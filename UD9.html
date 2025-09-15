@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es la web?</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🌐 ¿Qué es la web? 💻</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#paginas-web" class="hover:text-gray-200 transition-colors duration-300">Páginas Web</a></li>
+                    <li><a href="#servidores-web" class="hover:text-gray-200 transition-colors duration-300">Servidores Web</a></li>
+                    <li><a href="#lenguajes-web" class="hover:text-gray-200 transition-colors duration-300">Lenguajes Web</a></li>
+                    <li><a href="#animacion-web" class="hover:text-gray-200 transition-colors duration-300">Animación Web</a></li>
+                    <li><a href="#proyecto-final" class="hover:text-gray-200 transition-colors duration-300">Proyecto Final</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Explora el Universo de Internet!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Cada día, navegas por la <strong class="text-blue-600">web</strong>: visitas tus páginas favoritas, ves vídeos, buscas información. Pero, ¿alguna vez te has preguntado cómo funciona todo esto? ¿Cómo llegan esas páginas a tu pantalla?
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                En esta unidad, vamos a desvelar los secretos de la web. Aprenderemos qué son las páginas web, dónde se guardan, cómo se crean y cómo se les puede dar vida con animaciones. ¡Prepárate para entender el mundo que está detrás de cada clic!
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="web.png" alt="Concepto de Web" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/4f46e5/ffffff?text=Concepto+de+Web';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡El mundo en la punta de tus dedos!
+            </p>
+        </section>
+
+        <!-- CYR.3.E.1. Introducción a las páginas web. -->
+        <section id="paginas-web" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. Introducción a las Páginas Web</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Una <strong class="text-purple-600">página web</strong> es un documento digital que se puede ver en un navegador de Internet (como Chrome, Firefox o Edge). Es como una página de un libro, pero interactiva y conectada a millones de otras páginas.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Las páginas web pueden contener texto, imágenes, vídeos, sonidos y enlaces a otras páginas web. Cuando haces clic en un enlace, te "navegas" a otra página. El conjunto de todas las páginas web interconectadas forma la <strong class="text-purple-600">World Wide Web</strong> (WWW).
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">¿Cómo se accede a una página web?</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li>Escribiendo su <strong class="text-indigo-600">dirección URL</strong> (Uniform Resource Locator) en el navegador, por ejemplo: `https://www.google.com`.</li>
+                <li>Haciendo clic en un <strong class="text-indigo-600">enlace</strong> (hipervínculo) en otra página.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="ejemplo_web.webp" alt="Ejemplo de Página Web" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/8b5cf6/ffffff?text=Ejemplo+de+P\u00E1gina+Web';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Así se ve una página web!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Abre tu navegador y busca una página web sobre tu videojuego favorito. Identifica su URL y al menos 3 enlaces que te lleven a otras partes de la página o a otras webs.
+            </p>
+        </section>
+
+        <!-- CYR.3.E.2. Introducción a los servidores web. -->
+        <section id="servidores-web" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Introducción a los Servidores Web: Los "Almacenes" de Internet</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Cuando escribes una dirección web o haces clic en un enlace, ¿de dónde viene la página? Viene de un <strong class="text-green-600">servidor web</strong>.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un servidor web es un ordenador muy potente que está siempre encendido y conectado a Internet. Su trabajo es <strong class="text-green-600">almacenar las páginas web</strong> y enviarlas a tu navegador cuando las pides. Es como una biblioteca gigante que te entrega el libro que pides al instante.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">¿Cómo funciona?</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li>Tu navegador envía una <strong class="text-teal-600">petición</strong> al servidor web.</li>
+                <li>El servidor web <strong class="text-teal-600">encuentra</strong> la página que pides.</li>
+                <li>El servidor web <strong class="text-teal-600">envía</strong> la página de vuelta a tu navegador.</li>
+                <li>Tu navegador <strong class="text-teal-600">muestra</strong> la página en tu pantalla.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="servicio-web.jpg" alt="Concepto de Servidor Web" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/059669/ffffff?text=Concepto+de+Servidor+Web';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - El servidor web te entrega las páginas.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Cuando visitas una página web, ¿crees que el servidor web está cerca de ti o puede estar en cualquier parte del mundo? ¿Por qué?
+            </p>
+        </section>
+
+        <!-- CYR.3.E.3. Tipos de lenguajes para la edición de páginas web. -->
+        <section id="lenguajes-web" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Lenguajes para la Edición de Páginas Web: ¡Construyendo tu Propia Web!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Las páginas web no aparecen de la nada. Se construyen utilizando diferentes lenguajes de programación. Los más básicos y esenciales son:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-red-600">HTML (HyperText Markup Language):</strong> Es el "esqueleto" o la estructura de la página web. Define el contenido (títulos, párrafos, imágenes, enlaces).
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-inner mt-2">
+                        <pre class="whitespace-pre-wrap text-base font-mono">
+&lt;h1&gt;Mi Primera Página Web&lt;/h1&gt;
+&lt;p&gt;¡Hola mundo! Esta es mi página.&lt;/p&gt;
+&lt;img src="mi_imagen.jpg" alt="Mi imagen"&gt;
+                        </pre>
+                    </div>
+                </li>
+                <li><strong class="text-red-600">CSS (Cascading Style Sheets):</strong> Es la "ropa" o el "diseño" de la página web. Define cómo se ve el contenido (colores, fuentes, tamaños, disposición).
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-inner mt-2">
+                        <pre class="whitespace-pre-wrap text-base font-mono">
+h1 {
+  color: blue;
+  font-family: Arial;
+}
+p {
+  font-size: 16px;
+}
+                        </pre>
+                    </div>
+                </li>
+                <li><strong class="text-red-600">JavaScript (JS):</strong> Es el "cerebro" o la interactividad de la página web. Permite que la página haga cosas dinámicas (botones que reaccionan, animaciones complejas, juegos).</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Con HTML y CSS, puedes crear páginas web estáticas muy bonitas. Con JavaScript, puedes hacer que cobren vida.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="html-css-js.jpg" alt="HTML, CSS y JavaScript" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/ef4444/ffffff?text=HTML+CSS+JS';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Los pilares de la web.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Abre un editor de texto simple (como el Bloc de Notas) y escribe un pequeño código HTML para un título y un párrafo. Guarda el archivo como `mi_pagina.html` y ábrelo con tu navegador. ¡Verás tu primera web!
+            </p>
+        </section>
+
+        <!-- CYR.3.E.4. Introducción a la animación web. -->
+        <section id="animacion-web" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Introducción a la Animación Web: ¡Dale Vida a tus Páginas!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                La <strong class="text-orange-600">animación web</strong> hace que las páginas sean más atractivas y dinámicas. Puedes hacer que los elementos se muevan, cambien de color, aparezcan o desaparezcan suavemente.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tipos de animación web sencilla:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-orange-600">Transiciones CSS:</strong> Permiten cambios suaves de una propiedad a otra (ej. un botón que cambia de color al pasar el ratón por encima).</li>
+                <li><strong class="text-orange-600">Animaciones CSS:</strong> Permiten crear secuencias de movimiento más complejas (ej. un elemento que rebota o gira).</li>
+                <li><strong class="text-orange-600">Animaciones con JavaScript:</strong> Para interacciones más avanzadas y juegos dentro de la web.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                La animación hace que la experiencia del usuario sea más divertida y atractiva.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="web_animation.png" alt="Animación Web" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/f97316/ffffff?text=Animaci\u00F3n+Web';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Haz que tu web se mueva!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> En tu archivo `mi_pagina.html`, añade un estilo CSS para cambiar el color de tu título a rojo. Luego, investiga cómo hacer que el color cambie suavemente al pasar el ratón por encima (transición CSS).
+            </p>
+        </section>
+
+        <!-- Proyecto Final de Unidad -->
+        <section id="proyecto-final" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Proyecto Final de Unidad: "Mi Primera Página Web Personal"</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para este proyecto final, vas a crear tu propia página web personal utilizando HTML y CSS. En ella, podrás presentarte, hablar de tus intereses, tus videojuegos favoritos o tus proyectos de robótica.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Requisitos del Proyecto:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="font-bold">1. Estructura HTML:</strong>
+                    <ul>
+                        <li>Un título principal (h1) con tu nombre.</li>
+                        <li>Al menos dos secciones diferentes (ej. "Sobre mí", "Mis Hobbies", "Mis Proyectos").</li>
+                        <li>Texto en párrafos (p).</li>
+                        <li>Al menos una imagen.</li>
+                        <li>Al menos un enlace a otra página (puede ser una página web real o una segunda página tuya).</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">2. Estilos CSS:</strong>
+                    <ul>
+                        <li>Cambia el color de fondo de la página o de alguna sección.</li>
+                        <li>Cambia el color y/o el tipo de letra de los títulos y/o párrafos.</li>
+                        <li>Aplica algún estilo a las imágenes (ej. bordes redondeados).</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">3. Animación Sencilla (Opcional pero recomendado):</strong>
+                    <ul>
+                        <li>Añade una pequeña animación o transición CSS a algún elemento (ej. un botón, un texto, una imagen).</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">4. Reflexión y Presentación:</strong>
+                    <ul>
+                        <li>Explica cómo has estructurado tu página con HTML.</li>
+                        <li>Describe cómo has aplicado estilos con CSS.</li>
+                        <li>Comenta cómo has asegurado que la página sea "segura, responsable y respetuosa" (ej. no compartiendo información sensible, usando imágenes con permiso).</li>
+                        <li>Menciona cualquier problema que hayas encontrado y cómo lo has resuelto.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>5.1. Conocer la construcción de aplicaciones informáticas y web, entendiendo su funcionamiento interno, de forma segura, responsable y respetuosa.</li>
+                    <li>5.2. Conocer y resolver la variedad de problemas potencialmente presentes en el desarrollo de una aplicación web, tratando de generalizar posibles soluciones.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de la Web!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué es una página web?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Un tipo de programa de ordenador
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) Un documento digital que se ve en un navegador de Internet
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Un tipo de robot
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. ¿Cuál es la función principal de un servidor web?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) Crear videojuegos
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Almacenar y enviar páginas web a los navegadores
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) Conectar dispositivos IoT
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué lenguaje se utiliza para definir la ESTRUCTURA y el CONTENIDO de una página web?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) CSS
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) JavaScript
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) HTML
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. Si quieres cambiar los COLORES y las FUENTES de tu página web, ¿qué lenguaje usarías?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) HTML
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) CSS
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) JavaScript
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. ¿Qué permite la "animación web" en una página?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) Que la página se cargue más lento
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) Que los elementos se muevan o cambien dinámicamente
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) Que la página solo muestre texto
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "¿Qué es la web?".</p>
+    </footer>
+</body>
+</html>
+

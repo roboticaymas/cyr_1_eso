@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La IA está aquí para quedarse</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-teal-600 to-lime-500 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🧠 La IA está aquí para quedarse 🤖</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#definicion-ia" class="hover:text-gray-200 transition-colors duration-300">¿Qué es la IA?</a></li>
+                    <li><a href="#etica-responsabilidad" class="hover:text-gray-200 transition-colors duration-300">Ética en IA</a></li>
+                    <li><a href="#agentes-inteligentes" class="hover:text-gray-200 transition-colors duration-300">Agentes Inteligentes</a></li>
+                    <li><a href="#aprendizaje-automatico" class="hover:text-gray-200 transition-colors duration-300">Aprendizaje Automático</a></li>
+                    <li><a href="#tipos-aprendizaje" class="hover:text-gray-200 transition-colors duration-300">Tipos de Aprendizaje</a></li>
+                    <li><a href="#ml-for-kids" class="hover:text-gray-200 transition-colors duration-300">ML for Kids</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Descubre el Poder de la Inteligencia Artificial!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¿Has hablado alguna vez con un asistente de voz como Siri o Google Assistant? ¿O has visto cómo Netflix te recomienda películas que te encantan? Todo esto es posible gracias a la <strong class="text-teal-600">Inteligencia Artificial (IA)</strong>.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                La IA es una de las tecnologías más emocionantes de nuestro tiempo, y está en todas partes, desde los videojuegos hasta los coches que se conducen solos. En esta unidad, vamos a explorar qué es la IA, cómo funciona y por qué es tan importante para nuestro futuro.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ia.png" alt="Concepto de Inteligencia Artificial" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/6d28d9/ffffff?text=Concepto+de+Inteligencia+Artificial';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - La IA está transformando el mundo.
+            </p>
+        </section>
+
+        <!-- CYR.1.H.1. Definición de la Inteligencia Artificial. -->
+        <section id="definicion-ia" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. ¿Qué es la Inteligencia Artificial?</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                La <strong class="text-blue-600">Inteligencia Artificial (IA)</strong> es la capacidad de las máquinas para <strong class="text-blue-600">imitar la inteligencia humana</strong>. Esto significa que un programa de IA puede hacer cosas que normalmente requieren pensamiento humano, como:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Aprender:</strong> Mejorar con la experiencia.</li>
+                <li><strong class="text-purple-600">Razonar:</strong> Resolver problemas y tomar decisiones.</li>
+                <li><strong class="text-purple-600">Comprender el lenguaje:</strong> Entender lo que decimos o escribimos.</li>
+                <li><strong class="text-purple-600">Reconocer patrones:</strong> Identificar caras, objetos o voces.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                En resumen, la IA permite que las máquinas "piensen" y actúen de forma inteligente para realizar tareas.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Ejemplos de IA en tu día a día:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Asistentes de voz:</strong> Siri, Google Assistant, Alexa.</li>
+                <li><strong class="text-purple-600">Recomendaciones:</strong> Netflix, YouTube, Spotify.</li>
+                <li><strong class="text-purple-600">Filtros de spam:</strong> En tu correo electrónico.</li>
+                <li><strong class="text-purple-600">Reconocimiento facial:</strong> Para desbloquear tu móvil.</li>
+                <li><strong class="text-purple-600">Videojuegos:</strong> Los personajes controlados por la máquina.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="ia2.jpeg" alt="Ejemplos de IA" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/a78bfa/ffffff?text=Ejemplos+de+IA';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - La IA está por todas partes.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en 3 ejemplos de IA que uses o conozcas en tu vida diaria y compártelos con tus compañeros.
+            </p>
+        </section>
+
+        <!-- CYR.1.H.2. Introducción a la ética y responsabilidad social en el uso de IA. -->
+        <section id="etica-responsabilidad" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Ética y Responsabilidad Social en el uso de la IA</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                La IA es muy poderosa, y como todo poder, debe usarse con <strong class="text-green-600">responsabilidad</strong>. Es importante pensar en las consecuencias de cómo usamos la IA.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Preguntas importantes sobre la ética en IA:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-green-600">¿Es justa la IA?</strong> ¿Toma decisiones sin prejuicios? Por ejemplo, un sistema de IA que decide quién consigue un trabajo, ¿es justo para todos?</li>
+                <li><strong class="text-green-600">¿Es segura la IA?</strong> ¿Puede causar daño si falla o se usa mal?</li>
+                <li><strong class="text-green-600">¿Respeta nuestra privacidad?</strong> ¿Qué datos nuestros usa y cómo los protege?</li>
+                <li><strong class="text-green-600">¿Quién es responsable si algo sale mal?</strong> Si un coche autónomo tiene un accidente, ¿quién tiene la culpa?</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Debemos asegurarnos de que la IA se desarrolle y se use para el <strong class="text-green-600">bien de la sociedad</strong>, respetando a las personas y sus derechos.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ia_ethics.png" alt="Ética en la IA" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/4ade80/ffffff?text=Etica+en+la+IA';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - La IA debe ser justa y segura.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> En grupos, debatan un ejemplo de IA (como un sistema de reconocimiento facial en la calle) y piensen en un posible problema ético que podría surgir y cómo lo solucionarían.
+            </p>
+        </section>
+
+        <!-- CYR.1.H.3. Agentes inteligentes simples. -->
+        <section id="agentes-inteligentes" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Agentes Inteligentes Simples: Pequeños Cerebros Digitales</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un <strong class="text-red-600">agente inteligente</strong> es cualquier cosa (un programa, un robot) que puede <strong class="text-red-600">percibir</strong> su entorno (recibir información), <strong class="text-red-600">procesar</strong> esa información y luego <strong class="text-red-600">actuar</strong> para alcanzar un objetivo.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Piensa en el personaje de un videojuego que te persigue:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-orange-600">Percibe:</strong> Ve dónde estás tú.</li>
+                <li><strong class="text-orange-600">Procesa:</strong> Decide la mejor ruta para alcanzarte.</li>
+                <li><strong class="text-orange-600">Actúa:</strong> Se mueve hacia ti.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Estos son ejemplos de agentes inteligentes simples, programados para seguir reglas específicas.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ia_agent.png" alt="Agente inteligente simple" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/fca5a5/ffffff?text=Agente+Inteligente+Simple';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Así funciona un agente inteligente.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> En Scratch, programa un "sprite" para que persiga al puntero del ratón. Esto es un agente inteligente simple que percibe la posición del ratón y actúa moviéndose hacia él.
+            </p>
+        </section>
+
+        <!-- CYR.1.H.4. Aprendizaje automático. -->
+        <section id="aprendizaje-automatico" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Aprendizaje Automático (Machine Learning): La IA que Aprende</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                El <strong class="text-yellow-600">Aprendizaje Automático (Machine Learning - ML)</strong> es una parte muy importante de la IA. Es la capacidad de los ordenadores para <strong class="text-yellow-600">aprender de los datos sin ser programados explícitamente</strong> para cada tarea.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Imagina que quieres que un ordenador reconozca si una foto es de un perro o un gato. En lugar de decirle "si tiene orejas puntiagudas y bigotes largos es un gato", le muestras <strong class="text-yellow-600">miles de fotos de perros y gatos</strong>. El ordenador, por sí mismo, aprende a diferenciar entre ellos.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                El ML se usa en las recomendaciones de Netflix, en el reconocimiento de voz de tu móvil y en los filtros de spam.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ml_concept.jpeg" alt="Concepto de Machine Learning" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/fcd34d/ffffff?text=Concepto+de+Machine+Learning';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - La IA aprende de los datos.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en un juego donde la dificultad se adapte a cómo juegas. ¿Cómo crees que la IA del juego podría "aprender" de tus movimientos para hacerse más difícil o más fácil?
+            </p>
+        </section>
+
+        <!-- CYR.1.H.5. Tipos de aprendizaje. -->
+        <section id="tipos-aprendizaje" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">5. Tipos de Aprendizaje Automático</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Hay varias formas en que las máquinas pueden aprender. Aquí veremos las más básicas:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Aprendizaje Supervisado:</strong>
+                    <p class="ml-4 mt-1">Es como aprender con un profesor. Le das a la máquina muchos ejemplos con sus respuestas correctas, y la máquina aprende a dar esas respuestas. <br>
+                    <span class="text-gray-600">Ejemplo: Mostrarle fotos de perros y decirle "esto es un perro", "esto es un gato".</span></p>
+                </li>
+                <li><strong class="text-purple-600">Aprendizaje No Supervisado:</strong>
+                    <p class="ml-4 mt-1">Es como descubrir cosas por ti mismo. Le das a la máquina datos sin respuestas correctas, y la máquina busca patrones o grupos por sí misma. <br>
+                    <span class="text-gray-600">Ejemplo: Agrupar a clientes con gustos similares sin que tú le digas cuáles son esos gustos.</span></p>
+                </li>
+                <li><strong class="text-purple-600">Aprendizaje por Refuerzo:</strong>
+                    <p class="ml-4 mt-1">Es como aprender jugando a un videojuego. La máquina aprende por "prueba y error", recibiendo "recompensas" por las acciones correctas y "castigos" por las incorrectas. <br>
+                    <span class="text-gray-600">Ejemplo: Un robot aprendiendo a caminar, donde cada paso exitoso es una recompensa.</span></p>
+                </li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="ml.webp" alt="Tipos de Machine Learning" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/818cf8/ffffff?text=Tipos+de+ML';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Diferentes formas en que la IA puede aprender.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en un ejemplo de la vida real para cada tipo de aprendizaje (supervisado, no supervisado, por refuerzo) que no hayamos mencionado.
+            </p>
+        </section>
+
+        <!-- Nueva Sección: Machine Learning for Kids -->
+        <section id="ml-for-kids" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">6. Machine Learning for Kids: ¡Crea tu propia IA!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para entender de verdad cómo funciona el Aprendizaje Automático, ¡nada mejor que crearlo tú mismo! <strong class="text-pink-600">Machine Learning for Kids</strong> es una herramienta fantástica que te permite entrenar a una IA con tus propios datos y luego usarla en proyectos de Scratch o App Inventor.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Es como enseñar a un robot a reconocer cosas. Tú le das ejemplos (imágenes, textos, números) y le dices qué son. El robot "aprende" y luego puede reconocer cosas nuevas por sí mismo.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="mlkids.png" alt="Interfaz de Machine Learning for Kids" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/ec4899/ffffff?text=Interfaz+de+ML+for+Kids';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Entrena a tu propia IA!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Explora la herramienta!</strong> Puedes acceder a Machine Learning for Kids aquí: <a href="https://machinelearningforkids.co.uk/" target="_blank" class="text-blue-500 hover:underline">Machine Learning for Kids</a>
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-10 mb-4">Actividad de Evaluación: "Clasificador de Texto de Mensajes"</h3>
+            <p class="text-lg mb-4 leading-relaxed">
+                Utilizando Machine Learning for Kids, vas a crear un proyecto de IA que pueda clasificar mensajes de texto como "positivo", "negativo" o "neutro".
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="font-bold">Paso 1: Entrenar la IA.</strong>
+                    <ul>
+                        <li>Crea un nuevo proyecto de "reconocimiento de texto" en Machine Learning for Kids.</li>
+                        <li>Crea tres "etiquetas" (categorías): `positivo`, `negativo`, `neutro`.</li>
+                        <li>Añade al menos 10 ejemplos de frases para cada categoría. Por ejemplo:
+                            <ul>
+                                <li>Positivo: "Me encanta este juego", "Hoy es un día genial", "Qué bien me lo paso"</li>
+                                <li>Negativo: "Estoy aburrido", "Esto es muy difícil", "No me gusta"</li>
+                                <li>Neutro: "Hola", "Qué hora es", "Voy a clase"</li>
+                            </ul>
+                        </li>
+                        <li>Entrena tu modelo de aprendizaje automático.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">Paso 2: Usar la IA en Scratch.</strong>
+                    <ul>
+                        <li>Abre el editor de Scratch y conecta tu proyecto de Machine Learning for Kids.</li>
+                        <li>Crea un programa donde el usuario escriba un mensaje (usando el bloque "preguntar y esperar").</li>
+                        <li>La IA debe clasificar el mensaje y el personaje de Scratch debe decir si el mensaje es "positivo", "negativo" o "neutro".</li>
+                        <li>Si el mensaje es "negativo", el personaje podría cambiar a un disfraz triste; si es "positivo", a uno alegre.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">Paso 3: Reflexión y Presentación.</strong>
+                    <ul>
+                        <li>Explica cómo entrenaste tu IA (qué ejemplos usaste).</li>
+                        <li>Demuestra cómo funciona tu proyecto de Scratch, probando diferentes mensajes.</li>
+                        <li>Discute si la IA siempre clasifica correctamente y por qué (introducción a la ética y limitaciones).</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>4.2. Comprender los principios básicos de funcionamiento de los agentes inteligentes y de las técnicas de aprendizaje automático, con objeto de aplicarlos para la resolución de situaciones mediante la Inteligencia Artificial de forma ética y responsable.</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de IA!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué es la Inteligencia Artificial (IA)?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Un nuevo tipo de videojuego
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) La capacidad de las máquinas para imitar la inteligencia humana
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Un robot que puede hablar
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. ¿Por qué es importante considerar la ética al usar la IA?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) Para que la IA sea más rápida
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Para asegurar que la IA se use de forma justa y segura para todos
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) Para que la IA aprenda más rápido
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué hace un "agente inteligente"?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) Solo juega videojuegos
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) Percibe su entorno, procesa información y actúa para un objetivo
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) Solo habla con las personas
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. ¿Qué es el Aprendizaje Automático (Machine Learning)?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) Una forma de programar cada paso de la máquina
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) La capacidad de las máquinas para aprender de los datos sin ser programadas explícitamente
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) Un tipo de robot muy avanzado
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. Si una IA aprende de ejemplos donde ya se le ha dicho cuál es la respuesta correcta (ej. "esto es un perro"), ¿qué tipo de aprendizaje es?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) Aprendizaje por refuerzo
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) Aprendizaje no supervisado
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) Aprendizaje supervisado
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "La IA está aquí para quedarse".</p>
+    </footer>
+</body>
+</html>
+

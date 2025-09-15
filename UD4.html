@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemas de Computación</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-500 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">💻 Sistemas de Computación ⚙️</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#sistemas-computacion" class="hover:text-gray-200 transition-colors duration-300">Sistemas</a></li>
+                    <li><a href="#microcontroladores" class="hover:text-gray-200 transition-colors duration-300">Microcontroladores</a></li>
+                    <li><a href="#hardware-software" class="hover:text-gray-200 transition-colors duration-300">Hardware y Software</a></li>
+                    <li><a href="#seguridad-electrica" class="hover:text-gray-200 transition-colors duration-300">Seguridad Eléctrica</a></li>
+                    <li><a href="#proyecto-final" class="hover:text-gray-200 transition-colors duration-300">Proyecto Final</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Descubre Cómo Funcionan las Máquinas!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Desde tu móvil hasta un semáforo, pasando por un videojuego o un robot, todos funcionan gracias a los <strong class="text-indigo-600">sistemas de computación</strong>. Pero, ¿qué son exactamente y cómo están construidos?
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                En esta unidad, vamos a explorar las piezas fundamentales que hacen posible que la tecnología funcione, tanto por dentro como por fuera. Entenderemos cómo se comunican las máquinas, qué son los cerebros diminutos que las controlan y por qué es tan importante la seguridad cuando trabajamos con electricidad.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="sist_comp.png" alt="Concepto de Sistema de Computación" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/6366f1/ffffff?text=Concepto+de+Sistema+de+Computaci\u00F3n';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Un sistema de computación es como un cerebro electrónico.
+            </p>
+        </section>
+
+        <!-- CYR.1.F.1. Introducción a los sistemas de computación. -->
+        <section id="sistemas-computacion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. Introducción a los Sistemas de Computación</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un <strong class="text-blue-600">sistema de computación</strong> es un conjunto de elementos que trabajan juntos para procesar información. Piensa en él como un equipo que recibe datos, los transforma y luego produce un resultado.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Componentes básicos de un sistema de computación:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Entrada (Input):</strong> Es la información que el sistema recibe.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Teclado, ratón, micrófono, sensor de temperatura.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-purple-600">Proceso:</strong> Es la parte donde el sistema "piensa" o realiza cálculos con la información recibida.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: La CPU (cerebro del ordenador), un microcontrolador.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-purple-600">Salida (Output):</strong> Es el resultado que el sistema produce.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Pantalla, altavoces, impresora, luz LED, motor de un robot.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Todos los sistemas informáticos, desde el más simple al más complejo, siguen este ciclo de entrada, proceso y salida.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ciclo_sist.png" alt="Diagrama de Entrada Proceso Salida" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/8b5cf6/ffffff?text=Diagrama+de+Entrada+Proceso+Salida';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - El ciclo de un sistema de computación.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Identifica los componentes de entrada, proceso y salida en tres objetos tecnológicos que uses a diario (ej. un mando de consola, una lavadora, un cajero automático).
+            </p>
+        </section>
+
+        <!-- CYR.1.F.2. Concepto de microcontroladores. -->
+        <section id="microcontroladores" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Concepto de Microcontroladores: Pequeños Cerebros para Tareas Específicas</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un <strong class="text-green-600">microcontrolador</strong> es como un ordenador muy pequeño y especializado, diseñado para controlar una tarea específica. Piensa en el "cerebro" de una lavadora, un horno microondas o un juguete electrónico.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                A diferencia de un ordenador personal que puede hacer muchas cosas, un microcontrolador está programado para hacer una o pocas cosas muy bien. Son esenciales en la robótica y la electrónica porque permiten que los dispositivos interactúen con el mundo físico (a través de sensores y actuadores).
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Ejemplos de microcontroladores populares:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-teal-600">Arduino:</strong> Muy popular para proyectos de electrónica y robótica.</li>
+                <li><strong class="text-teal-600">micro:bit:</strong> Ideal para aprender programación y electrónica de forma sencilla.</li>
+                <li><strong class="text-teal-600">ESP32/ESP8266:</strong> Usados para proyectos con conexión a internet (IoT).</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="microcontrollers.jpeg" alt="Placa de Microcontrolador" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/34d399/ffffff?text=Placa+de+Microcontrolador';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Una placa de microcontrolador, el cerebro de muchos dispositivos.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Busca imágenes de diferentes dispositivos electrónicos en tu casa (ej. un mando a distancia, un termostato inteligente) e intenta imaginar qué tipo de microcontrolador podrían llevar dentro.
+            </p>
+        </section>
+
+        <!-- CYR.1.F.3. Introducción al Hardware y Software. -->
+        <section id="hardware-software" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Hardware y Software: El Cuerpo y el Alma de la Computación</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para que un sistema de computación funcione, necesita dos cosas fundamentales que trabajan juntas:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-red-600">Hardware:</strong> Son todas las <strong class="text-red-600">partes físicas</strong> y tangibles de un sistema de computación. Todo lo que puedes tocar.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: La pantalla, el teclado, el ratón, el disco duro, la placa base, los cables, los chips.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-red-600">Software:</strong> Son los <strong class="text-red-600">programas, instrucciones y datos</strong> que le dicen al hardware qué hacer. No se puede tocar.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: El sistema operativo (Windows, macOS, Android), los videojuegos, las aplicaciones (Word, Chrome, Scratch).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                El hardware sin software es como un cuerpo sin cerebro, no puede hacer nada. El software sin hardware es como una idea sin un cuerpo para ejecutarla, no existe físicamente. ¡Necesitan el uno del otro!
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="hardware_software.webp" alt="Hardware y Software" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/f87171/ffffff?text=Hardware+y+Software';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Hardware (físico) y Software (programas).
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Haz una lista de 5 elementos de hardware y 5 elementos de software que encuentres en tu ordenador o móvil.
+            </p>
+        </section>
+
+        <!-- CYR.1.F.4. Introducción a la seguridad eléctrica. -->
+        <section id="seguridad-electrica" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Introducción a la Seguridad Eléctrica: ¡Cuidado con la Corriente!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Cuando trabajamos con sistemas de computación, especialmente con microcontroladores o componentes electrónicos, es fundamental conocer las normas básicas de <strong class="text-orange-600">seguridad eléctrica</strong>. La electricidad puede ser peligrosa si no se maneja correctamente.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Reglas básicas de seguridad:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-orange-600">Desconecta la corriente:</strong> Siempre que vayas a manipular cables o componentes, asegúrate de que el dispositivo esté desconectado de la corriente eléctrica.</li>
+                <li><strong class="text-orange-600">No toques cables pelados:</strong> Los cables con el aislamiento dañado pueden provocar descargas.</li>
+                <li><strong class="text-orange-600">Evita el agua:</strong> El agua y la electricidad no se mezclan. Mantén tus dispositivos y manos secas.</li>
+                <li><strong class="text-orange-600">Usa herramientas adecuadas:</strong> Utiliza herramientas aisladas cuando sea necesario.</li>
+                <li><strong class="text-orange-600">Sigue las instrucciones:</strong> Siempre lee y sigue las indicaciones del profesor o los manuales.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                La seguridad es lo primero para evitar accidentes y proteger tanto a las personas como a los equipos.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="electric.png" alt="Seguridad Eléctrica" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/fbbf24/ffffff?text=Seguridad+Electrica';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡La seguridad es lo más importante!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Diseña un pequeño cartel con 3 reglas de seguridad eléctrica importantes para un laboratorio de robótica.
+            </p>
+        </section>
+
+        <!-- Proyecto Final de Unidad -->
+        <section id="proyecto-final" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Proyecto Final de Unidad: "Mi Investigación sobre Sistemas Inteligentes"</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para este proyecto, vas a investigar un sistema de computación o robótico que te parezca interesante y que tenga un impacto en el mundo real. Tu objetivo es entender cómo funciona y cómo contribuye a resolver un problema o mejorar una situación.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Puedes elegir un tema como:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li>Un robot de limpieza (ej. Roomba)</li>
+                <li>Un sistema de riego automático inteligente</li>
+                <li>Un semáforo inteligente</li>
+                <li>Un dron de reparto</li>
+                <li>Un sistema de seguridad del hogar</li>
+                <li>Un brazo robótico industrial</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tareas a Realizar:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="font-bold">1. Investigación:</strong>
+                    <ul>
+                        <li>Describe el sistema elegido y su función principal.</li>
+                        <li>Identifica sus componentes principales de <strong class="text-blue-600">Hardware</strong> y <strong class="text-blue-600">Software</strong>.</li>
+                        <li>Explica cómo interactúa con el mundo físico (qué <strong class="text-blue-600">sensores</strong> usa para la entrada y qué <strong class="text-blue-600">actuadores</strong> usa para la salida).</li>
+                        <li>¿Qué problema del mundo real resuelve o qué mejora aporta?</li>
+                        <li>¿Cómo contribuye a la <strong class="text-green-600">sostenibilidad</strong> (ej. ahorro de energía, optimización de recursos, reducción de residuos)?</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">2. Formato de Presentación:</strong>
+                    <p class="ml-4 mt-1">Elige uno de los siguientes formatos para presentar tu investigación:</p>
+                    <ul class="list-circle list-inside ml-8 mt-1">
+                        <li>Una presentación digital (ej. con Canva, Genially, Google Slides).</li>
+                        <li>Un póster informativo (digital o físico).</li>
+                        <li>Un informe escrito con ilustraciones.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>3.1. Ser capaz de construir un sistema de computación o robótico, promoviendo la interacción con el mundo físico en el contexto de un problema del mundo real, de forma sostenible.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de Sistemas!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Cuál de los siguientes NO es un componente básico de un sistema de computación?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Entrada (Input)
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) Proceso
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Decoración
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="d"> d) Salida (Output)
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. Un microcontrolador es un ordenador:</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) Muy grande y potente
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Especializado para una tarea específica
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) Que solo sirve para jugar
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué término se refiere a las partes físicas y tangibles de un sistema de computación?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) Software
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) Hardware
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) Firmware
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. ¿Cuál de las siguientes es una regla básica de seguridad eléctrica?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) Tocar cables pelados para comprobar si hay corriente
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) Manipular componentes con las manos mojadas
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) Desconectar la corriente antes de manipular cables
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. Un videojuego es un ejemplo de:</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) Hardware
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) Software
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) Microcontrolador
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "Sistemas de Computación".</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo está interconectado</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-blue-700 to-cyan-600 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🌐 Todo está interconectado 🔗</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#definicion-componentes" class="hover:text-gray-200 transition-colors duration-300">Definición y Componentes</a></li>
+                    <li><a href="#funcionamiento-iot" class="hover:text-gray-200 transition-colors duration-300">Funcionamiento</a></li>
+                    <li><a href="#tipos-comunicaciones" class="hover:text-gray-200 transition-colors duration-300">Comunicaciones</a></li>
+                    <li><a href="#aplicaciones-iot" class="hover:text-gray-200 transition-colors duration-300">Aplicaciones</a></li>
+                    <li><a href="#proyecto-final" class="hover:text-gray-200 transition-colors duration-300">Proyecto Final</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Descubre el Mundo Conectado del IoT!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¿Sabías que tu nevera podría avisarte cuando falta leche? ¿O que las luces de tu casa podrían encenderse solas al llegar? Esto es parte de lo que llamamos el <strong class="text-blue-600">Internet de las Cosas (IoT)</strong>.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                El IoT se refiere a la idea de que objetos cotidianos (desde electrodomésticos hasta coches) pueden conectarse a internet, recoger y enviar datos, y así interactuar entre sí y con nosotros. En esta unidad, vamos a explorar cómo funciona esta red de objetos inteligentes y cómo está cambiando nuestro mundo.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="iot.png" alt="Concepto de IoT" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/3b82f6/ffffff?text=Concepto+de+IoT';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡El mundo se está conectando!
+            </p>
+        </section>
+
+        <!-- CYR.1.B.1. Definición y componentes IoT. -->
+        <section id="definicion-componentes" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. Definición y Componentes del IoT</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                El <strong class="text-green-600">Internet de las Cosas (IoT)</strong> es una red de objetos físicos que están equipados con sensores, software y otras tecnologías para conectarse e intercambiar datos con otros dispositivos y sistemas a través de internet.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Componentes clave de un sistema IoT:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-teal-600">Dispositivos/Cosas:</strong> Son los objetos físicos (sensores, actuadores, electrodomésticos, vehículos, etc.) que recogen datos o realizan acciones.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Un termostato inteligente, una pulsera de actividad, una cámara de seguridad.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-teal-600">Conectividad:</strong> Cómo se comunican los dispositivos con la nube o entre sí.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Wi-Fi, Bluetooth, 5G, LoRaWAN.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-teal-600">Plataforma IoT (Cloud):</strong> Es el "cerebro" en la nube donde se recogen, almacenan y procesan los datos de los dispositivos.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Google Cloud IoT, AWS IoT.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-teal-600">Interfaz de Usuario:</strong> Cómo interactuamos con el sistema IoT (aplicaciones móviles, paneles de control).
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Una app en tu móvil para controlar las luces, un panel web para ver datos de sensores.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="iot_components.png" alt="Componentes de IoT" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/0d9488/ffffff?text=Componentes+de+IoT';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Los elementos clave que forman un sistema IoT.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Haz una lista de 3 objetos de tu casa que podrían ser parte del IoT y qué componentes (sensor, actuador, conectividad) crees que tendrían.
+            </p>
+        </section>
+
+        <!-- CYR.1.B.2. Funcionamiento de IoT. -->
+        <section id="funcionamiento-iot" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. ¿Cómo Funciona el IoT? El Flujo de Datos</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                El funcionamiento del IoT sigue un ciclo básico de cuatro pasos:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">1. Recolección de datos:</strong> Los sensores integrados en los dispositivos IoT recogen datos del entorno (temperatura, humedad, movimiento, etc.).</li>
+                <li><strong class="text-purple-600">2. Envío de datos:</strong> Estos datos se envían a la nube a través de la conectividad (Wi-Fi, Bluetooth, etc.).</li>
+                <li><strong class="text-purple-600">3. Procesamiento de datos:</strong> En la nube, los datos se analizan y se toman decisiones. Aquí es donde la IA puede entrar en juego para interpretar los datos.</li>
+                <li><strong class="text-purple-600">4. Acción/Respuesta:</strong> Basándose en el análisis, el sistema puede enviar una instrucción a un actuador (ej. encender una luz, ajustar un termostato) o enviarnos una notificación.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Este ciclo permite que los dispositivos "sientan", "piensen" (en la nube) y "actúen" en el mundo físico.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="iot_flow.png" alt="Flujo de datos en IoT" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/7c3aed/ffffff?text=Flujo+de+Datos+en+IoT';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - El camino que siguen los datos en un sistema IoT.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Dibuja el flujo de datos para un sistema IoT que detecta si una planta necesita agua y la riega automáticamente. Identifica cada uno de los 4 pasos.
+            </p>
+        </section>
+
+        <!-- CYR.1.B.3. Tipos de Comunicaciones de dispositivos IoT. -->
+        <section id="tipos-comunicaciones" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Tipos de Comunicaciones en Dispositivos IoT</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para que los dispositivos IoT puedan enviar y recibir información, utilizan diferentes tecnologías de comunicación. La elección depende de la distancia, la cantidad de datos y el consumo de energía.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Algunos tipos comunes de comunicación:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-red-600">Wi-Fi:</strong> Ideal para distancias cortas y grandes cantidades de datos (ej. cámaras de seguridad, televisores inteligentes).</li>
+                <li><strong class="text-red-600">Bluetooth:</strong> Para distancias muy cortas y bajo consumo de energía (ej. auriculares inalámbricos, pulseras de actividad).</li>
+                <li><strong class="text-red-600">Celular (4G/5G):</strong> Para largas distancias y cuando no hay Wi-Fi (ej. coches conectados, rastreadores de activos).</li>
+                <li><strong class="text-red-600">LoRaWAN:</strong> Para largas distancias y muy bajo consumo de energía, ideal para sensores que envían pocos datos (ej. sensores agrícolas, contadores de agua).</li>
+                <li><strong class="text-red-600">Ethernet:</strong> Conexión por cable, muy rápida y segura, para dispositivos fijos (ej. algunos sistemas de domótica avanzados).</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="iot_types.jpg" alt="Tipos de comunicación IoT" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/ef4444/ffffff?text=Tipos+de+Comunicaci\u00F3n+IoT';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Diferentes formas de conectar el mundo.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Investiga qué tipo de comunicación usa tu móvil para conectarse a internet en casa y fuera de casa. ¿Por qué crees que usa diferentes tipos?
+            </p>
+        </section>
+
+        <!-- CYR.1.B.4. Aplicaciones de IoT. -->
+        <section id="aplicaciones-iot" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Aplicaciones del IoT: ¡El Mundo Inteligente!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                El IoT tiene aplicaciones en casi todos los aspectos de nuestra vida. Nos ayuda a hacer las cosas más eficientes, cómodas y seguras.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Ejemplos de aplicaciones de IoT:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-orange-600">Hogares Inteligentes (Smart Home):</strong> Termostatos, luces, cerraduras, aspiradoras robot, neveras conectadas.</li>
+                <li><strong class="text-orange-600">Ciudades Inteligentes (Smart City):</strong> Semáforos que se adaptan al tráfico, sensores de calidad del aire, gestión de residuos.</li>
+                <li><strong class="text-orange-600">Salud Conectada:</strong> Pulseras de actividad, monitores de ritmo cardíaco, pastilleros inteligentes.</li>
+                <li><strong class="text-orange-600">Agricultura Inteligente:</strong> Sensores de humedad del suelo, sistemas de riego automático, drones para monitorizar cultivos.</li>
+                <li><strong class="text-orange-600">Industria (Industria 4.0):</strong> Máquinas que se comunican entre sí para optimizar la producción, mantenimiento predictivo.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="iot_applications.png" alt="Aplicaciones de IoT" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/f97316/ffffff?text=Aplicaciones+de+IoT';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - El IoT mejora nuestra vida diaria.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Elige una aplicación de IoT que te parezca más interesante y explica cómo crees que funciona, mencionando al menos un sensor y un actuador que podría utilizar.
+            </p>
+        </section>
+
+        <!-- Proyecto Final de Unidad -->
+        <section id="proyecto-final" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Proyecto Final de Unidad: "Mi Caso de Estudio IoT"</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para este proyecto, vas a investigar un sistema IoT específico que resuelva un problema del mundo real. Tu objetivo es comprender cómo sus componentes interactúan para lograr su funcionamiento global.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Puedes elegir un sistema como:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li>Un sistema de luces inteligentes (ej. Philips Hue)</li>
+                <li>Un termostato inteligente (ej. Nest)</li>
+                <li>Un sistema de seguridad para el hogar conectado (cámaras, sensores de puertas)</li>
+                <li>Un sistema de seguimiento de mascotas con GPS</li>
+                <li>Un sistema de monitorización de la calidad del aire en una ciudad</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tareas a Realizar:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="font-bold">1. Descripción del Sistema:</strong>
+                    <ul>
+                        <li>Describe el sistema IoT elegido y el problema del mundo real que resuelve.</li>
+                        <li>Identifica los <strong class="text-blue-600">dispositivos/cosas</strong> principales que lo componen (sensores, actuadores, etc.).</li>
+                        <li>Explica cómo estos dispositivos se <strong class="text-blue-600">comunican</strong> (tipo de conectividad).</li>
+                        <li>Describe brevemente el <strong class="text-blue-600">flujo de datos</strong> desde que se recogen hasta que se produce una acción o resultado.</li>
+                        <li>¿Qué <strong class="text-blue-600">características principales</strong> tiene este sistema que lo hacen "inteligente" o útil?</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">2. Formato de Presentación:</strong>
+                    <p class="ml-4 mt-1">Elige uno de los siguientes formatos para presentar tu investigación:</p>
+                    <ul class="list-circle list-inside ml-8 mt-1">
+                        <li>Una presentación digital (ej. con Canva, Genially, Google Slides).</li>
+                        <li>Un póster informativo (digital o físico).</li>
+                        <li>Un informe escrito con ilustraciones.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>1.1. Comprender el funcionamiento global de los sistemas de computación física, sus componentes y principales características.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de IoT!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué significa la "I" en IoT?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Inteligencia
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) Interconexión
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Internet
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. ¿Cuál de los siguientes es un componente clave de un sistema IoT?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) Un libro de texto
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Un dispositivo (con sensores/actuadores)
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) Un lápiz
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué paso sigue a la "Recolección de datos" en el funcionamiento del IoT?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) Apagar el dispositivo
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) Envío de datos a la nube
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) Imprimir un informe
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. ¿Qué tipo de comunicación IoT es ideal para distancias cortas y bajo consumo de energía?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) 5G
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) Wi-Fi
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) Bluetooth
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. Un termostato inteligente es un ejemplo de aplicación en:</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) Agricultura Inteligente
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) Hogares Inteligentes
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) Industria 4.0
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "Todo está interconectado".</p>
+    </footer>
+</body>
+</html>
+

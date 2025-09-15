@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computación y Robótica 1º ESO</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+            display: flex;
+            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+        }
+        .sidebar {
+            width: 280px; /* Ancho fijo para el sidebar */
+            background-color: #1e293b; /* Color oscuro para el sidebar */
+            color: white;
+            padding: 1.5rem;
+            box-shadow: 4px 0 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            border-radius: 0 0.75rem 0.75rem 0; /* Bordes redondeados solo a la derecha */
+        }
+        .sidebar-link {
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+        .sidebar-link:hover {
+            background-color: #334155; /* Color más claro al pasar el ratón */
+        }
+        .main-content {
+            flex-grow: 1; /* Ocupa el espacio restante */
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-center: center;
+            align-items: center;
+            text-align: center;
+        }
+        .header-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            max-width: 800px;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                border-radius: 0 0 0.75rem 0.75rem; /* Bordes redondeados solo abajo en móvil */
+                padding: 1rem;
+            }
+            .sidebar-link {
+                margin-bottom: 0.25rem;
+            }
+            .main-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Sidebar de Navegación -->
+    <aside class="sidebar">
+        <h2 class="text-3xl font-bold mb-6 text-center">Unidades</h2>
+        <nav class="flex-grow">
+            <ul>
+            	<li><a href="presentacion.html" class="sidebar-link"> Presentación de la asignatura</a></li>
+                <li><a href="UD1.html" class="sidebar-link">🎮 Unidad 1: Creando mi Videojuego</a></li>
+                <li><a href="UD2.html" class="sidebar-link">📱 Unidad 2: Nos introducimos en el mundo de las apps</a></li>
+                <li><a href="UD3.html" class="sidebar-link">🧠 Unidad 3: La IA está aquí para quedarse</a></li>
+                <li><a href="UD4.html" class="sidebar-link">💻 Unidad 4: Sistemas de Computación</a></li>
+                <li><a href="UD5.html" class="sidebar-link">🌐 Unidad 5: Todo está interconectado</a></li>
+                <li><a href="UD6.html" class="sidebar-link">📊 Unidad 6: Datos masivos (Big Data)</a></li>
+                <li><a href="UD7.html" class="sidebar-link">🛡️ Unidad 7: Exploradores Digitales: Misión Ciberseguridad</a></li>
+                <li><a href="UD8.html" class="sidebar-link">🤖 Unidad 8: Creamos nuestro sistema robótico</a></li>
+                <li><a href="UD9.html" class="sidebar-link">🌐 Unidad 9: ¿Qué es la web?</a></li>
+            </ul>
+        </nav>
+        <div class="mt-8 text-sm text-gray-400 text-center">
+            <p>&copy; 2025 Computación y Robótica</p>
+            <p>Material Didáctico</p>
+        </div>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="main-content">
+        <div class="header-card">
+            <h1 class="text-5xl font-extrabold text-blue-700 mb-4">¡Bienvenidos a Computación y Robótica!</h1>
+            <p class="text-xl text-gray-700 mb-6">
+                Explora el fascinante mundo de la tecnología, desde la programación de videojuegos hasta la construcción de robots y la comprensión de la inteligencia artificial.
+            </p>
+            <p class="text-lg text-gray-600">
+                Usa el menú lateral para navegar por las diferentes unidades y descubrir todo lo que la computación y la robótica tienen para ofrecerte. ¡Prepárate para crear, innovar y aprender de forma divertida!
+            </p>
+        </div>
+        <div class="flex justify-center mt-8">
+    	<img src="robotic.png" alt="Robótica y Programación" class="rounded-lg shadow-lg max-w-full h-auto md:max-w-3/4 		lg:max-w-1/2"></div>
+        <p class="text-center text-sm text-gray-500 mt-4">
+             - ¡El futuro está en tus manos!
+        </p>
+    </main>
+</body>
+</html>
+

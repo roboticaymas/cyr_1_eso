@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploradores Digitales: Misión Ciberseguridad</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-red-600 to-orange-500 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🛡️ Exploradores Digitales: Misión Ciberseguridad 🔒</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#seguridad-activa-pasiva" class="hover:text-gray-200 transition-colors duration-300">Seguridad</a></li>
+                    <li><a href="#exposicion-usuarios" class="hover:text-gray-200 transition-colors duration-300">Tu Exposición</a></li>
+                    <li><a href="#peligros-internet" class="hover:text-gray-200 transition-colors duration-300">Peligros</a></li>
+                    <li><a href="#plataformas-virtuales" class="hover:text-gray-200 transition-colors duration-300">Plataformas</a></li>
+                    <li><a href="#propiedad-intelectual" class="hover:text-gray-200 transition-colors duration-300">Propiedad Intelectual</a></li>
+                    <li><a href="#actividades-evaluacion" class="hover:text-gray-200 transition-colors duration-300">Actividades</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Prepárate para ser un Ciber-Explorador!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                El mundo digital es increíble: puedes aprender, jugar, comunicarte y explorar. Pero, como cualquier lugar, tiene sus riesgos. En esta unidad, te convertirás en un <strong class="text-red-600">Explorador Digital</strong> y aprenderás a navegar por Internet de forma <strong class="text-red-600">segura y responsable</strong>.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Descubriremos cómo proteger tu información, identificar los peligros y respetar los derechos de los demás en línea. ¡Tu misión es dominar la ciberseguridad para disfrutar al máximo de la red!
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="digital_explorer.png" alt="Explorador Digital" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/ef4444/ffffff?text=Explorador+Digital';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Tu aventura digital comienza aquí!
+            </p>
+        </section>
+
+        <!-- CYR.1.I.1. Seguridad activa y pasiva. -->
+        <section id="seguridad-activa-pasiva" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. Seguridad Activa y Pasiva: Tus Escudos Digitales</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para estar seguro en Internet, necesitamos dos tipos de defensa:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-green-600">Seguridad Activa:</strong> Son las medidas que tomas <strong class="text-green-600">antes</strong> de que ocurra un problema para prevenirlo. Es como poner una cerradura en tu puerta.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Usar contraseñas fuertes, tener un antivirus, actualizar tus programas.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-green-600">Seguridad Pasiva:</strong> Son las medidas que tomas <strong class="text-green-600">después</strong> de que ha ocurrido un problema para minimizar el daño o recuperarte. Es como tener un seguro de hogar.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Hacer copias de seguridad de tus archivos, tener un plan para recuperar tu cuenta si te la roban.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                ¡Ambas son importantes para protegerte en el mundo digital!
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="seguridad_pasiva.png" alt="Seguridad Activa y Pasiva" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/10b981/ffffff?text=Seguridad+Activa+y+Pasiva';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Tus defensas en línea.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en 2 ejemplos de seguridad activa y 2 de seguridad pasiva que uses o que podrías usar en tu vida digital.
+            </p>
+        </section>
+
+        <!-- CYR.1.I.2. Exposición de los usuarios. -->
+        <section id="exposicion-usuarios" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Tu Exposición en Internet: ¡Lo que Compartes Importa!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Todo lo que publicas o compartes en Internet (fotos, comentarios, vídeos, información personal) deja una <strong class="text-orange-600">huella digital</strong>. Esta huella puede ser vista por muchas personas y es difícil de borrar.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Consejos para gestionar tu exposición:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-orange-600">Piensa antes de publicar:</strong> ¿Es algo que quieres que todo el mundo vea, incluso en el futuro?</li>
+                <li><strong class="text-orange-600">Configura tu privacidad:</strong> En redes sociales y otras plataformas, ajusta quién puede ver tu información.</li>
+                <li><strong class="text-orange-600">No compartas datos personales sensibles:</strong> Tu dirección, número de teléfono, o datos bancarios nunca deben compartirse públicamente.</li>
+                <li><strong class="text-orange-600">Sé amable y respetuoso:</strong> Lo que dices en línea afecta a los demás y a tu propia reputación.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="huella_digital.png" alt="Huella Digital" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/f97316/ffffff?text=Huella+Digital';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Tu huella digital es para siempre.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Imagina que vas a publicar una foto en una red social. Antes de hacerlo, haz una lista de 3 preguntas que te harías para asegurarte de que es seguro y apropiado publicarla.
+            </p>
+        </section>
+
+        <!-- CYR.1.I.3. Peligros en Internet. -->
+        <section id="peligros-internet" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Peligros en Internet: ¡Mantente Alerta!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Internet es un lugar genial, pero también tiene sus peligros. Es importante conocerlos para poder evitarlos:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-red-600">Ciberacoso (Cyberbullying):</strong> Molestar o acosar a alguien a través de medios digitales.</li>
+                <li><strong class="text-red-600">Phishing:</strong> Intentos de engañarte para que reveles información personal (contraseñas, datos bancarios) haciéndose pasar por alguien de confianza (ej. un banco, una red social).</li>
+                <li><strong class="text-red-600">Malware (Virus):</strong> Programas maliciosos que pueden dañar tu ordenador o robar tu información.</li>
+                <li><strong class="text-red-600">Contenido Inapropiado:</strong> Imágenes, vídeos o textos que no son adecuados para tu edad.</li>
+                <li><strong class="text-red-600">Contactos Peligrosos:</strong> Personas que no conoces y que pueden intentar engañarte o hacerte daño.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                <strong class="text-red-600">Regla de oro:</strong> Si algo te parece extraño, demasiado bueno para ser verdad, o te hace sentir incómodo, ¡pide ayuda a un adulto de confianza!
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="malware.png" alt="Peligros en Internet" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/b91c1c/ffffff?text=Peligros+en+Internet';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Identifica y evita los riesgos!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Juega a "La Torre del Tesoro" de Interland para aprender a proteger tu información: <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/destino/torre-del-tesoro" target="_blank" class="text-blue-500 hover:underline">Jugar a La Torre del Tesoro</a>
+            </p>
+        </section>
+
+        <!-- CYR.1.I.4. Interacción básica de plataformas virtuales. -->
+        <section id="plataformas-virtuales" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Interacción en Plataformas Virtuales: ¡Conéctate con Responsabilidad!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Las plataformas virtuales (como redes sociales, foros de videojuegos, plataformas educativas) son lugares donde interactuamos con otras personas. Es fundamental hacerlo con respeto y seguridad.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Reglas de oro para interactuar:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Sé respetuoso:</strong> Trata a los demás como te gustaría que te trataran.</li>
+                <li><strong class="text-purple-600">No compartas tu contraseña:</strong> Nunca se la des a nadie, ni siquiera a tus amigos.</li>
+                <li><strong class="text-purple-600">Reporta lo inapropiado:</strong> Si ves algo que no está bien, repórtalo a la plataforma o a un adulto.</li>
+                <li><strong class="text-purple-600">Verifica la fuente:</strong> No todo lo que lees en línea es verdad. Investiga antes de creer o compartir.</li>
+                <li><strong class="text-purple-600">Cuida tu identidad digital:</strong> La forma en que te presentas en línea es importante.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="online_interactions.jpeg" alt="Interacción Online" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/8b5cf6/ffffff?text=Interacci\u00F3n+Online';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Conecta con respeto y seguridad.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Juega a "El Río de la Realidad" de Interland para aprender a distinguir lo real de lo falso en Internet: <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/destino/rio-de-la-realidad" target="_blank" class="text-blue-500 hover:underline">Jugar a El Río de la Realidad</a>
+            </p>
+        </section>
+
+        <!-- CYR.1.I.5. Introducción al concepto de propiedad intelectual. -->
+        <section id="propiedad-intelectual" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">5. Propiedad Intelectual: ¡Respeta las Creaciones de Otros!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Así como tú tienes derecho a tus propias ideas y creaciones, las personas que crean música, vídeos, programas, juegos o textos también tienen derechos sobre ellos. Esto se llama <strong class="text-indigo-600">Propiedad Intelectual</strong>.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">¿Qué significa esto para ti?</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-indigo-600">No copies sin permiso:</strong> Si quieres usar una imagen, una canción o un texto de Internet, asegúrate de tener permiso o de que sea de uso libre.</li>
+                <li><strong class="text-indigo-600">Cita tus fuentes:</strong> Si usas información de otra persona, menciona de dónde la sacaste.</li>
+                <li><strong class="text-indigo-600">Valora el trabajo ajeno:</strong> Crear contenido lleva tiempo y esfuerzo.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Respetar la propiedad intelectual es ser un ciudadano digital responsable.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="propiedad_intelectual.png" alt="Propiedad Intelectual" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/6366f1/ffffff?text=Propiedad+Intelectual';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Respeta las creaciones de los demás.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Juega a "El Jardín de la Bondad" de Interland para aprender a ser un buen ciudadano digital y respetar a los demás: <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland/destino/jardin-de-la-bondad" target="_blank" class="text-blue-500 hover:underline">Jugar a El Jardín de la Bondad</a>
+            </p>
+        </section>
+
+        <!-- Actividades de Evaluación -->
+        <section id="actividades-evaluacion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Actividades de Evaluación: ¡Demuestra tus Habilidades de Ciberseguridad!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Es hora de poner a prueba tus conocimientos y habilidades como Explorador Digital.
+            </p>
+
+            <ul class="list-disc list-inside text-lg space-y-4 ml-4">
+                <li>
+                    <strong class="text-green-600">Actividad 1: "Mi Guía de Contraseñas Seguras"</strong>
+                    <p class="mt-2">Crea un póster digital o un folleto (utilizando Canva o una herramienta similar) donde expliques qué es una contraseña segura y des al menos 5 consejos prácticos para crear y gestionar contraseñas difíciles de adivinar. Incluye ejemplos de contraseñas buenas y malas.</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>6.1. Adoptar conductas y hábitos que permitan la protección del individuo en su interacción en la red.</li>
+                            <li>6.4. Adoptar conductas de seguridad activa y pasiva en la protección de datos y en el intercambio de información.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-green-600">Actividad 2: "Detectives de Phishing"</strong>
+                    <p class="mt-2">Se te presentarán 3 ejemplos de correos electrónicos o mensajes (simulados) que podrían ser phishing. Tu tarea es identificar cuál de ellos es un intento de phishing y explicar por qué, señalando al menos 3 pistas que te hicieron sospechar (ej. errores ortográficos, enlaces extraños, petición de datos personales).</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>6.1. Adoptar conductas y hábitos que permitan la protección del individuo en su interacción en la red.</li>
+                            <li>6.2. Acceder a servicios de intercambio y publicación de información digital aplicando criterios básicos de seguridad y uso responsable.</li>
+                            <li>6.4. Adoptar conductas de seguridad activa y pasiva en la protección de datos y en el intercambio de información.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-green-600">Actividad 3: "Mi Código de Conducta Digital"</strong>
+                    <p class="mt-2">Elabora un "Código de Conducta Digital" personal o para tu clase, en el que incluyas al menos 5 reglas sobre cómo interactuar de forma respetuosa y segura en plataformas virtuales (redes sociales, juegos online, foros). Incluye una regla sobre el respeto a la propiedad intelectual.</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>6.2. Acceder a servicios de intercambio y publicación de información digital aplicando criterios básicos de seguridad y uso responsable.</li>
+                            <li>6.3. Reconocer y comprender los derechos de los materiales alojados en la web.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de Ciberseguridad!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué tipo de seguridad es usar un antivirus?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Seguridad pasiva
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) Seguridad activa
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Seguridad física
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. ¿Qué es la "huella digital"?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) La marca de tu dedo en la pantalla
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Toda la información que dejas en Internet
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) Un tipo de contraseña
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué debes hacer si recibes un correo electrónico sospechoso que te pide tu contraseña?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) Dar tu contraseña para ver qué pasa
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) Responder pidiendo más información
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) No hacer clic en ningún enlace y pedir ayuda a un adulto
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. ¿Cuál de las siguientes es una buena práctica al interactuar en plataformas virtuales?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) Compartir tu contraseña con tus amigos
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) Publicar información personal sensible
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) Ser respetuoso y reportar contenido inapropiado
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. ¿Qué significa "Propiedad Intelectual"?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) Que puedes copiar todo lo que encuentres en Internet
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) Los derechos de las personas sobre sus creaciones (música, fotos, textos)
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) El derecho a tener un ordenador
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "Exploradores Digitales: Misión Ciberseguridad".</p>
+    </footer>
+</body>
+</html>
+

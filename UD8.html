@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creamos nuestro sistema robótico</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-green-700 to-emerald-500 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🤖 Creamos nuestro sistema robótico 🛠️</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#definicion-robot" class="hover:text-gray-200 transition-colors duration-300">¿Qué es un Robot?</a></li>
+                    <li><a href="#leyes-robotica" class="hover:text-gray-200 transition-colors duration-300">Leyes de la Robótica</a></li>
+                    <li><a href="#componentes-robot" class="hover:text-gray-200 transition-colors duration-300">Componentes</a></li>
+                    <li><a href="#locomocion-manipulacion" class="hover:text-gray-200 transition-colors duration-300">Locomoción</a></li>
+                    <li><a href="#programacion-robots" class="hover:text-gray-200 transition-colors duration-300">Programación</a></li>
+                    <li><a href="#proyecto-final" class="hover:text-gray-200 transition-colors duration-300">Proyecto Final</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Construye y Programa tu Propio Robot!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¿Alguna vez has soñado con tener tu propio robot? ¡En esta unidad, ese sueño se hará realidad! Vamos a sumergirnos en el emocionante mundo de la robótica, donde aprenderás a construir, programar y hacer que los robots cobren vida.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Utilizaremos la placa <strong class="text-green-600">Micro:Bit</strong> como el "cerebro" de nuestros robots y el chasis <strong class="text-green-600">Maqueen</strong> para darles movimiento y añadirles accesorios. ¡Prepárate para ver cómo tus ideas se transforman en máquinas que interactúan con el mundo real!
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="maqueen.jpg" alt="Micro:Bit y Maqueen" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/047857/ffffff?text=Micro:Bit+y+Maqueen';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Nuestras herramientas para construir robots!
+            </p>
+        </section>
+
+        <!-- CYR.1.C.1. Definición de robot. -->
+        <section id="definicion-robot" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. ¿Qué es un Robot?</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un <strong class="text-blue-600">robot</strong> es una máquina programable que puede realizar tareas de forma autónoma o semiautónoma. Los robots están diseñados para interactuar con el mundo físico, ya sea moviéndose, manipulando objetos o recogiendo información.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                No todos los robots tienen forma humana. Un robot puede ser una aspiradora que limpia tu casa, un brazo en una fábrica que ensambla coches, o incluso un pequeño coche como Maqueen que sigue una línea.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Características clave de un robot:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Programable:</strong> Recibe instrucciones para realizar tareas.</li>
+                <li><strong class="text-purple-600">Interactúa con el entorno:</strong> Usa sensores para "sentir" y actuadores para "actuar".</li>
+                <li><strong class="text-purple-600">Autonomía:</strong> Puede realizar tareas sin intervención humana constante.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="robot.png" alt="Definición de Robot" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/a78bfa/ffffff?text=Definici\u00F3n+de+Robot';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Los robots están por todas partes!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en 3 ejemplos de robots que conozcas (reales o de ficción) y explica brevemente qué tarea realizan.
+            </p>
+        </section>
+
+        <!-- CYR.1.C.2. Leyes de la robótica. -->
+        <section id="leyes-robotica" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Las Leyes de la Robótica: ¡Robots Responsables!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para asegurar que los robots sean seguros y beneficiosos para los humanos, el escritor de ciencia ficción Isaac Asimov propuso tres <strong class="text-green-600">Leyes de la Robótica</strong>. Aunque son de ficción, nos hacen pensar en la importancia de la ética en el diseño de robots.
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-green-600">Primera Ley:</strong> Un robot no hará daño a un ser humano o, por inacción, permitirá que un ser humano sufra daño.</li>
+                <li><strong class="text-green-600">Segunda Ley:</strong> Un robot debe obedecer las órdenes dadas por los seres humanos, excepto si estas órdenes entran en conflicto con la Primera Ley.</li>
+                <li><strong class="text-green-600">Tercera Ley:</strong> Un robot debe proteger su propia existencia en la medida en que esta protección no entre en conflicto con la Primera o Segunda Ley.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Estas leyes nos recuerdan que la seguridad y el bienestar de las personas deben ser siempre lo más importante al crear tecnología.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="asimov.jpg" alt="Leyes de la Robótica de Asimov" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/059669/ffffff?text=Leyes+de+la+Rob\u00F3tica';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Principios para robots seguros.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Imagina un robot de limpieza que tiene que evitar chocar con tu mascota. ¿Qué Ley de la Robótica estaría aplicando principalmente? ¿Por qué?
+            </p>
+        </section>
+
+        <!-- CYR.1.C.3. Aproximación a los componentes de un robot: sensores, efectores y actuadores. -->
+        <section id="componentes-robot" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Componentes de un Robot: ¡Siente, Piensa y Actúa!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Como vimos en la unidad de sistemas de computación, los robots también tienen partes de "entrada" y "salida" para interactuar con el mundo:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-red-600">Sensores:</strong> Son los "ojos", "oídos" y "tacto" del robot. Recogen información del entorno.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos en Micro:Bit/Maqueen:
+                            <ul>
+                                <li><strong class="text-orange-600">Sensor de línea:</strong> Detecta líneas oscuras en el suelo.</li>
+                                <li><strong class="text-orange-600">Sensor ultrasónico (Maqueen):</strong> Mide distancias, detecta obstáculos.</li>
+                                <li><strong class="text-orange-600">Sensor de luz (Micro:Bit):</strong> Mide la intensidad de la luz.</li>
+                                <li><strong class="text-orange-600">Acelerómetro (Micro:Bit):</strong> Detecta inclinación y movimiento (agitación).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong class="text-red-600">Actuadores:</strong> Son las partes que permiten al robot "actuar" en el mundo físico, realizando movimientos o produciendo efectos.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos en Micro:Bit/Maqueen:
+                            <ul>
+                                <li><strong class="text-orange-600">Motores (Maqueen):</strong> Hacen que el robot se mueva.</li>
+                                <li><strong class="text-orange-600">LEDs (Micro:Bit/Maqueen):</strong> Producen luz.</li>
+                                <li><strong class="text-orange-600">Zumbador/Altavoz (Micro:Bit/Maqueen):</strong> Produce sonidos.</li>
+                                <li><strong class="text-orange-600">Servomotores (Maqueen):</strong> Permiten movimientos precisos de brazos o pinzas.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong class="text-red-600">Efectores:</strong> Son las "manos" o "herramientas" del robot, la parte final del actuador que interactúa directamente con el entorno.
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Ejemplos: Ruedas (movidas por motores), pinzas (movidas por servomotores).</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="partes-de-robot.jpg" alt="Componentes de un Robot" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/b91c1c/ffffff?text=Componentes+de+un+Robot';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Sensores, Actuadores, Efectores.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica con Maqueen!</strong> Conecta tu Micro:Bit a Maqueen. Programa Maqueen para que sus LEDs frontales se enciendan de un color cuando el sensor ultrasónico detecte un objeto cerca (menos de 10 cm).
+            </p>
+        </section>
+
+        <!-- CYR.1.C.4. Mecanismos de locomoción y manipulación. -->
+        <section id="locomocion-manipulacion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Mecanismos de Locomoción y Manipulación</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Los robots necesitan moverse (locomoción) y, a veces, interactuar con objetos (manipulación).
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Mecanismos de Locomoción:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Ruedas:</strong> El más común para robots móviles (como Maqueen). Permiten movimiento rápido y eficiente en superficies planas.</li>
+                <li><strong class="text-purple-600">Orugas:</strong> Como las de un tanque, ofrecen mejor tracción en terrenos irregulares.</li>
+                <li><strong class="text-purple-600">Patas:</strong> Para robots que necesitan caminar, subir escaleras o moverse en terrenos muy complejos.</li>
+                <li><strong class="text-purple-600">Hélices/Propulsores:</strong> Para drones o robots submarinos.</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Mecanismos de Manipulación:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Brazos robóticos:</strong> Con articulaciones que imitan el brazo humano, para agarrar, mover o ensamblar objetos.</li>
+                <li><strong class="text-purple-600">Pinzas:</strong> Para sujetar objetos de diferentes formas y tamaños.</li>
+                <li><strong class="text-purple-600">Ventosas:</strong> Para manipular objetos planos y lisos.</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="robot_mov.jpg" alt="Locomoción y Manipulación de Robots" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/8b5cf6/ffffff?text=Locomoci\u00F3n+y+Manipulaci\u00F3n+de+Robots';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Cómo se mueven y actúan los robots.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica con Maqueen!</strong> Programa tu Maqueen para que avance 50 cm, luego gire 90 grados a la derecha y avance otros 50 cm. ¡Intenta que forme un cuadrado!
+            </p>
+        </section>
+
+        <!-- CYR.1.C.5. Introducción a la programación de robots. -->
+        <section id="programacion-robots" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">5. Programación de Robots: ¡Dándole Órdenes a tu Máquina!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Programar un robot es darle las instrucciones para que realice sus tareas. Para Micro:Bit y Maqueen, usaremos el entorno de programación por bloques <strong class="text-teal-600">MakeCode</strong>, muy similar a Scratch.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Conceptos clave en MakeCode para Micro:Bit y Maqueen:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-teal-600">Eventos:</strong> "al iniciar", "para siempre", "al presionar botón A", "al agitar".</li>
+                <li><strong class="text-teal-600">Salidas (Actuadores):</strong>
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Bloques de "Maqueen" para controlar motores (adelante, atrás, girar).</li>
+                        <li>Bloques de "Básico" para mostrar LEDs en la matriz de Micro:Bit.</li>
+                        <li>Bloques de "Música" para el zumbador.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-teal-600">Entradas (Sensores):</strong>
+                    <ul class="list-circle list-inside ml-4 mt-1">
+                        <li>Bloques de "Maqueen" para leer sensores de línea o distancia ultrasónica.</li>
+                        <li>Bloques de "Entrada" para leer botones o el acelerómetro de Micro:Bit.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-teal-600">Lógica y Bucles:</strong> Bloques "si...entonces", "repetir", "por siempre" (igual que en Scratch).</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="makecode.png" alt="MakeCode para Micro:Bit y Maqueen" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/06b6d4/ffffff?text=MakeCode+Maqueen';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Programa tu robot con bloques!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica con Maqueen!</strong> Programa tu Maqueen para que siga una línea negra dibujada en el suelo. Utiliza los sensores de línea y los bloques de lógica para que el robot se mantenga sobre la línea.
+            </p>
+            <a href="https://makecode.microbit.org/" target="_blank" class="btn-primary inline-block mt-4">Abrir Editor MakeCode</a>
+        </section>
+
+        <!-- Proyecto Final de Unidad -->
+        <section id="proyecto-final" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Proyecto Final de Unidad: "Mi Robot Resuelve un Problema"</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para este proyecto, en equipos, diseñaréis, construiréis y programaréis un robot móvil utilizando Micro:Bit y Maqueen para resolver un problema del mundo real de forma sostenible.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                <strong class="text-red-600">Ideas de Proyectos (puedes elegir una o proponer la tuya):</strong>
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="font-bold">Robot de Detección de Obstáculos:</strong> Un robot que se mueve por una habitación y se detiene o cambia de dirección al detectar obstáculos, evitando colisiones.</li>
+                <li><strong class="font-bold">Robot de Entrega Simple:</strong> Un robot que sigue una ruta predefinida (ej. una línea) y se detiene en un punto específico para "entregar" algo (simulado con un sonido o luz).</li>
+                <li><strong class="font-bold">Robot de Alerta de Luz:</strong> Un robot que se mueve y, al detectar un cambio brusco de luz (ej. al entrar en una zona oscura), enciende sus luces o emite un sonido de alerta.</li>
+            </ul>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tareas a Realizar (en equipo):</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="font-bold">1. Diseño del Problema y Solución:</strong>
+                    <ul>
+                        <li>Identificad el problema del mundo real que vuestro robot va a resolver.</li>
+                        <li>Describid cómo vuestro robot lo solucionará, qué acciones realizará y por qué es una solución sostenible (ej. ahorro de energía, eficiencia).</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">2. Construcción y Montaje:</strong>
+                    <ul>
+                        <li>Ensamblad el chasis Maqueen y conectad la Micro:Bit.</li>
+                        <li>Añadid los sensores y actuadores necesarios para vuestro proyecto.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">3. Programación en MakeCode:</strong>
+                    <ul>
+                        <li>Programad la lógica del robot utilizando bloques en MakeCode.</li>
+                        <li>Aseguraos de que el robot utilice sus sensores para percibir el entorno y sus actuadores para responder.</li>
+                        <li>Utilizad estructuras de control (secuencias, bucles, condicionales) de forma eficiente.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">4. Pruebas y Depuración:</strong>
+                    <ul>
+                        <li>Probad vuestro robot repetidamente y corregid los errores (depuración) hasta que funcione correctamente.</li>
+                    </ul>
+                </li>
+                <li><strong class="font-bold">5. Documentación y Presentación:</strong>
+                    <ul>
+                        <li>Crear una breve documentación del proyecto (puede ser un informe corto, un póster digital o una presentación sencilla) explicando:
+                            <ul>
+                                <li>El problema que resuelve el robot.</li>
+                                <li>Los componentes (sensores, actuadores, Micro:Bit, Maqueen) que habéis usado y por qué.</li>
+                                <li>Una explicación sencilla de cómo funciona vuestro código (los bloques principales).</li>
+                            </ul>
+                        </li>
+                        <li>Demostrad el funcionamiento de vuestro robot ante la clase.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>1.1. Comprender el funcionamiento global de los sistemas de computación física, sus componentes y principales características.</li>
+                    <li>1.2. Reconocer el papel de la robótica en nuestra sociedad, indicando el marco elemental de trabajo de los mismos.</li>
+                    <li>1.4. Comprender los principios básicos de ingeniería en los que se basan los robots.</li>
+                    <li>3.1. Ser capaz de construir un sistema de computación o robótico, promoviendo la interacción con el mundo físico en el contexto de un problema del mundo real, de forma sostenible.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de Robótica!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué es un robot?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Un juguete que no se mueve
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) Una máquina programable que puede realizar tareas
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Un ordenador que solo sirve para escribir
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. Según las Leyes de la Robótica, ¿cuál es la prioridad principal de un robot?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) Proteger su propia existencia
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Obedecer las órdenes de los humanos
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) No hacer daño a un ser humano
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué componente de un robot le permite "sentir" el entorno (ej. detectar un obstáculo)?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) Un actuador
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) Un sensor
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) Un efector
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. ¿Qué tipo de mecanismo de locomoción utiliza el robot Maqueen?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) Patas
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) Orugas
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) Ruedas
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. ¿Qué entorno de programación por bloques usaremos para programar Micro:Bit y Maqueen?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) App Inventor
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) MakeCode
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) Python
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "Creamos nuestro sistema robótico".</p>
+    </footer>
+</body>
+</html>
+

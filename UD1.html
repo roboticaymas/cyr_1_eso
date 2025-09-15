@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creando mi Videojuego: Introducción a la Programación con Scratch</title>
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter para una mejor legibilidad -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Color de fondo suave */
+            color: #334155; /* Color de texto principal */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-title {
+            border-left: 8px solid #06b6d4; /* Borde turquesa para títulos de sección */
+            padding-left: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* Bordes redondeados */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .btn-primary {
+            background-color: #10b981; /* Verde esmeralda */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #059669;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .quiz-option:hover {
+            background-color: #cbd5e1;
+        }
+        .quiz-option input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .evaluation-criteria {
+            background-color: #f0f9ff; /* Light blue background for criteria */
+            border-left: 4px solid #38bdf8; /* Blue border */
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-gradient-to-r from-blue-600 to-cyan-500 text-white p-6 shadow-lg rounded-b-xl">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🎮 Creando mi Videojuego 👾</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg font-medium">
+                    <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
+                    <li><a href="#lenguajes-visuales" class="hover:text-gray-200 transition-colors duration-300">Lenguajes Visuales</a></li>
+                    <li><a href="#algoritmos" class="hover:text-gray-200 transition-colors duration-300">Algoritmos</a></li>
+                    <li><a href="#repeticiones-condiciones" class="hover:text-gray-200 transition-colors duration-300">Lógica</a></li>
+                    <li><a href="#interaccion-usuario" class="hover:text-gray-200 transition-colors duration-300">Interacción</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                    <li><a href="#actividades-evaluacion" class="hover:text-gray-200 transition-colors duration-300">Actividades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Introducción -->
+        <section id="introduccion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Bienvenido al Mundo de la Programación!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¿Alguna vez te has preguntado cómo funcionan tus videojuegos favoritos? ¿Cómo los personajes se mueven, reaccionan o cómo se guardan tus puntuaciones? En esta unidad, vamos a descubrir la magia detrás de los videojuegos y, lo que es mejor, ¡vamos a crear los nuestros propios!
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                La programación es como darle instrucciones a un ordenador para que haga lo que tú quieres. Es una habilidad súper útil y creativa. Usaremos una herramienta muy divertida llamada <strong class="text-blue-600">Scratch</strong>, que es perfecta para empezar.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="scratch_initial.png" alt="Interfaz de Scratch" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Así es como se ve Scratch!
+            </p>
+        </section>
+
+        <!-- CYR.1.A.1. Introducción a los lenguajes de programación visuales. Tipos. -->
+        <section id="lenguajes-visuales" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. Lenguajes de Programación Visuales: ¡Programar Jugando!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Imagina que quieres construir algo con piezas de LEGO. Los lenguajes de programación visuales son muy parecidos: en lugar de escribir código complicado, <strong class="text-green-600">arrastras y sueltas bloques</strong> que encajan entre sí, como si fueran piezas de un puzzle. Cada bloque tiene una instrucción específica.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Esto hace que aprender a programar sea mucho más fácil y divertido, ¡porque puedes ver lo que estás haciendo!
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tipos de Lenguajes Visuales:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Scratch:</strong> El que usaremos. Desarrollado por el MIT, es ideal para crear historias interactivas, animaciones y juegos.</li>
+                <li><strong class="text-purple-600">Blockly:</strong> Una biblioteca de Google que permite crear editores de código visuales.</li>
+                <li><strong class="text-purple-600">App Inventor:</strong> Para crear aplicaciones móviles Android con bloques.</li>
+                <li>Y muchos más...</li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="scratch_blocks.png" alt="Ejemplo de bloques de Scratch" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Así se conectan los bloques en Scratch!
+            </p>
+        </section>
+
+        <!-- CYR.1.A.2. Introducción a los Lenguajes de bloques. -->
+        <section id="lenguajes-bloques" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Lenguajes de Bloques: La Magia de Encajar Piezas</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Los lenguajes de bloques son una categoría específica de lenguajes visuales donde cada instrucción es un "bloque" con una forma única. Piensa en ellos como piezas de un rompecabezas que solo encajan de una manera lógica.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                <strong class="text-red-600">Ventajas clave:</strong>
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-red-600">Fácil de aprender:</strong> No necesitas memorizar comandos complicados.</li>
+                <li><strong class="text-red-600">Sin errores de sintaxis:</strong> Los bloques solo encajan si la lógica es correcta, ¡adiós a los errores de escritura!</li>
+                <li><strong class="text-red-600">Visual e intuitivo:</strong> Ves el flujo de tu programa.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                En Scratch, cada bloque representa una acción (mover, decir, cambiar color) o un evento (al hacer clic, al presionar tecla). Al unirlos, creas un <strong class="text-blue-600">script</strong>, que es la secuencia de instrucciones que tu personaje (o "sprite") seguirá.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="scratch_script.png" alt="Ejemplo de script en Scratch" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Un script de Scratch, ¡una secuencia de acciones!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Visita la web de Scratch y explora los diferentes tipos de bloques: <a href="https://scratch.mit.edu/explore/projects/all" target="_blank" class="text-blue-500 hover:underline">Explora Proyectos en Scratch</a>
+            </p>
+        </section>
+
+        <!-- CYR.1.A.3. Secuencia básica de instrucciones. Concepto de algoritmo. -->
+        <section id="algoritmos" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Algoritmos y Secuencias: ¡El Recetario de tu Videojuego!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un <strong class="text-yellow-600">algoritmo</strong> es como una receta de cocina: una serie de pasos claros y ordenados para resolver un problema o completar una tarea. En programación, es el plan que le das al ordenador.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                La <strong class="text-yellow-600">secuencia de instrucciones</strong> es el orden en que se ejecutan esos pasos. Si cambias el orden, ¡el resultado puede ser muy diferente! Piensa en vestirte: primero te pones los calcetines y luego los zapatos. Si lo haces al revés, ¡no funciona!
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Ejemplo en Scratch: Mover un personaje</h3>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-inner mb-4">
+                <pre class="whitespace-pre-wrap text-base font-mono">
+<span class="text-blue-700">cuando 🚩 haga clic</span>
+<span class="text-purple-700">ir a x: (0) y: (0)</span>  <span class="text-gray-600">// Paso 1: Ir al centro de la pantalla</span>
+<span class="text-blue-700">apuntar en dirección (90)</span> <span class="text-gray-600">// Paso 2: Mirar a la derecha</span>
+<span class="text-green-700">mover (100) pasos</span>    <span class="text-gray-600">// Paso 3: Moverse 100 pasos</span>
+<span class="text-purple-700">decir (¡Hola!) por (2) segundos</span> <span class="text-gray-600">// Paso 4: Saludar</span>
+                </pre>
+            </div>
+            <p class="text-lg mb-4 leading-relaxed">
+                Cada bloque se ejecuta uno después del otro, en el orden en que los colocas. ¡Así es como tu personaje sabe qué hacer!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Abre Scratch y crea un script para que un personaje se mueva, cambie de color y luego diga algo. Experimenta cambiando el orden de los bloques.
+            </p>
+            <a href="https://scratch.mit.edu/projects/editor/" target="_blank" class="btn-primary inline-block mt-4">Abrir Editor de Scratch</a>
+        </section>
+
+        <!-- CYR.1.A.4. Reconocimiento de tareas repetitivas y condicionales. -->
+        <section id="repeticiones-condiciones" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Tareas Repetitivas y Condicionales: ¡La Lógica del Juego!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Los videojuegos no serían interesantes si todo fuera una secuencia lineal. Necesitamos que las cosas se repitan y que el juego tome decisiones.
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tareas Repetitivas (Bucles):</h3>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¿Imaginas programar cada paso de un personaje que camina? ¡Sería aburridísimo! Para eso usamos los <strong class="text-orange-600">bucles</strong>. Un bucle le dice al programa: "Haz esto una y otra vez".
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-orange-600">Bloque "repetir (X)":</strong> Repite las instrucciones X veces.</li>
+                <li><strong class="text-orange-600">Bloque "por siempre":</strong> Repite las instrucciones infinitamente (ideal para el movimiento de un personaje).</li>
+            </ul>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-inner mb-4 mt-4">
+                <pre class="whitespace-pre-wrap text-base font-mono">
+<span class="text-blue-700">cuando 🚩 haga clic</span>
+<span class="text-orange-700">por siempre</span>
+  <span class="text-green-700">mover (10) pasos</span>
+  <span class="text-purple-700">si toca borde, rebotar</span>
+                </pre>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Un personaje moviéndose "por siempre".
+            </p>
+
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Tareas Condicionales (Decisiones):</h3>
+            <p class="text-lg mb-4 leading-relaxed">
+                Los juegos están llenos de decisiones: "Si toco una moneda, gano puntos", "Si me toca un enemigo, pierdo vida". Para esto usamos las <strong class="text-teal-600">condiciones</strong>. Una condición le dice al programa: "Si esto es VERDADERO, haz esto; si no, haz otra cosa (o no hagas nada)".
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-teal-600">Bloque "si (condición) entonces":</strong> Ejecuta las instrucciones solo si la condición es verdadera.</li>
+                <li><strong class="text-teal-600">Bloque "si (condición) entonces, si no":</strong> Ejecuta un conjunto de instrucciones si es verdadero y otro si es falso.</li>
+            </ul>
+            <div class="bg-gray-100 p-4 rounded-lg shadow-inner mb-4 mt-4">
+                <pre class="whitespace-pre-wrap text-base font-mono">
+<span class="text-blue-700">cuando 🚩 haga clic</span>
+<span class="text-orange-700">por siempre</span>
+  <span class="text-teal-700">si <span class="text-red-700"><tocar (¿color rojo?)></span> entonces</span>
+    <span class="text-purple-700">cambiar disfraz a (¡Explosión!)</span>
+    <span class="text-purple-700">decir (¡Game Over!)</span>
+  <span class="text-teal-700">si no</span>
+    <span class="text-purple-700">siguiente disfraz</span>
+                </pre>
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Un ejemplo de condición en Scratch.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> En Scratch, crea un personaje que se mueva por siempre, y si toca un color específico, que cambie su mensaje.
+            </p>
+        </section>
+
+        <!-- CYR.1.A.5. Determinación de los elementos para la interacción con el usuario. -->
+        <section id="interaccion-usuario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">5. Interacción con el Usuario: ¡Tu Juego Responde!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Un videojuego es divertido cuando puedes interactuar con él. Esto significa que el juego puede <strong class="text-indigo-600">recibir información</strong> de ti (entrada) y <strong class="text-indigo-600">mostrarte información</strong> (salida).
+            </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Elementos de Interacción en Scratch:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-indigo-600">Entrada (Input):</strong>
+                    <ul class="list-circle list-inside ml-4 mt-2">
+                        <li><strong class="text-blue-700">Teclado:</strong> Bloques como "al presionar tecla (espacio)".</li>
+                        <li><strong class="text-blue-700">Ratón:</strong> Bloques como "al hacer clic en este objeto", "posición x/y del ratón".</li>
+                        <li><strong class="text-blue-700">Sensores:</strong> Bloques como "preguntar (¿Cómo te llamas?) y esperar" para introducir texto.</li>
+                    </ul>
+                </li>
+                <li><strong class="text-indigo-600">Salida (Output):</strong>
+                    <ul class="list-circle list-inside ml-4 mt-2">
+                        <li><strong class="text-green-700">Movimiento:</strong> "mover", "girar".</li>
+                        <li><strong class="text-green-700">Apariencia:</strong> "decir", "cambiar disfraz", "cambiar efecto de color".</li>
+                        <li><strong class="text-green-700">Sonido:</strong> "tocar sonido".</li>
+                        <li><strong class="text-green-700">Variables:</strong> Mostrar puntuaciones, vidas, etc. (ej. "mostrar variable (puntuación)").</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="flex justify-center mt-6">
+                <img src="scratch_user.png" alt="Ejemplo de interacción con el usuario en Scratch" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Haz que tu juego cobre vida con la interacción!
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Crea un juego sencillo donde el usuario controle un personaje con las flechas del teclado y el personaje diga "¡Hola!" cuando se le haga clic.
+            </p>
+        </section>
+
+        <!-- Cuestionario -->
+        <section id="cuestionario" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes!</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
+            </p>
+
+            <form>
+                <!-- Pregunta 1 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué tipo de lenguaje de programación utiliza bloques que se arrastran y sueltan?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="a"> a) Lenguaje de texto
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="b"> b) Lenguaje visual
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q1" value="c"> c) Lenguaje binario
+                    </label>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">2. ¿Qué es un algoritmo?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="a"> a) Un tipo de videojuego
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="b"> b) Una serie de pasos desordenados
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q2" value="c"> c) Una secuencia de pasos claros y ordenados para resolver un problema
+                    </label>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">3. Si quieres que una acción se repita muchas veces en Scratch, ¿qué tipo de bloque usarías?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="a"> a) Un bloque de "decir"
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="b"> b) Un bloque de "si...entonces"
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q3" value="c"> c) Un bloque de "por siempre" o "repetir"
+                    </label>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">4. ¿Qué bloque de Scratch usarías para que un personaje haga algo SOLO si toca un color específico?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="a"> a) Mover (X) pasos
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="b"> b) Si (condición) entonces
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q4" value="c"> c) Al presionar tecla (espacio)
+                    </label>
+                </div>
+
+                <!-- Pregunta 5 -->
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <p class="font-semibold text-xl mb-4">5. ¿Cuál de los siguientes es un ejemplo de "entrada" (input) del usuario en Scratch?</p>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="a"> a) Que el personaje diga "¡Hola!"
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="b"> b) Mover el personaje
+                    </label>
+                    <label class="quiz-option block">
+                        <input type="radio" name="q5" value="c"> c) Presionar una tecla del teclado
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <p class="text-sm text-gray-500 mt-2">
+                        Nota: Este cuestionario no guarda tus respuestas.
+                    </p>
+                </div>
+            </form>
+        </section>
+
+        <!-- Nueva Sección: Actividades de Práctica y Evaluación -->
+        <section id="actividades-evaluacion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Actividades de Práctica y Evaluación</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¡Es hora de poner en práctica todo lo aprendido! Aquí tienes una serie de actividades para consolidar tus conocimientos y demostrar tus habilidades en programación con Scratch.
+            </p>
+
+            <!-- Actividades de Práctica -->
+            <h3 class="text-2xl font-semibold mt-8 mb-4">Actividades para Practicar:</h3>
+            <ul class="list-disc list-inside text-lg space-y-3 ml-4">
+                <li>
+                    <strong class="text-blue-600">Historia Interactiva:</strong> Crea una historia corta en Scratch donde al menos dos personajes interactúen. Utiliza bloques de "decir", "cambiar disfraz" y "esperar" para controlar el flujo de la conversación.
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>1.3. Entender la estructura básica de un programa informático.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-blue-600">Bucle de Movimiento:</strong> Diseña un programa donde un personaje se mueva por la pantalla rebotando en los bordes "por siempre". Añade un sonido cada vez que rebote.
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>1.3. Entender la estructura básica de un programa informático.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-blue-600">Control por Teclado:</strong> Haz que un personaje se mueva arriba, abajo, izquierda y derecha utilizando las teclas de flecha del teclado.
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>1.3. Entender la estructura básica de un programa informático.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-blue-600">Cambio de Fondo Condicional:</strong> Crea un escenario en Scratch que cambie de fondo cuando un personaje toque un color específico o un objeto determinado.
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>1.3. Entender la estructura básica de un programa informático.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Actividades de Evaluación -->
+            <h3 class="text-2xl font-semibold mt-10 mb-4">Actividades de Evaluación:</h3>
+            <ul class="list-disc list-inside text-lg space-y-4 ml-4">
+                <li>
+                    <strong class="text-green-600">Actividad 1: "Atrapa el Objeto"</strong>
+                    <p class="mt-2">Crea un juego sencillo donde un personaje (por ejemplo, un gato) se mueva por la pantalla (usando bucles y rebotes) y otro objeto (por ejemplo, una manzana) aparezca en posiciones aleatorias. El objetivo es que el gato "atrape" la manzana (detectando el contacto) y cada vez que lo haga, se sume un punto a una variable de "Puntuación". El juego debe terminar después de un tiempo determinado (ej. 30 segundos).</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>1.3. Entender la estructura básica de un programa informático.</li>
+                            <li>2.1. Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-green-600">Actividad 2: "Laberinto Simple" (Trabajo en equipo)</strong>
+                    <p class="mt-2">En parejas o grupos pequeños, diseñad y programad un pequeño juego de laberinto en Scratch. Un personaje debe moverse por un laberinto (dibujado como fondo o con sprites) usando las flechas del teclado. Si el personaje toca las paredes del laberinto, debe volver al inicio. El objetivo es llegar a un punto final. Cada miembro del equipo debe programar al menos una parte del movimiento o la lógica del laberinto.</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li>1.3. Entender la estructura básica de un programa informático.</li>
+                            <li>2.1. Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Proyecto Final de Unidad -->
+            <h3 class="text-2xl font-semibold mt-10 mb-4">Proyecto Final de Unidad: ¡Mi Gran Videojuego!</h3>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para el proyecto final, deberás crear un videojuego original en Scratch que demuestre todo lo que has aprendido en esta unidad. Puedes trabajar individualmente o en parejas.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                <strong class="text-red-600">Requisitos Mínimos:</strong>
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li>Debe tener al menos <strong class="font-bold">dos personajes</strong> (sprites) que interactúen.</li>
+                <li>Debe incluir <strong class="font-bold">movimiento</strong> para al menos un personaje.</li>
+                <li>Debe usar <strong class="font-bold">bucles</strong> (repeticiones) para alguna acción.</li>
+                <li>Debe usar <strong class="font-bold">condiciones</strong> (decisiones) para que el juego reaccione a eventos (ej. tocar un objeto, perder vida).</li>
+                <li>Debe tener alguna forma de <strong class="font-bold">interacción con el usuario</strong> (ej. control por teclado/ratón, preguntas).</li>
+                <li>Debe incluir una <strong class="font-bold">variable</strong> (ej. puntuación, vida, tiempo).</li>
+                <li>El juego debe tener un <strong class="font-bold">objetivo claro</strong> y un "final" (ganar/perder).</li>
+                <li>Debe incluir un <strong class="font-bold">fondo</strong> y al menos un <strong class="font-bold">sonido</strong>.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-6">
+                <strong class="text-red-600">Presentación:</strong>
+                Una vez terminado, deberás presentar tu videojuego a la clase, explicando cómo lo programaste y qué bloques utilizaste para cada funcionalidad.
+            </p>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li>1.3. Entender la estructura básica de un programa informático.</li>
+                    <li>2.1. Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
+        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "Creando mi Videojuego".</p>
+    </footer>
+</body>
+</html>
