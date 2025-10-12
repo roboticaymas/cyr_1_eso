@@ -47,8 +47,15 @@
         .quiz-option:hover {
             background-color: #cbd5e1;
         }
-        .quiz-option input[type="radio"] {
-            margin-right: 0.5rem;
+        /* Clases para feedback visual */
+        .correct {
+            background-color: #d1fae5; /* Verde muy claro */
+            border: 2px solid #10b981; /* Borde verde */
+            font-weight: 600;
+        }
+        .incorrect {
+            background-color: #fee2e2; /* Rojo muy claro */
+            border: 2px solid #ef4444; /* Borde rojo */
         }
         .evaluation-criteria {
             background-color: #f0f9ff; /* Light blue background for criteria */
@@ -273,9 +280,9 @@
                 Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
             </p>
 
-            <form>
+            <form id="quizForm" onsubmit="event.preventDefault(); checkQuiz();">
                 <!-- Pregunta 1 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">1. ¿Qué tipo de lenguaje de programación utiliza bloques que se arrastran y sueltan?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q1" value="a"> a) Lenguaje de texto
@@ -289,7 +296,7 @@
                 </div>
 
                 <!-- Pregunta 2 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
                     <p class="font-semibold text-xl mb-4">2. ¿Qué es un algoritmo?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q2" value="a"> a) Un tipo de videojuego
@@ -303,7 +310,7 @@
                 </div>
 
                 <!-- Pregunta 3 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
                     <p class="font-semibold text-xl mb-4">3. Si quieres que una acción se repita muchas veces en Scratch, ¿qué tipo de bloque usarías?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q3" value="a"> a) Un bloque de "decir"
@@ -317,7 +324,7 @@
                 </div>
 
                 <!-- Pregunta 4 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">4. ¿Qué bloque de Scratch usarías para que un personaje haga algo SOLO si toca un color específico?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q4" value="a"> a) Mover (X) pasos
@@ -331,7 +338,7 @@
                 </div>
 
                 <!-- Pregunta 5 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
                     <p class="font-semibold text-xl mb-4">5. ¿Cuál de los siguientes es un ejemplo de "entrada" (input) del usuario en Scratch?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q5" value="a"> a) Que el personaje diga "¡Hola!"
@@ -345,7 +352,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <button type="submit" id="checkAnswersBtn" class="btn-primary">Comprobar Respuestas</button>
                     <p class="text-sm text-gray-500 mt-2">
                         Nota: Este cuestionario no guarda tus respuestas.
                     </p>
@@ -465,5 +472,73 @@
         <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
         <p class="text-sm mt-2">Material didáctico creado para la unidad "Creando mi Videojuego".</p>
     </footer>
+
+    <script>
+        // Definición de las respuestas correctas para cada pregunta (qX: respuesta_correcta)
+        const CORRECT_ANSWERS = {
+            q1: 'b', // 1. Lenguaje visual
+            q2: 'c', // 2. Una secuencia de pasos claros y ordenados para resolver un problema
+            q3: 'c', // 3. Un bloque de "por siempre" o "repetir"
+            q4: 'b', // 4. Si (condición) entonces
+            q5: 'c'  // 5. Presionar una tecla del teclado
+        };
+
+        function checkQuiz() {
+            const form = document.getElementById('quizForm');
+            const questions = form.querySelectorAll('[data-answer]');
+            
+            // Recorrer todas las preguntas
+            questions.forEach((questionDiv, index) => {
+                const questionName = `q${index + 1}`;
+                const correctAnswer = CORRECT_ANSWERS[questionName];
+                const selectedOption = form.querySelector(`input[name="${questionName}"]:checked`);
+                
+                // Limpiar clases de feedback anteriores
+                const options = questionDiv.querySelectorAll('.quiz-option');
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                    opt.style.border = 'none'; // Quitar borde para evitar duplicidad visual si no es feedback
+                });
+                
+                // Si hay una opción seleccionada
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    const selectedLabel = selectedOption.closest('label');
+                    
+                    if (selectedValue === correctAnswer) {
+                        // Respuesta correcta seleccionada
+                        selectedLabel.classList.add('correct');
+                    } else {
+                        // Respuesta incorrecta seleccionada: Marcar incorrecta y mostrar la correcta
+                        selectedLabel.classList.add('incorrect');
+                        
+                        // Buscar y marcar la respuesta correcta
+                        const correctInput = questionDiv.querySelector(`input[value="${correctAnswer}"]`);
+                        if (correctInput) {
+                            correctInput.closest('label').classList.add('correct');
+                        }
+                    }
+                } else {
+                    // Si no se selecciona ninguna opción, solo mostrar la correcta para estudio
+                    const correctInput = questionDiv.querySelector(`input[value="${correctAnswer}"]`);
+                    if (correctInput) {
+                        correctInput.closest('label').classList.add('correct');
+                    }
+                }
+            });
+        }
+
+        // Cambiar el tipo de botón para evitar el envío (aunque ya está en el onsubmit)
+        document.getElementById('checkAnswersBtn').type = 'button';
+        document.getElementById('checkAnswersBtn').onclick = checkQuiz;
+        
+        // Remover el atributo onsubmit del form para asegurar
+        document.getElementById('quizForm').onsubmit = function(event) {
+            event.preventDefault();
+            checkQuiz();
+        };
+
+    </script>
 </body>
 </html>
+

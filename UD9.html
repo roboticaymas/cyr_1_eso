@@ -50,6 +50,16 @@
         .quiz-option input[type="radio"] {
             margin-right: 0.5rem;
         }
+        /* Clases para feedback visual */
+        .correct {
+            background-color: #d1fae5; /* Verde muy claro */
+            border: 2px solid #10b981; /* Borde verde */
+            font-weight: 600;
+        }
+        .incorrect {
+            background-color: #fee2e2; /* Rojo muy claro */
+            border: 2px solid #ef4444; /* Borde rojo */
+        }
         .evaluation-criteria {
             background-color: #f0f9ff; /* Light blue background for criteria */
             border-left: 4px solid #38bdf8; /* Blue border */
@@ -275,9 +285,9 @@ p {
                 Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
             </p>
 
-            <form>
+            <form id="quizFormWeb" onsubmit="event.preventDefault(); checkQuizWeb();">
                 <!-- Pregunta 1 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">1. ¿Qué es una página web?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q1" value="a"> a) Un tipo de programa de ordenador
@@ -291,7 +301,7 @@ p {
                 </div>
 
                 <!-- Pregunta 2 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">2. ¿Cuál es la función principal de un servidor web?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q2" value="a"> a) Crear videojuegos
@@ -305,7 +315,7 @@ p {
                 </div>
 
                 <!-- Pregunta 3 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
                     <p class="font-semibold text-xl mb-4">3. ¿Qué lenguaje se utiliza para definir la ESTRUCTURA y el CONTENIDO de una página web?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q3" value="a"> a) CSS
@@ -319,7 +329,7 @@ p {
                 </div>
 
                 <!-- Pregunta 4 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">4. Si quieres cambiar los COLORES y las FUENTES de tu página web, ¿qué lenguaje usarías?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q4" value="a"> a) HTML
@@ -333,7 +343,7 @@ p {
                 </div>
 
                 <!-- Pregunta 5 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">5. ¿Qué permite la "animación web" en una página?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q5" value="a"> a) Que la página se cargue más lento
@@ -347,7 +357,7 @@ p {
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <button type="submit" id="checkAnswersBtnWeb" class="btn-primary">Comprobar Respuestas</button>
                     <p class="text-sm text-gray-500 mt-2">
                         Nota: Este cuestionario no guarda tus respuestas.
                     </p>
@@ -361,6 +371,68 @@ p {
         <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
         <p class="text-sm mt-2">Material didáctico creado para la unidad "¿Qué es la web?".</p>
     </footer>
+
+    <script>
+        // Definición de las respuestas correctas para cada pregunta
+        const CORRECT_ANSWERS_WEB = {
+            q1: 'b', // 1. Un documento digital que se ve en un navegador de Internet
+            q2: 'b', // 2. Almacenar y enviar páginas web a los navegadores
+            q3: 'c', // 3. HTML
+            q4: 'b', // 4. CSS
+            q5: 'b'  // 5. Que los elementos se muevan o cambien dinámicamente
+        };
+
+        function checkQuizWeb() {
+            const form = document.getElementById('quizFormWeb');
+            // Selector para encontrar los contenedores de preguntas
+            const questions = form.querySelectorAll('.mb-8.p-6.bg-gray-50.rounded-lg.shadow-sm');
+            
+            // Recorrer todas las preguntas
+            questions.forEach((questionDiv, index) => {
+                const questionName = `q${index + 1}`;
+                const correctAnswer = CORRECT_ANSWERS_WEB[questionName];
+                const selectedOption = form.querySelector(`input[name="${questionName}"]:checked`);
+                
+                // Limpiar clases de feedback anteriores
+                const options = questionDiv.querySelectorAll('.quiz-option');
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                    opt.style.border = 'none'; 
+                });
+                
+                // Si hay una opción seleccionada
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    const selectedLabel = selectedOption.closest('label');
+                    
+                    if (selectedValue === correctAnswer) {
+                        // Respuesta correcta seleccionada
+                        selectedLabel.classList.add('correct');
+                    } else {
+                        // Respuesta incorrecta seleccionada: Marcar incorrecta y mostrar la correcta
+                        selectedLabel.classList.add('incorrect');
+                        
+                        // Buscar y marcar la respuesta correcta
+                        const correctInput = questionDiv.querySelector(`input[value="${correctAnswer}"]`);
+                        if (correctInput) {
+                            correctInput.closest('label').classList.add('correct');
+                        }
+                    }
+                } else {
+                    // Si no se selecciona ninguna opción, solo mostrar la correcta para estudio
+                    const correctInput = questionDiv.querySelector(`input[value="${correctAnswer}"]`);
+                    if (correctInput) {
+                        correctInput.closest('label').classList.add('correct');
+                    }
+                }
+            });
+        }
+
+        // Configurar el botón para que ejecute la función
+        document.getElementById('checkAnswersBtnWeb').type = 'button';
+        document.getElementById('checkAnswersBtnWeb').onclick = checkQuizWeb;
+        
+    </script>
 </body>
 </html>
 

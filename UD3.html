@@ -50,6 +50,16 @@
         .quiz-option input[type="radio"] {
             margin-right: 0.5rem;
         }
+        /* Clases para feedback visual */
+        .correct {
+            background-color: #d1fae5; /* Verde muy claro */
+            border: 2px solid #10b981; /* Borde verde */
+            font-weight: 600;
+        }
+        .incorrect {
+            background-color: #fee2e2; /* Rojo muy claro */
+            border: 2px solid #ef4444; /* Borde rojo */
+        }
         .evaluation-criteria {
             background-color: #f0f9ff; /* Light blue background for criteria */
             border-left: 4px solid #38bdf8; /* Blue border */
@@ -312,9 +322,9 @@
                 Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
             </p>
 
-            <form>
+            <form id="quizFormIA" onsubmit="event.preventDefault(); checkQuizIA();">
                 <!-- Pregunta 1 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">1. ¿Qué es la Inteligencia Artificial (IA)?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q1" value="a"> a) Un nuevo tipo de videojuego
@@ -328,7 +338,7 @@
                 </div>
 
                 <!-- Pregunta 2 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">2. ¿Por qué es importante considerar la ética al usar la IA?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q2" value="a"> a) Para que la IA sea más rápida
@@ -342,7 +352,7 @@
                 </div>
 
                 <!-- Pregunta 3 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">3. ¿Qué hace un "agente inteligente"?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q3" value="a"> a) Solo juega videojuegos
@@ -356,7 +366,7 @@
                 </div>
 
                 <!-- Pregunta 4 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
                     <p class="font-semibold text-xl mb-4">4. ¿Qué es el Aprendizaje Automático (Machine Learning)?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q4" value="a"> a) Una forma de programar cada paso de la máquina
@@ -370,7 +380,7 @@
                 </div>
 
                 <!-- Pregunta 5 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm">
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
                     <p class="font-semibold text-xl mb-4">5. Si una IA aprende de ejemplos donde ya se le ha dicho cuál es la respuesta correcta (ej. "esto es un perro"), ¿qué tipo de aprendizaje es?</p>
                     <label class="quiz-option block">
                         <input type="radio" name="q5" value="a"> a) Aprendizaje por refuerzo
@@ -384,7 +394,7 @@
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" class="btn-primary">Enviar Respuestas</button>
+                    <button type="submit" id="checkAnswersBtnIA" class="btn-primary">Comprobar Respuestas</button>
                     <p class="text-sm text-gray-500 mt-2">
                         Nota: Este cuestionario no guarda tus respuestas.
                     </p>
@@ -398,6 +408,68 @@
         <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
         <p class="text-sm mt-2">Material didáctico creado para la unidad "La IA está aquí para quedarse".</p>
     </footer>
+
+    <script>
+        // Definición de las respuestas correctas para cada pregunta
+        const CORRECT_ANSWERS_IA = {
+            q1: 'b', // 1. La capacidad de las máquinas para imitar la inteligencia humana
+            q2: 'b', // 2. Para asegurar que la IA se use de forma justa y segura para todos
+            q3: 'b', // 3. Percibe su entorno, procesa información y actúa para un objetivo
+            q4: 'b', // 4. La capacidad de las máquinas para aprender de los datos sin ser programadas explícitamente
+            q5: 'c'  // 5. Aprendizaje supervisado
+        };
+
+        function checkQuizIA() {
+            const form = document.getElementById('quizFormIA');
+            // Selector para encontrar los contenedores de preguntas
+            const questions = form.querySelectorAll('.mb-8.p-6.bg-gray-50.rounded-lg.shadow-sm');
+            
+            // Recorrer todas las preguntas
+            questions.forEach((questionDiv, index) => {
+                const questionName = `q${index + 1}`;
+                const correctAnswer = CORRECT_ANSWERS_IA[questionName];
+                const selectedOption = form.querySelector(`input[name="${questionName}"]:checked`);
+                
+                // Limpiar clases de feedback anteriores
+                const options = questionDiv.querySelectorAll('.quiz-option');
+                options.forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                    opt.style.border = 'none'; 
+                });
+                
+                // Si hay una opción seleccionada
+                if (selectedOption) {
+                    const selectedValue = selectedOption.value;
+                    const selectedLabel = selectedOption.closest('label');
+                    
+                    if (selectedValue === correctAnswer) {
+                        // Respuesta correcta seleccionada
+                        selectedLabel.classList.add('correct');
+                    } else {
+                        // Respuesta incorrecta seleccionada: Marcar incorrecta y mostrar la correcta
+                        selectedLabel.classList.add('incorrect');
+                        
+                        // Buscar y marcar la respuesta correcta
+                        const correctInput = questionDiv.querySelector(`input[value="${correctAnswer}"]`);
+                        if (correctInput) {
+                            correctInput.closest('label').classList.add('correct');
+                        }
+                    }
+                } else {
+                    // Si no se selecciona ninguna opción, solo mostrar la correcta para estudio
+                    const correctInput = questionDiv.querySelector(`input[value="${correctAnswer}"]`);
+                    if (correctInput) {
+                        correctInput.closest('label').classList.add('correct');
+                    }
+                }
+            });
+        }
+
+        // Configurar el botón para que ejecute la función
+        document.getElementById('checkAnswersBtnIA').type = 'button';
+        document.getElementById('checkAnswersBtnIA').onclick = checkQuizIA;
+        
+    </script>
 </body>
 </html>
 
