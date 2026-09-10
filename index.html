@@ -312,40 +312,40 @@
                 body.castShadow = true;
                 robot.add(body);
 
-                // Núcleo brillante en el pecho
+                // Núcleo brillante en el pecho (orientado hacia el frente -Z)
                 const coreGeo = new THREE.CylinderGeometry(0.25, 0.25, 0.1, 16);
                 const coreMat = new THREE.MeshBasicMaterial({ color: 0x10b981 });
                 const core = new THREE.Mesh(coreGeo, coreMat);
                 core.rotation.x = Math.PI / 2;
-                core.position.set(0, 0.6, 0.91);
+                core.position.set(0, 0.6, -0.91);
                 robot.add(core);
 
                 // Cabeza
                 const headGeo = new THREE.BoxGeometry(0.9, 0.6, 0.8);
                 const headMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, metalness: 0.8, roughness: 0.2 });
                 const head = new THREE.Mesh(headGeo, headMat);
-                head.position.set(0, 1.25, 0.2);
+                head.position.set(0, 1.25, -0.2);
                 head.castShadow = true;
                 robot.add(head);
 
-                // Viseras/Ojos brillantes
+                // Viseras/Ojos brillantes (mirando hacia el frente -Z)
                 const visorGeo = new THREE.BoxGeometry(0.7, 0.2, 0.1);
                 const visorMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
                 const visor = new THREE.Mesh(visorGeo, visorMat);
-                visor.position.set(0, 1.3, 0.61);
+                visor.position.set(0, 1.3, -0.61);
                 robot.add(visor);
 
                 // Antena
                 const antGeo = new THREE.CylinderGeometry(0.03, 0.03, 0.5);
                 const antMat = new THREE.MeshBasicMaterial({ color: 0x64748b });
                 const ant = new THREE.Mesh(antGeo, antMat);
-                ant.position.set(0, 1.8, 0.2);
+                ant.position.set(0, 1.8, -0.2);
                 robot.add(ant);
 
                 const tipGeo = new THREE.SphereGeometry(0.1, 8, 8);
                 const tipMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
                 const tip = new THREE.Mesh(tipGeo, tipMat);
-                tip.position.set(0, 2.1, 0.2);
+                tip.position.set(0, 2.1, -0.2);
                 robot.add(tip);
 
                 // Ruedas (4 ruedas)
@@ -527,7 +527,7 @@
             function updateRobotPhysics() {
                 if (isModalOpen) return;
 
-                // Controles de aceleración
+                // Controles de aceleración: W / Flecha Arriba avanza hacia adelante (al frente -Z)
                 if (keyState['w'] || keyState['arrowup']) {
                     robotPhysics.speed = Math.min(robotPhysics.speed + robotPhysics.accel, robotPhysics.maxSpeed);
                 } else if (keyState['s'] || keyState['arrowdown']) {
@@ -536,7 +536,7 @@
                     robotPhysics.speed *= robotPhysics.friction;
                 }
 
-                // Giro
+                // Giro intuitivo
                 if (keyState['a'] || keyState['arrowleft']) {
                     robotPhysics.angle += robotPhysics.turnSpeed * (robotPhysics.speed >= 0 ? 1 : -1);
                 }
@@ -544,9 +544,9 @@
                     robotPhysics.angle -= robotPhysics.turnSpeed * (robotPhysics.speed >= 0 ? 1 : -1);
                 }
 
-                // Movimiento espacial
-                robotPhysics.x += Math.sin(robotPhysics.angle) * robotPhysics.speed;
-                robotPhysics.z += Math.cos(robotPhysics.angle) * robotPhysics.speed;
+                // Movimiento espacial (W avanza hacia adelante en la pantalla)
+                robotPhysics.x -= Math.sin(robotPhysics.angle) * robotPhysics.speed;
+                robotPhysics.z -= Math.cos(robotPhysics.angle) * robotPhysics.speed;
 
                 // Límite de la arena
                 const distFromCenter = Math.sqrt(robotPhysics.x * robotPhysics.x + robotPhysics.z * robotPhysics.z);
@@ -621,8 +621,8 @@
                 const modal = document.getElementById('portal-modal');
                 if (modal) modal.classList.add('hidden');
                 // Empujar el robot un poco hacia atrás para no re-activar inmediatamente
-                robotPhysics.x -= Math.sin(robotPhysics.angle) * 1.5;
-                robotPhysics.z -= Math.cos(robotPhysics.angle) * 1.5;
+                robotPhysics.x += Math.sin(robotPhysics.angle) * 1.5;
+                robotPhysics.z += Math.cos(robotPhysics.angle) * 1.5;
             }
 
             function animate(time) {
