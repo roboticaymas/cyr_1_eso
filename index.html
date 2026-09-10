@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Fuente Inter para una mejor legibilidad -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Three.js CDN para el minijuego 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -37,6 +39,19 @@
         }
         .sidebar-link:hover {
             background-color: #334155; /* Color más claro al pasar el ratón */
+        }
+        .sidebar-link-disabled {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: #94a3b8;
+            background-color: #0f172a;
+            opacity: 0.65;
+            cursor: not-allowed;
+            user-select: none;
         }
         .main-content {
             flex-grow: 1; /* Ocupa el espacio restante */
@@ -76,23 +91,26 @@
 <body class="antialiased">
     <!-- Sidebar de Navegación -->
     <aside class="sidebar">
-        <h2 class="text-3xl font-bold mb-6 text-center">Unidades</h2>
+        <h2 class="text-3xl font-bold mb-2 text-center">Unidades</h2>
+        <p class="text-xs text-emerald-400 text-center font-semibold mb-6">📌 1er Trimestre Activo</p>
         <nav class="flex-grow">
             <ul>
-            	<li><a href="presentacion.html" class="sidebar-link"> Presentación de la asignatura</a></li>
-                <li><a href="UD1.html" class="sidebar-link">🎮 Unidad 1: Creando mi Videojuego</a></li>
-                <li><a href="UD2.html" class="sidebar-link">📱 Unidad 2: Nos introducimos en el mundo de las apps</a></li>
-                <li><a href="UD3.html" class="sidebar-link">🧠 Unidad 3: La IA está aquí para quedarse</a></li>
-                <li><a href="UD4.html" class="sidebar-link">💻 Unidad 4: Sistemas de Computación</a></li>
-                <li><a href="UD5.html" class="sidebar-link">🌐 Unidad 5: Todo está interconectado</a></li>
-                <li><a href="UD6.html" class="sidebar-link">📊 Unidad 6: Datos masivos (Big Data)</a></li>
-                <li><a href="UD7.html" class="sidebar-link">🛡️ Unidad 7: Exploradores Digitales: Misión Ciberseguridad</a></li>
-                <li><a href="UD8.html" class="sidebar-link">🤖 Unidad 8: Creamos nuestro sistema robótico</a></li>
-                <li><a href="UD9.html" class="sidebar-link">🌐 Unidad 9: ¿Qué es la web?</a></li>
+            	<li><a href="presentacion.html" class="sidebar-link font-semibold text-blue-200 hover:text-white">📋 Presentación de la asignatura</a></li>
+                <li><a href="UD1.html" class="sidebar-link font-medium flex items-center justify-between border-l-4 border-emerald-400 bg-slate-800/80"><span>🎮 Unidad 1: Creando mi Videojuego (Scratch)</span> <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded font-bold ml-1">ACTIVA</span></a></li>
+                <li><a href="UD2.html" class="sidebar-link font-medium flex items-center justify-between border-l-4 border-emerald-400 bg-slate-800/80"><span>🧠 Unidad 2: La IA y Machine Learning (Scratch)</span> <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded font-bold ml-1">ACTIVA</span></a></li>
+                <li><a href="UD3.html" class="sidebar-link font-medium flex items-center justify-between border-l-4 border-emerald-400 bg-slate-800/80"><span>📱 Unidad 3: Dispositivos Portátiles y Arcade</span> <span class="text-[10px] bg-emerald-500 text-white px-1.5 py-0.5 rounded font-bold ml-1">ACTIVA</span></a></li>
+                
+                <!-- Unidades bloqueadas temporalmente (Secret / Top Secret) -->
+                <li><div class="sidebar-link-disabled"><span>❓ Unidad 4: Top Secret 🕵️‍♂️</span> <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">🔒 Bloqueada</span></div></li>
+                <li><div class="sidebar-link-disabled"><span>❓ Unidad 5: Top Secret 🕵️‍♂️</span> <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">🔒 Bloqueada</span></div></li>
+                <li><div class="sidebar-link-disabled"><span>❓ Unidad 6: Top Secret 🕵️‍♂️</span> <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">🔒 Bloqueada</span></div></li>
+                <li><div class="sidebar-link-disabled"><span>❓ Unidad 7: Top Secret 🕵️‍♂️</span> <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">🔒 Bloqueada</span></div></li>
+                <li><div class="sidebar-link-disabled"><span>❓ Unidad 8: Top Secret 🕵️‍♂️</span> <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">🔒 Bloqueada</span></div></li>
+                <li><div class="sidebar-link-disabled"><span>❓ Unidad 9: Top Secret 🕵️‍♂️</span> <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">🔒 Bloqueada</span></div></li>
             </ul>
         </nav>
         <div class="mt-8 text-sm text-gray-400 text-center">
-            <p>&copy; 2025 Computación y Robótica</p>
+            <p>&copy; 2026 Computación y Robótica</p>
             <p>Material Didáctico</p>
         </div>
     </aside>
@@ -100,19 +118,548 @@
     <!-- Contenido Principal -->
     <main class="main-content">
         <div class="header-card">
+            <div class="inline-block bg-emerald-100 text-emerald-800 font-semibold text-sm px-4 py-1.5 rounded-full mb-4 shadow-sm border border-emerald-300">
+                ✨ Programación 1er Trimestre: Unidades 1, 2 y 3 habilitadas
+            </div>
             <h1 class="text-5xl font-extrabold text-blue-700 mb-4">¡Bienvenidos a Computación y Robótica!</h1>
             <p class="text-xl text-gray-700 mb-6">
-                Explora el fascinante mundo de la tecnología, desde la programación de videojuegos hasta la construcción de robots y la comprensión de la inteligencia artificial.
+                Explora el fascinante mundo de la tecnología, desde la programación de videojuegos hasta la creación de apps móviles y la inteligencia artificial.
             </p>
             <p class="text-lg text-gray-600">
-                Usa el menú lateral para navegar por las diferentes unidades y descubrir todo lo que la computación y la robótica tienen para ofrecerte. ¡Prepárate para crear, innovar y aprender de forma divertida!
+                Usa el menú lateral para navegar por las unidades disponibles del primer trimestre (UD1, UD2 y UD3). Las unidades restantes se irán desbloqueando a lo largo del curso. ¡Prepárate para crear e innovar!
             </p>
         </div>
-        <div class="flex justify-center mt-8">
-    	<img src="robotic.png" alt="Robótica y Programación" class="rounded-lg shadow-lg max-w-full h-auto md:max-w-3/4 		lg:max-w-1/2"></div>
+        <!-- Contenedor del Minijuego 3D Retro "Robot Navigator" -->
+        <div class="w-full max-w-4xl mt-6 bg-slate-900 border-2 border-emerald-500/40 rounded-2xl shadow-2xl overflow-hidden text-left text-white relative">
+            <!-- Game Header Bar -->
+            <div class="bg-slate-950/90 px-5 py-3 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl animate-pulse">🕹️</span>
+                    <div>
+                        <h3 class="font-bold text-emerald-400 text-sm md:text-base leading-tight">Robot Navigator 3D</h3>
+                        <p class="text-xs text-slate-400">Conduce el robot hacia un portal para explorar la unidad</p>
+                    </div>
+                </div>
+                <div id="game-status-badge" class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-500/30 flex items-center space-x-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>🟢 Conduciendo en la arena</span>
+                </div>
+            </div>
+
+            <!-- Canvas Container -->
+            <div id="game-canvas-container" class="relative w-full h-[420px] bg-slate-950 select-none">
+                <!-- Overlay Modal para la activación de Portales -->
+                <div id="portal-modal" class="hidden absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 z-20 text-center transition-all duration-300">
+                    <div id="modal-icon" class="text-5xl mb-3">🚀</div>
+                    <h4 id="modal-title" class="text-2xl font-bold text-emerald-400 mb-2">¡Portal Detectado!</h4>
+                    <p id="modal-desc" class="text-slate-300 max-w-md text-sm mb-6 leading-relaxed">Has alcanzado la Unidad 1</p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        <a id="modal-action-btn" href="#" class="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 font-bold text-slate-950 rounded-lg shadow-lg transition-all transform hover:scale-105">
+                            🚀 Entrar a la Unidad
+                        </a>
+                        <button onclick="closePortalModal()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold rounded-lg border border-slate-700 transition-all">
+                            🔙 Seguir Explorando
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel de Controles / Footer -->
+            <div class="bg-slate-950 px-5 py-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs">
+                <div class="text-slate-400 flex items-center space-x-2">
+                    <span>⌨️ <strong>Controles:</strong> Usa <kbd class="px-1.5 py-0.5 bg-slate-800 text-emerald-400 rounded border border-slate-700">W A S D</kbd> o <kbd class="px-1.5 py-0.5 bg-slate-800 text-emerald-400 rounded border border-slate-700">Flechas</kbd></span>
+                </div>
+
+                <!-- Botones táctiles de dirección -->
+                <div class="flex items-center space-x-1.5">
+                    <span class="mr-2 text-slate-500 font-semibold text-[11px] hidden sm:inline">Controles pantalla:</span>
+                    <button id="btn-up" class="w-9 h-9 bg-slate-800 hover:bg-slate-700 active:bg-emerald-600 rounded-lg flex items-center justify-center font-bold text-white shadow border border-slate-700 transition-colors">⬆️</button>
+                    <button id="btn-left" class="w-9 h-9 bg-slate-800 hover:bg-slate-700 active:bg-emerald-600 rounded-lg flex items-center justify-center font-bold text-white shadow border border-slate-700 transition-colors">⬅️</button>
+                    <button id="btn-down" class="w-9 h-9 bg-slate-800 hover:bg-slate-700 active:bg-emerald-600 rounded-lg flex items-center justify-center font-bold text-white shadow border border-slate-700 transition-colors">⬇️</button>
+                    <button id="btn-right" class="w-9 h-9 bg-slate-800 hover:bg-slate-700 active:bg-emerald-600 rounded-lg flex items-center justify-center font-bold text-white shadow border border-slate-700 transition-colors">➡️</button>
+                    <button onclick="resetRobotPosition()" class="ml-2 px-3 py-1.5 bg-indigo-950 hover:bg-indigo-900 text-indigo-300 border border-indigo-500/40 rounded-lg font-semibold text-[11px] transition-colors">
+                        🔄 Reaparecer
+                    </button>
+                </div>
+            </div>
+        </div>
         <p class="text-center text-sm text-gray-500 mt-4">
              - ¡El futuro está en tus manos!
         </p>
+
+        <!-- Lógica en Three.js para el Minijuego 3D -->
+        <script>
+            let scene, camera, renderer;
+            let robot, wheels = [];
+            let portals = [];
+            let keyState = {};
+            let isModalOpen = false;
+
+            // Datos de las Unidades y sus Portales 3D
+            const UNIT_DATA = [
+                { id: 1, name: 'UD1: Videojuegos', fullTitle: 'Unidad 1: Creando mi Videojuego (Scratch)', url: 'UD1.html', active: true, icon: '🎮' },
+                { id: 2, name: 'UD2: IA & ML', fullTitle: 'Unidad 2: La IA y Machine Learning (Scratch)', url: 'UD2.html', active: true, icon: '🧠' },
+                { id: 3, name: 'UD3: Apps & Arcade', fullTitle: 'Unidad 3: Dispositivos Portátiles y Arcade', url: 'UD3.html', active: true, icon: '📱' },
+                { id: 4, name: 'UD4: Top Secret', fullTitle: 'Unidad 4: Top Secret 🕵️‍♂️', active: false, icon: '❓' },
+                { id: 5, name: 'UD5: Top Secret', fullTitle: 'Unidad 5: Top Secret 🕵️‍♂️', active: false, icon: '❓' },
+                { id: 6, name: 'UD6: Top Secret', fullTitle: 'Unidad 6: Top Secret 🕵️‍♂️', active: false, icon: '❓' },
+                { id: 7, name: 'UD7: Top Secret', fullTitle: 'Unidad 7: Top Secret 🕵️‍♂️', active: false, icon: '❓' },
+                { id: 8, name: 'UD8: Top Secret', fullTitle: 'Unidad 8: Top Secret 🕵️‍♂️', active: false, icon: '❓' },
+                { id: 9, name: 'UD9: Top Secret', fullTitle: 'Unidad 9: Top Secret 🕵️‍♂️', active: false, icon: '❓' }
+            ];
+
+            // Física del robot
+            let robotPhysics = {
+                x: 0,
+                z: 0,
+                angle: 0,
+                speed: 0,
+                maxSpeed: 0.16,
+                accel: 0.012,
+                friction: 0.93,
+                turnSpeed: 0.05
+            };
+
+            function init3DGame() {
+                const container = document.getElementById('game-canvas-container');
+                if (!container) return;
+
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+
+                // 1. Escena
+                scene = new THREE.Scene();
+                scene.background = new THREE.Color(0x0a0f1d);
+                scene.fog = new THREE.FogExp2(0x0a0f1d, 0.035);
+
+                // 2. CÁMARA
+                camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 1000);
+                camera.position.set(0, 14, 16);
+                camera.lookAt(0, 0, 0);
+
+                // 3. RENDERER
+                renderer = new THREE.WebGLRenderer({ antialias: true });
+                renderer.setSize(width, height);
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+                renderer.shadowMap.enabled = true;
+                renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+                container.appendChild(renderer.domElement);
+
+                // 4. LUCES
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+                scene.add(ambientLight);
+
+                const dirLight = new THREE.DirectionalLight(0x38bdf8, 1.2);
+                dirLight.position.set(15, 25, 15);
+                dirLight.castShadow = true;
+                dirLight.shadow.mapSize.width = 1024;
+                dirLight.shadow.mapSize.height = 1024;
+                scene.add(dirLight);
+
+                // Luz ambiental central suave
+                const centerLight = new THREE.PointLight(0x10b981, 1.5, 20);
+                centerLight.position.set(0, 3, 0);
+                scene.add(centerLight);
+
+                // 5. SUELO / ARENA
+                const floorGeo = new THREE.PlaneGeometry(50, 50);
+                const floorMat = new THREE.MeshStandardMaterial({
+                    color: 0x0f172a,
+                    roughness: 0.8,
+                    metalness: 0.2
+                });
+                const floor = new THREE.Mesh(floorGeo, floorMat);
+                floor.rotation.x = -Math.PI / 2;
+                floor.receiveShadow = true;
+                scene.add(floor);
+
+                // Rejilla Cyber Neón
+                const gridHelper = new THREE.GridHelper(50, 25, 0x10b981, 0x1e293b);
+                gridHelper.position.y = 0.01;
+                scene.add(gridHelper);
+
+                // 6. ROBOT JUGADOR
+                createRobot();
+
+                // 7. PORTALES 3D
+                createPortals();
+
+                // 8. PARTÍCULAS AMBIENTALES
+                createParticles();
+
+                // EVENTOS DE CONTROL
+                setupControls();
+
+                // RESIZE HANDLER
+                window.addEventListener('resize', onWindowResize);
+
+                // BUCLE DE ANIMACIÓN
+                animate();
+            }
+
+            function createRobot() {
+                robot = new THREE.Group();
+
+                // Cuerpo del robot
+                const bodyGeo = new THREE.BoxGeometry(1.4, 0.7, 1.8);
+                const bodyMat = new THREE.MeshStandardMaterial({
+                    color: 0x0284c7,
+                    metalness: 0.6,
+                    roughness: 0.3
+                });
+                const body = new THREE.Mesh(bodyGeo, bodyMat);
+                body.position.y = 0.6;
+                body.castShadow = true;
+                robot.add(body);
+
+                // Núcleo brillante en el pecho
+                const coreGeo = new THREE.CylinderGeometry(0.25, 0.25, 0.1, 16);
+                const coreMat = new THREE.MeshBasicMaterial({ color: 0x10b981 });
+                const core = new THREE.Mesh(coreGeo, coreMat);
+                core.rotation.x = Math.PI / 2;
+                core.position.set(0, 0.6, 0.91);
+                robot.add(core);
+
+                // Cabeza
+                const headGeo = new THREE.BoxGeometry(0.9, 0.6, 0.8);
+                const headMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, metalness: 0.8, roughness: 0.2 });
+                const head = new THREE.Mesh(headGeo, headMat);
+                head.position.set(0, 1.25, 0.2);
+                head.castShadow = true;
+                robot.add(head);
+
+                // Viseras/Ojos brillantes
+                const visorGeo = new THREE.BoxGeometry(0.7, 0.2, 0.1);
+                const visorMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+                const visor = new THREE.Mesh(visorGeo, visorMat);
+                visor.position.set(0, 1.3, 0.61);
+                robot.add(visor);
+
+                // Antena
+                const antGeo = new THREE.CylinderGeometry(0.03, 0.03, 0.5);
+                const antMat = new THREE.MeshBasicMaterial({ color: 0x64748b });
+                const ant = new THREE.Mesh(antGeo, antMat);
+                ant.position.set(0, 1.8, 0.2);
+                robot.add(ant);
+
+                const tipGeo = new THREE.SphereGeometry(0.1, 8, 8);
+                const tipMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
+                const tip = new THREE.Mesh(tipGeo, tipMat);
+                tip.position.set(0, 2.1, 0.2);
+                robot.add(tip);
+
+                // Ruedas (4 ruedas)
+                const wheelGeo = new THREE.CylinderGeometry(0.35, 0.35, 0.25, 16);
+                const wheelMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.9 });
+
+                const wheelPositions = [
+                    [-0.85, 0.35, 0.6],
+                    [0.85, 0.35, 0.6],
+                    [-0.85, 0.35, -0.6],
+                    [0.85, 0.35, -0.6]
+                ];
+
+                wheels = [];
+                wheelPositions.forEach(pos => {
+                    const wheel = new THREE.Mesh(wheelGeo, wheelMat);
+                    wheel.rotation.z = Math.PI / 2;
+                    wheel.position.set(...pos);
+                    wheel.castShadow = true;
+                    robot.add(wheel);
+                    wheels.push(wheel);
+                });
+
+                scene.add(robot);
+            }
+
+            function createPortals() {
+                const radius = 13.5;
+                const totalUnits = UNIT_DATA.length;
+
+                UNIT_DATA.forEach((unit, index) => {
+                    const angle = (index / totalUnits) * Math.PI * 2;
+                    const px = Math.sin(angle) * radius;
+                    const pz = Math.cos(angle) * radius;
+
+                    const portalGroup = new THREE.Group();
+                    portalGroup.position.set(px, 0, pz);
+
+                    const isAct = unit.active;
+                    const color = isAct ? 0x10b981 : 0xa855f7;
+
+                    // Anillo exterior brillante
+                    const torusGeo = new THREE.TorusGeometry(1.3, 0.15, 16, 32);
+                    const torusMat = new THREE.MeshStandardMaterial({
+                        color: color,
+                        emissive: color,
+                        emissiveIntensity: 0.6,
+                        metalness: 0.8,
+                        roughness: 0.2
+                    });
+                    const torus = new THREE.Mesh(torusGeo, torusMat);
+                    torus.position.y = 1.8;
+                    torus.castShadow = true;
+                    portalGroup.add(torus);
+
+                    // Núcleo cristal interior
+                    const crystalGeo = isAct ? new THREE.OctahedronGeometry(0.7) : new THREE.BoxGeometry(0.8, 0.8, 0.8);
+                    const crystalMat = new THREE.MeshBasicMaterial({
+                        color: isAct ? 0x34d399 : 0xc084fc,
+                        wireframe: true
+                    });
+                    const crystal = new THREE.Mesh(crystalGeo, crystalMat);
+                    crystal.position.y = 1.8;
+                    portalGroup.add(crystal);
+
+                    // Luz puntual del portal
+                    const pLight = new THREE.PointLight(color, 1.8, 6);
+                    pLight.position.y = 1.8;
+                    portalGroup.add(pLight);
+
+                    // Etiqueta flotante con Canvas Sprite
+                    const sprite = createTextSprite(unit.name, isAct ? '#10b981' : '#a855f7');
+                    sprite.position.set(0, 3.6, 0);
+                    portalGroup.add(sprite);
+
+                    scene.add(portalGroup);
+
+                    portals.push({
+                        group: portalGroup,
+                        torus: torus,
+                        crystal: crystal,
+                        unit: unit,
+                        pos: new THREE.Vector3(px, 0, pz)
+                    });
+                });
+            }
+
+            function createTextSprite(text, colorHex) {
+                const canvas = document.createElement('canvas');
+                canvas.width = 256;
+                canvas.height = 64;
+                const ctx = canvas.getContext('2d');
+
+                ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+                ctx.strokeStyle = colorHex;
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.roundRect(10, 10, 236, 44, 10);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.font = 'Bold 20px Inter, sans-serif';
+                ctx.fillStyle = '#ffffff';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(text, 128, 32);
+
+                const texture = new THREE.CanvasTexture(canvas);
+                const spriteMat = new THREE.SpriteMaterial({ map: texture, transparent: true });
+                const sprite = new THREE.Sprite(spriteMat);
+                sprite.scale.set(3.5, 0.875, 1);
+                return sprite;
+            }
+
+            function createParticles() {
+                const particleGeo = new THREE.BufferGeometry();
+                const count = 120;
+                const posArray = new Float32Array(count * 3);
+
+                for (let i = 0; i < count * 3; i += 3) {
+                    posArray[i] = (Math.random() - 0.5) * 40;
+                    posArray[i + 1] = Math.random() * 8 + 0.2;
+                    posArray[i + 2] = (Math.random() - 0.5) * 40;
+                }
+
+                particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+                const particleMat = new THREE.PointsMaterial({
+                    size: 0.15,
+                    color: 0x38bdf8,
+                    transparent: true,
+                    opacity: 0.6
+                });
+
+                const particles = new THREE.Points(particleGeo, particleMat);
+                scene.add(particles);
+            }
+
+            function setupControls() {
+                window.addEventListener('keydown', e => {
+                    keyState[e.key.toLowerCase()] = true;
+                    keyState[e.code] = true;
+                });
+
+                window.addEventListener('keyup', e => {
+                    keyState[e.key.toLowerCase()] = false;
+                    keyState[e.code] = false;
+                });
+
+                // Controles en pantalla
+                const bindTouchBtn = (btnId, keyName) => {
+                    const btn = document.getElementById(btnId);
+                    if (!btn) return;
+                    const start = (e) => { e.preventDefault(); keyState[keyName] = true; };
+                    const end = (e) => { e.preventDefault(); keyState[keyName] = false; };
+                    btn.addEventListener('mousedown', start);
+                    btn.addEventListener('mouseup', end);
+                    btn.addEventListener('touchstart', start);
+                    btn.addEventListener('touchend', end);
+                };
+
+                bindTouchBtn('btn-up', 'w');
+                bindTouchBtn('btn-left', 'a');
+                bindTouchBtn('btn-down', 's');
+                bindTouchBtn('btn-right', 'd');
+            }
+
+            function resetRobotPosition() {
+                robotPhysics.x = 0;
+                robotPhysics.z = 0;
+                robotPhysics.speed = 0;
+                robotPhysics.angle = 0;
+                if (robot) {
+                    robot.position.set(0, 0, 0);
+                    robot.rotation.y = 0;
+                }
+                closePortalModal();
+            }
+
+            function updateRobotPhysics() {
+                if (isModalOpen) return;
+
+                // Controles de aceleración
+                if (keyState['w'] || keyState['arrowup']) {
+                    robotPhysics.speed = Math.min(robotPhysics.speed + robotPhysics.accel, robotPhysics.maxSpeed);
+                } else if (keyState['s'] || keyState['arrowdown']) {
+                    robotPhysics.speed = Math.max(robotPhysics.speed - robotPhysics.accel, -robotPhysics.maxSpeed * 0.6);
+                } else {
+                    robotPhysics.speed *= robotPhysics.friction;
+                }
+
+                // Giro
+                if (keyState['a'] || keyState['arrowleft']) {
+                    robotPhysics.angle += robotPhysics.turnSpeed * (robotPhysics.speed >= 0 ? 1 : -1);
+                }
+                if (keyState['d'] || keyState['arrowright']) {
+                    robotPhysics.angle -= robotPhysics.turnSpeed * (robotPhysics.speed >= 0 ? 1 : -1);
+                }
+
+                // Movimiento espacial
+                robotPhysics.x += Math.sin(robotPhysics.angle) * robotPhysics.speed;
+                robotPhysics.z += Math.cos(robotPhysics.angle) * robotPhysics.speed;
+
+                // Límite de la arena
+                const distFromCenter = Math.sqrt(robotPhysics.x * robotPhysics.x + robotPhysics.z * robotPhysics.z);
+                const maxArenaRadius = 18.5;
+                if (distFromCenter > maxArenaRadius) {
+                    robotPhysics.x = (robotPhysics.x / distFromCenter) * maxArenaRadius;
+                    robotPhysics.z = (robotPhysics.z / distFromCenter) * maxArenaRadius;
+                    robotPhysics.speed *= -0.5;
+                }
+
+                if (robot) {
+                    robot.position.x = robotPhysics.x;
+                    robot.position.z = robotPhysics.z;
+                    robot.rotation.y = robotPhysics.angle;
+
+                    // Giro visual de las ruedas
+                    wheels.forEach(w => {
+                        w.rotation.x += robotPhysics.speed * 2;
+                    });
+                }
+
+                // Seguimiento suave de la cámara
+                const targetCamX = robotPhysics.x * 0.6;
+                const targetCamZ = robotPhysics.z * 0.6 + 15;
+                camera.position.x += (targetCamX - camera.position.x) * 0.05;
+                camera.position.z += (targetCamZ - camera.position.z) * 0.05;
+                camera.lookAt(robotPhysics.x, 0.8, robotPhysics.z);
+
+                // Comprobar colisión con Portales
+                checkPortalCollisions();
+            }
+
+            function checkPortalCollisions() {
+                const robotPos = new THREE.Vector3(robotPhysics.x, 0, robotPhysics.z);
+
+                portals.forEach(p => {
+                    const dist = robotPos.distanceTo(p.pos);
+                    if (dist < 2.2 && !isModalOpen) {
+                        triggerPortalModal(p.unit);
+                    }
+                });
+            }
+
+            function triggerPortalModal(unit) {
+                isModalOpen = true;
+                const modal = document.getElementById('portal-modal');
+                const title = document.getElementById('modal-title');
+                const desc = document.getElementById('modal-desc');
+                const icon = document.getElementById('modal-icon');
+                const actionBtn = document.getElementById('modal-action-btn');
+
+                icon.textContent = unit.icon;
+                title.textContent = unit.name;
+
+                if (unit.active) {
+                    title.className = "text-2xl font-bold text-emerald-400 mb-2";
+                    desc.textContent = `Has sintonizado el portal de la "${unit.fullTitle}". ¿Quieres acceder al contenido de esta unidad?`;
+                    actionBtn.href = unit.url;
+                    actionBtn.className = "px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 font-bold text-slate-950 rounded-lg shadow-lg transition-all transform hover:scale-105 inline-block";
+                    actionBtn.textContent = `🚀 Entrar a la ${unit.name.split(':')[0]}`;
+                } else {
+                    title.className = "text-2xl font-bold text-purple-400 mb-2";
+                    desc.textContent = `🔒 Este portal está encriptado con nivel TOP SECRET. Esta unidad se desvelará y desbloqueará próximamente durante el curso.`;
+                    actionBtn.className = "hidden";
+                }
+
+                modal.classList.remove('hidden');
+            }
+
+            function closePortalModal() {
+                isModalOpen = false;
+                const modal = document.getElementById('portal-modal');
+                if (modal) modal.classList.add('hidden');
+                // Empujar el robot un poco hacia atrás para no re-activar inmediatamente
+                robotPhysics.x -= Math.sin(robotPhysics.angle) * 1.5;
+                robotPhysics.z -= Math.cos(robotPhysics.angle) * 1.5;
+            }
+
+            function animate(time) {
+                requestAnimationFrame(animate);
+
+                updateRobotPhysics();
+
+                // Animación continua de Portales
+                const t = time * 0.002;
+                portals.forEach(p => {
+                    p.torus.rotation.z += 0.015;
+                    p.crystal.rotation.y -= 0.02;
+                    p.crystal.position.y = 1.8 + Math.sin(t + p.unit.id) * 0.2;
+                });
+
+                renderer.render(scene, camera);
+            }
+
+            function onWindowResize() {
+                const container = document.getElementById('game-canvas-container');
+                if (!container || !renderer || !camera) return;
+
+                const width = container.clientWidth;
+                const height = container.clientHeight;
+
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                renderer.setSize(width, height);
+            }
+
+            // Iniciar cuando el DOM y scripts estén listos
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init3DGame);
+            } else {
+                init3DGame();
+            }
+        </script>
     </main>
 </body>
 </html>

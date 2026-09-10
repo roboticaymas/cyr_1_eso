@@ -73,20 +73,50 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🎮 Creando mi Videojuego 👾</h1>
             <nav>
-                <ul class="flex space-x-6 text-lg font-medium">
+                <ul class="flex flex-wrap items-center space-x-4 md:space-x-6 text-lg font-medium">
+                    <li><a href="index.html" class="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg font-bold transition-colors inline-flex items-center gap-1 shadow-sm">🏠 Inicio</a></li>
                     <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
                     <li><a href="#lenguajes-visuales" class="hover:text-gray-200 transition-colors duration-300">Lenguajes Visuales</a></li>
                     <li><a href="#algoritmos" class="hover:text-gray-200 transition-colors duration-300">Algoritmos</a></li>
                     <li><a href="#repeticiones-condiciones" class="hover:text-gray-200 transition-colors duration-300">Lógica</a></li>
                     <li><a href="#interaccion-usuario" class="hover:text-gray-200 transition-colors duration-300">Interacción</a></li>
-                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                    <li><a href="#recursos-scratch" class="hover:text-gray-200 transition-colors duration-300">Recursos</a></li>
                     <li><a href="#actividades-evaluacion" class="hover:text-gray-200 transition-colors duration-300">Actividades</a></li>
+                    <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                    <li><a href="#rubrica-evaluacion" class="hover:text-gray-200 transition-colors duration-300 font-bold text-amber-200">📋 Rúbrica</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Planificación Didáctica de la Unidad 1 -->
+        <section class="card p-6 bg-gradient-to-r from-amber-50 to-orange-50 border-l-8 border-amber-500 shadow-md">
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-3xl">📌</span>
+                <div>
+                    <h3 class="text-xl font-bold text-amber-900">Planificación y Fases Didácticas de la Unidad 1</h3>
+                    <p class="text-xs font-semibold text-amber-800 bg-amber-200/60 inline-block px-2.5 py-1 rounded-md mt-1">
+                        ⏱️ Planificación flexible y orientativa: Adaptable según el ritmo del alumnado, festivos y evaluación inicial (~6-8 sesiones estimadas).
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mt-4">
+                <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-sm">
+                    <p class="font-bold text-amber-800 mb-1">Fase 1: Exploración e Interfaz (Orientativo ~2 sesiones)</p>
+                    <p class="text-gray-600">Crear cuenta en Scratch, reconocer escenarios/objetos y programar la primera secuencia de movimiento y sonido.</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-sm">
+                    <p class="font-bold text-amber-800 mb-1">Fase 2: Lógica y Eventos (Orientativo ~3 sesiones)</p>
+                    <p class="text-gray-600">Trabajar bucles (`por siempre`), condicionales (`si...entonces`) y control por teclado/ratón con los mini-retos.</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-amber-200 shadow-sm">
+                    <p class="font-bold text-amber-800 mb-1">Fase 3: Proyecto Final (Orientativo ~2-3 sesiones)</p>
+                    <p class="text-gray-600">Desarrollo por parejas del videojuego libre siguiendo la rúbrica y presentación breve a los compañeros.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Introducción -->
         <section id="introduccion" class="card p-8">
@@ -101,8 +131,13 @@
                 <img src="scratch_initial.png" alt="Interfaz de Scratch" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
             </div>
             <p class="text-center text-sm text-gray-500 mt-2">
-                 -  - ¡Así es como se ve Scratch!
+                 - ¡Así es como se ve el editor de Scratch!
             </p>
+            <div class="flex justify-center mt-6">
+                <a href="https://scratch.mit.edu/projects/editor/" target="_blank" class="btn-primary inline-flex items-center gap-2 text-lg font-bold shadow-lg transform hover:-translate-y-0.5 transition-all">
+                    🚀 Abrir Editor Online de Scratch
+                </a>
+            </div>
         </section>
 
         <!-- CYR.1.A.1. Introducción a los lenguajes de programación visuales. Tipos. -->
@@ -273,6 +308,162 @@
             </p>
         </section>
 
+        <!-- Sección de Recursos y Guías de Referencia Scratch -->
+        <section id="recursos-scratch" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">📚 Zona de Recursos y Guías Scratch</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Utiliza estos enlaces y materiales como centro de consulta permanente durante el desarrollo de tus proyectos de programación:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Recurso 1: Editor Oficial -->
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center gap-2 text-blue-800 font-bold text-xl mb-2">
+                            <span>🚀</span> Editor Oficial de Scratch (MIT)
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                            Acceso directo a la plataforma web oficial de Scratch 3.0 para crear y guardar tus proyectos en la nube sin instalar nada.
+                        </p>
+                    </div>
+                    <a href="https://scratch.mit.edu/projects/editor/" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition-colors w-fit">
+                        Abrir Editor de Scratch ↗
+                    </a>
+                </div>
+
+                <!-- Recurso 2: Tarjetas de Programación -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center gap-2 text-purple-800 font-bold text-xl mb-2">
+                            <span>🎴</span> Tarjetas de Desafíos (Scratch Cards)
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                            Colección de fichas paso a paso del MIT para aprender a animar nombres, programar música, juegos de esquivar y efectos visuales.
+                        </p>
+                    </div>
+                    <a href="https://scratch.mit.edu/ideas" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg transition-colors w-fit">
+                        Ver Tarjetas de Ideas (MIT) ↗
+                    </a>
+                </div>
+
+                <!-- Recurso 3: Galería e Inspiración -->
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+                    <div>
+                        <div class="flex items-center gap-2 text-amber-800 font-bold text-xl mb-2">
+                            <span>🔍</span> Galería de Proyectos ("Ver por dentro")
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+                            Explora miles de juegos creados por otros estudiantes. Haz clic en el botón "Ver por dentro" para descubrir cómo está programado cualquier proyecto.
+                        </p>
+                    </div>
+                    <a href="https://scratch.mit.edu/explore/projects/all" target="_blank" class="inline-flex items-center gap-2 text-sm font-bold text-white bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-lg transition-colors w-fit">
+                        Explorar Proyectos ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Actividades de Práctica y Evaluación -->
+        <section id="actividades-evaluacion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">Actividades de Práctica y Evaluación</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                ¡Es hora de poner en práctica todo lo aprendido! Aquí tienes una serie de actividades para consolidar tus conocimientos y demostrar tus habilidades en programación con Scratch.
+            </p>
+
+            <!-- Actividades de Práctica Gamificadas -->
+            <h3 class="text-2xl font-semibold mt-8 mb-4">🏆 Mini-Retos Scratch (Gamificados por Niveles)</h3>
+            <p class="text-gray-600 mb-6">Completa los retos en orden para conseguir tus medallas de programador/a:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Nivel Bronce -->
+                <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-5 shadow-sm relative overflow-hidden">
+                    <div class="bg-amber-500 text-white text-xs font-extrabold px-3 py-1 rounded-bl-lg absolute top-0 right-0">🥉 NIVEL BRONCE</div>
+                    <h4 class="text-lg font-bold text-amber-900 mb-2">1. "El Baile Animado"</h4>
+                    <p class="text-sm text-gray-700 mb-3">Programa un personaje para que cambie de disfraz 5 veces, haga un sonido divertido y diga "¡Mira cómo bailo!" al presionar la bandera verde.</p>
+                    <div class="text-xs bg-white p-2 rounded border border-amber-200 text-amber-800">
+                        🔑 <strong>Bloques clave:</strong> `al presionar 🚩`, `cambiar disfraz`, `tocar sonido`, `esperar (0.5) seg`.
+                    </div>
+                </div>
+
+                <!-- Nivel Plata -->
+                <div class="bg-slate-100 border-2 border-slate-300 rounded-xl p-5 shadow-sm relative overflow-hidden">
+                    <div class="bg-slate-500 text-white text-xs font-extrabold px-3 py-1 rounded-bl-lg absolute top-0 right-0">🥈 NIVEL PLATA</div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">2. "El Gato Caza-Galletas"</h4>
+                    <p class="text-sm text-gray-700 mb-3">Haz que tu personaje se mueva con las 4 flechas del teclado. Al tocar una galleta (objeto), la galleta debe sonar y saltar a una posición aleatoria.</p>
+                    <div class="text-xs bg-white p-2 rounded border border-slate-200 text-slate-800">
+                        🔑 <strong>Bloques clave:</strong> `al presionar tecla`, `si <toca objeto> entonces`, `ir a posición aleatoria`.
+                    </div>
+                </div>
+
+                <!-- Nivel Oro -->
+                <div class="bg-yellow-50 border-2 border-yellow-400 rounded-xl p-5 shadow-sm relative overflow-hidden">
+                    <div class="bg-yellow-500 text-white text-xs font-extrabold px-3 py-1 rounded-bl-lg absolute top-0 right-0">🥇 NIVEL ORO</div>
+                    <h4 class="text-lg font-bold text-yellow-900 mb-2">3. "Esquiva el Obstáculo"</h4>
+                    <p class="text-sm text-gray-700 mb-3">Crea un marcador de puntuación (variable). El héroe suma 1 punto cada segundo, pero si toca la bola de fuego (obstáculo en bucle), ¡el juego se detiene y dice Game Over!</p>
+                    <div class="text-xs bg-white p-2 rounded border border-yellow-200 text-yellow-800">
+                        🔑 <strong>Bloques clave:</strong> `por siempre`, `sumar a [puntuación] (1)`, `detener todos`.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actividades de Evaluación -->
+            <h3 class="text-2xl font-semibold mt-10 mb-4">Actividades de Evaluación:</h3>
+            <ul class="list-disc list-inside text-lg space-y-4 ml-4">
+                <li>
+                    <strong class="text-green-600">Actividad 1: "Atrapa el Objeto"</strong>
+                    <p class="mt-2">Crea un juego sencillo donde un personaje (por ejemplo, un gato) se mueva por la pantalla (usando bucles y rebotes) y otro objeto (por ejemplo, una manzana) aparezca en posiciones aleatorias. El objetivo es que el gato "atrape" la manzana (detectando el contacto) y cada vez que lo haga, se sume un punto a una variable de "Puntuación". El juego debe terminar después de un tiempo determinado (ej. 30 segundos).</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Criterio 1.3:</strong> Entender la estructura básica de un programa informático.</li>
+                            <li><strong>Criterio 2.1:</strong> Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <strong class="text-green-600">Actividad 2: "Laberinto Simple" (Trabajo en equipo)</strong>
+                    <p class="mt-2">En parejas o grupos pequeños, diseñad y programad un pequeño juego de laberinto en Scratch. Un personaje debe moverse por un laberinto (dibujado como fondo o con sprites) usando las flechas del teclado. Si el personaje toca las paredes del laberinto, debe volver al inicio. El objetivo es llegar a un punto final. Cada miembro del equipo debe programar al menos una parte del movimiento o la lógica del laberinto.</p>
+                    <div class="evaluation-criteria">
+                        <p><strong>Criterios trabajados:</strong></p>
+                        <ul class="list-disc list-inside ml-4">
+                            <li><strong>Criterio 1.3:</strong> Entender la estructura básica de un programa informático.</li>
+                            <li><strong>Criterio 2.1:</strong> Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Proyecto Final de Unidad -->
+            <h3 class="text-2xl font-semibold mt-10 mb-4">Proyecto Final de Unidad: ¡Mi Gran Videojuego!</h3>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para el proyecto final, deberás crear un videojuego original en Scratch que demuestre todo lo que has aprendido en esta unidad. Puedes trabajar individualmente o en parejas.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                <strong class="text-red-600">Requisitos Mínimos:</strong>
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li>Debe tener al menos <strong class="font-bold">dos personajes</strong> (sprites) que interactúen.</li>
+                <li>Debe incluir <strong class="font-bold">movimiento</strong> para al menos un personaje.</li>
+                <li>Debe usar <strong class="font-bold">bucles</strong> (repeticiones) para alguna acción.</li>
+                <li>Debe usar <strong class="font-bold">condiciones</strong> (decisiones) para que el juego reaccione a eventos (ej. tocar un objeto, perder vida).</li>
+                <li>Debe tener alguna forma de <strong class="font-bold">interacción con el usuario</strong> (ej. control por teclado/ratón, preguntas).</li>
+                <li>Debe incluir una <strong class="font-bold">variable</strong> (ej. puntuación, vida, tiempo).</li>
+                <li>El juego debe tener un <strong class="font-bold">objetivo claro</strong> y un "final" (ganar/perder).</li>
+                <li>Debe incluir un <strong class="font-bold">fondo</strong> y al menos un <strong class="font-bold">sonido</strong>.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-6">
+                <strong class="text-red-600">Presentación:</strong>
+                Una vez terminado, deberás presentar tu videojuego a la clase, explicando cómo lo programaste y qué bloques utilizaste para cada funcionalidad.
+            </p>
+            <div class="evaluation-criteria">
+                <p><strong>Criterios trabajados:</strong></p>
+                <ul class="list-disc list-inside ml-4">
+                    <li><strong>Criterio 1.3:</strong> Entender la estructura básica de un programa informático.</li>
+                    <li><strong>Criterio 2.1:</strong> Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Cuestionario -->
         <section id="cuestionario" class="card p-8">
             <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes!</h2>
@@ -360,116 +551,169 @@
             </form>
         </section>
 
-        <!-- Nueva Sección: Actividades de Práctica y Evaluación -->
-        <section id="actividades-evaluacion" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">Actividades de Práctica y Evaluación</h2>
-            <p class="text-lg mb-4 leading-relaxed">
-                ¡Es hora de poner en práctica todo lo aprendido! Aquí tienes una serie de actividades para consolidar tus conocimientos y demostrar tus habilidades en programación con Scratch.
-            </p>
+        <!-- Rúbrica Interactiva de Evaluación UD1 -->
+        <section id="rubrica-evaluacion" class="card p-8 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 shadow-md">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-amber-900 flex items-center gap-2 section-title border-amber-500">
+                        📋 Rúbrica Interactiva de Evaluación (UD1: Videojuegos con Scratch)
+                    </h2>
+                    <p class="text-sm text-amber-800 mt-1">
+                        Haz clic en la valoración de cada apartado para calcular la nota final del proyecto (1 a 10). 
+                        <strong class="text-amber-950 underline">¡Se prima especialmente el esfuerzo, trabajo constante e interés en clase!</strong>
+                    </p>
+                </div>
+                <div id="rubricScoreBadgeUD1" class="bg-amber-600 text-white font-extrabold px-5 py-2.5 rounded-xl text-lg shadow-sm flex items-center gap-2 whitespace-nowrap">
+                    <span>Nota:</span> <span id="totalScoreUD1">0.0</span> / 10
+                </div>
+            </div>
 
-            <!-- Actividades de Práctica -->
-            <h3 class="text-2xl font-semibold mt-8 mb-4">Actividades para Practicar:</h3>
-            <ul class="list-disc list-inside text-lg space-y-3 ml-4">
-                <li>
-                    <strong class="text-blue-600">Historia Interactiva:</strong> Crea una historia corta en Scratch donde al menos dos personajes interactúen. Utiliza bloques de "decir", "cambiar disfraz" y "esperar" para controlar el flujo de la conversación.
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>1.3. Entender la estructura básica de un programa informático.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <strong class="text-blue-600">Bucle de Movimiento:</strong> Diseña un programa donde un personaje se mueva por la pantalla rebotando en los bordes "por siempre". Añade un sonido cada vez que rebote.
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>1.3. Entender la estructura básica de un programa informático.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <strong class="text-blue-600">Control por Teclado:</strong> Haz que un personaje se mueva arriba, abajo, izquierda y derecha utilizando las teclas de flecha del teclado.
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>1.3. Entender la estructura básica de un programa informático.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <strong class="text-blue-600">Cambio de Fondo Condicional:</strong> Crea un escenario en Scratch que cambie de fondo cuando un personaje toque un color específico o un objeto determinado.
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>1.3. Entender la estructura básica de un programa informático.</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left bg-white rounded-xl shadow-sm border border-amber-200">
+                    <thead class="bg-amber-900 text-white text-xs uppercase font-semibold">
+                        <tr>
+                            <th class="p-3 w-1/4">Items de Evaluación</th>
+                            <th class="p-1.5 text-center bg-red-800/90">No realizado<br><span class="text-[10px] font-normal">(1-2 pts)</span></th>
+                            <th class="p-1.5 text-center bg-orange-700/90">Deficiente<br><span class="text-[10px] font-normal">(3-4 pts)</span></th>
+                            <th class="p-1.5 text-center bg-yellow-600/90">Suficiente<br><span class="text-[10px] font-normal">(5 pts)</span></th>
+                            <th class="p-1.5 text-center bg-blue-700/90">Bien<br><span class="text-[10px] font-normal">(6 pts)</span></th>
+                            <th class="p-1.5 text-center bg-indigo-700/90">Notable<br><span class="text-[10px] font-normal">(7-8 pts)</span></th>
+                            <th class="p-1.5 text-center bg-emerald-700/90">Sobresaliente<br><span class="text-[10px] font-normal">(9-10 pts)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 font-medium text-gray-800">
+                        <!-- Item 1: Esfuerzo (40%) -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold text-amber-950">
+                                💪 1. Esfuerzo, Trabajo Diario e Interés
+                                <span class="block text-[11px] font-normal text-amber-800 mt-0.5">Constancia diaria en el aula, ganas de aprender, superar bloqueos y actitud proactiva (Peso: 40%)</span>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 1, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">1</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 2, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">2</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 3, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">3</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 4, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">4</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud1', 1, 5, this)" class="rubric-btn ud1-c1 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-yellow-50 text-[11px]">5</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud1', 1, 6, this)" class="rubric-btn ud1-c1 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-blue-50 text-[11px]">6</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 7, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">7</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 8, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">8</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 9, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">9</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 1, 10, this)" class="rubric-btn ud1-c1 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">10 ⭐</button>
+                                </div>
+                            </td>
+                        </tr>
 
-            <!-- Actividades de Evaluación -->
-            <h3 class="text-2xl font-semibold mt-10 mb-4">Actividades de Evaluación:</h3>
-            <ul class="list-disc list-inside text-lg space-y-4 ml-4">
-                <li>
-                    <strong class="text-green-600">Actividad 1: "Atrapa el Objeto"</strong>
-                    <p class="mt-2">Crea un juego sencillo donde un personaje (por ejemplo, un gato) se mueva por la pantalla (usando bucles y rebotes) y otro objeto (por ejemplo, una manzana) aparezca en posiciones aleatorias. El objetivo es que el gato "atrape" la manzana (detectando el contacto) y cada vez que lo haga, se sume un punto a una variable de "Puntuación". El juego debe terminar después de un tiempo determinado (ej. 30 segundos).</p>
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>1.3. Entender la estructura básica de un programa informático.</li>
-                            <li>2.1. Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <strong class="text-green-600">Actividad 2: "Laberinto Simple" (Trabajo en equipo)</strong>
-                    <p class="mt-2">En parejas o grupos pequeños, diseñad y programad un pequeño juego de laberinto en Scratch. Un personaje debe moverse por un laberinto (dibujado como fondo o con sprites) usando las flechas del teclado. Si el personaje toca las paredes del laberinto, debe volver al inicio. El objetivo es llegar a un punto final. Cada miembro del equipo debe programar al menos una parte del movimiento o la lógica del laberinto.</p>
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>1.3. Entender la estructura básica de un programa informático.</li>
-                            <li>2.1. Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+                        <!-- Item 2: Creatividad (30%) -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold text-amber-950">
+                                🎨 2. Creatividad y Diseño Visual/Sonoro
+                                <span class="block text-[11px] font-normal text-amber-800 mt-0.5">Elección de escenarios, personajes (sprites), disfraces animados, diálogos y sonidos (Peso: 30%)</span>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 1, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">1</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 2, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">2</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 3, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">3</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 4, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">4</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud1', 2, 5, this)" class="rubric-btn ud1-c2 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-yellow-50 text-[11px]">5</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud1', 2, 6, this)" class="rubric-btn ud1-c2 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-blue-50 text-[11px]">6</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 7, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">7</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 8, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">8</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 9, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">9</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 2, 10, this)" class="rubric-btn ud1-c2 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">10 ⭐</button>
+                                </div>
+                            </td>
+                        </tr>
 
-            <!-- Proyecto Final de Unidad -->
-            <h3 class="text-2xl font-semibold mt-10 mb-4">Proyecto Final de Unidad: ¡Mi Gran Videojuego!</h3>
-            <p class="text-lg mb-4 leading-relaxed">
-                Para el proyecto final, deberás crear un videojuego original en Scratch que demuestre todo lo que has aprendido en esta unidad. Puedes trabajar individualmente o en parejas.
-            </p>
-            <p class="text-lg mb-4 leading-relaxed">
-                <strong class="text-red-600">Requisitos Mínimos:</strong>
-            </p>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li>Debe tener al menos <strong class="font-bold">dos personajes</strong> (sprites) que interactúen.</li>
-                <li>Debe incluir <strong class="font-bold">movimiento</strong> para al menos un personaje.</li>
-                <li>Debe usar <strong class="font-bold">bucles</strong> (repeticiones) para alguna acción.</li>
-                <li>Debe usar <strong class="font-bold">condiciones</strong> (decisiones) para que el juego reaccione a eventos (ej. tocar un objeto, perder vida).</li>
-                <li>Debe tener alguna forma de <strong class="font-bold">interacción con el usuario</strong> (ej. control por teclado/ratón, preguntas).</li>
-                <li>Debe incluir una <strong class="font-bold">variable</strong> (ej. puntuación, vida, tiempo).</li>
-                <li>El juego debe tener un <strong class="font-bold">objetivo claro</strong> y un "final" (ganar/perder).</li>
-                <li>Debe incluir un <strong class="font-bold">fondo</strong> y al menos un <strong class="font-bold">sonido</strong>.</li>
-            </ul>
-            <p class="text-lg mb-4 leading-relaxed mt-6">
-                <strong class="text-red-600">Presentación:</strong>
-                Una vez terminado, deberás presentar tu videojuego a la clase, explicando cómo lo programaste y qué bloques utilizaste para cada funcionalidad.
-            </p>
-            <div class="evaluation-criteria">
-                <p><strong>Criterios trabajados:</strong></p>
-                <ul class="list-disc list-inside ml-4">
-                    <li>1.3. Entender la estructura básica de un programa informático.</li>
-                    <li>2.1. Conocer y resolver la variedad de problemas posibles, desarrollando un programa informático y generalizando las soluciones, tanto de forma individual como trabajando en equipo, colaborando y comunicándose de forma adecuada.</li>
-                </ul>
+                        <!-- Item 3: Lógica y Mecánicas del Juego (30%) -->
+                        <tr class="hover:bg-amber-50/50">
+                            <td class="p-3 font-bold text-amber-950">
+                                ⚙️ 3. Lógica y Requisitos de Scratch
+                                <span class="block text-[11px] font-normal text-amber-800 mt-0.5">Programación de movimiento, colisiones, bucles, condicionales y marcador de puntos (Peso: 30%)</span>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 1, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">1</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 2, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">2</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 3, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">3</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 4, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">4</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud1', 3, 5, this)" class="rubric-btn ud1-c3 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-yellow-50 text-[11px]">5</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud1', 3, 6, this)" class="rubric-btn ud1-c3 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-blue-50 text-[11px]">6</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 7, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">7</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 8, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">8</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 9, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">9</button>
+                                    <button type="button" onclick="setRubricScore('ud1', 3, 10, this)" class="rubric-btn ud1-c3 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">10 ⭐</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Retroalimentación / Conclusión -->
+            <div class="mt-4 p-4 bg-white rounded-xl border border-amber-200 flex flex-col md:flex-row items-center justify-between gap-3 shadow-sm">
+                <div id="rubricFeedbackUD1" class="text-sm font-semibold text-gray-700">
+                    👈 Selecciona una puntuación en cada fila para ver la nota y valoración final.
+                </div>
+                <button type="button" onclick="resetRubric('ud1')" class="text-xs bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold px-3 py-1.5 rounded-lg transition-colors border border-amber-300">
+                    🔄 Reiniciar Rúbrica
+                </button>
             </div>
         </section>
 
     </main>
 
     <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
-        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
         <p class="text-sm mt-2">Material didáctico creado para la unidad "Creando mi Videojuego".</p>
     </footer>
 
@@ -482,6 +726,88 @@
             q4: 'b', // 4. Si (condición) entonces
             q5: 'c'  // 5. Presionar una tecla del teclado
         };
+
+        // Estado global para rúbricas interactivas
+        const rubricState = {
+            ud1: { c1: 0, c2: 0, c3: 0 },
+            ud2: { c1: 0, c2: 0, c3: 0 },
+            ud3: { c1: 0, c2: 0, c3: 0 }
+        };
+
+        function setRubricScore(unit, criterion, score, btn) {
+            rubricState[unit][`c${criterion}`] = score;
+
+            const parentRow = btn.closest('tr');
+            const buttons = parentRow.querySelectorAll('.rubric-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-emerald-600', 'bg-indigo-600', 'bg-blue-600', 'bg-yellow-500', 'bg-orange-500', 'bg-red-600', 'text-white', 'font-bold', 'ring-2', 'ring-amber-400', 'ring-emerald-400', 'ring-purple-400');
+                b.classList.add('border-gray-300');
+            });
+
+            btn.classList.remove('border-gray-300');
+            btn.classList.add('text-white', 'font-bold', 'ring-2');
+            
+            if (unit === 'ud1') btn.classList.add('ring-amber-500');
+            else if (unit === 'ud2') btn.classList.add('ring-emerald-500');
+            else btn.classList.add('ring-purple-500');
+
+            if (score >= 9) btn.classList.add('bg-emerald-600');
+            else if (score >= 7) btn.classList.add('bg-indigo-600');
+            else if (score >= 5) btn.classList.add('bg-blue-600');
+            else if (score >= 3) btn.classList.add('bg-yellow-500');
+            else btn.classList.add('bg-red-600');
+
+            const c1 = rubricState[unit].c1;
+            const c2 = rubricState[unit].c2;
+            const c3 = rubricState[unit].c3;
+
+            if (c1 > 0 && c2 > 0 && c3 > 0) {
+                const total = (c1 * 0.40) + (c2 * 0.30) + (c3 * 0.30);
+                const scoreFormatted = total.toFixed(1);
+                const badge = document.getElementById(`totalScore${unit.toUpperCase()}`);
+                const feedback = document.getElementById(`rubricFeedback${unit.toUpperCase()}`);
+
+                if (badge) badge.textContent = scoreFormatted;
+
+                if (feedback) {
+                    if (total >= 9.0) {
+                        feedback.className = "text-sm font-bold text-emerald-700 flex items-center gap-1";
+                        feedback.innerHTML = `🌟 ¡Sobresaliente! (${scoreFormatted}/10) - ¡Excelente trabajo, gran esfuerzo, creatividad e interés continuo!`;
+                    } else if (total >= 7.0) {
+                        feedback.className = "text-sm font-bold text-indigo-700 flex items-center gap-1";
+                        feedback.innerHTML = `👍 ¡Notable! (${scoreFormatted}/10) - Muy buen trabajo, se nota tu constancia y dedicación diaria en el aula.`;
+                    } else if (total >= 6.0) {
+                        feedback.className = "text-sm font-bold text-blue-700 flex items-center gap-1";
+                        feedback.innerHTML = `👌 ¡Bien! (${scoreFormatted}/10) - Buen trabajo en las actividades. ¡Sigue así para llegar al notable!`;
+                    } else if (total >= 5.0) {
+                        feedback.className = "text-sm font-bold text-yellow-700 flex items-center gap-1";
+                        feedback.innerHTML = `✅ ¡Suficiente! (${scoreFormatted}/10) - Cumple los requisitos mínimos. Si aumentas el esfuerzo llegarás más alto.`;
+                    } else {
+                        feedback.className = "text-sm font-bold text-amber-700 flex items-center gap-1";
+                        feedback.innerHTML = `💪 ¡Insuficiente! (${scoreFormatted}/10) - Pide ayuda en clase para completar los apartados pendientes y mejorar la nota.`;
+                    }
+                }
+            }
+        }
+
+        function resetRubric(unit) {
+            rubricState[unit] = { c1: 0, c2: 0, c3: 0 };
+            const container = document.getElementById(`rubricScoreBadge${unit.toUpperCase()}`)?.closest('.rounded-2xl');
+            if (container) {
+                const buttons = container.querySelectorAll('.rubric-btn');
+                buttons.forEach(b => {
+                    b.classList.remove('bg-emerald-600', 'bg-indigo-600', 'bg-blue-600', 'bg-yellow-500', 'bg-orange-500', 'bg-red-600', 'text-white', 'font-bold', 'ring-2', 'ring-amber-500', 'ring-emerald-500', 'ring-purple-500');
+                    b.classList.add('border-gray-300');
+                });
+            }
+            const badge = document.getElementById(`totalScore${unit.toUpperCase()}`);
+            if (badge) badge.textContent = "0.0";
+            const feedback = document.getElementById(`rubricFeedback${unit.toUpperCase()}`);
+            if (feedback) {
+                feedback.className = "text-sm font-semibold text-gray-700";
+                feedback.textContent = "👈 Selecciona una puntuación en cada fila para ver la nota y valoración final.";
+            }
+        }
 
         function checkQuiz() {
             const form = document.getElementById('quizForm');

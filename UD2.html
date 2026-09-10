@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos introducimos en el mundo de las apps</title>
+    <title>La IA está aquí para quedarse</title>
     <!-- Enlace a Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Fuente Inter para una mejor legibilidad -->
@@ -72,19 +72,22 @@
     </style>
 </head>
 <body class="antialiased">
-    <header class="bg-gradient-to-r from-purple-600 to-pink-500 text-white p-6 shadow-lg rounded-b-xl">
+    <header class="bg-gradient-to-r from-teal-600 to-lime-500 text-white p-6 shadow-lg rounded-b-xl">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">📱 Nos introducimos en el mundo de las apps 🚀</h1>
+            <h1 class="text-4xl font-extrabold mb-2 md:mb-0">🧠 La IA está aquí para quedarse 🤖</h1>
             <nav>
-                <ul class="flex space-x-6 text-lg font-medium">
+                <ul class="flex flex-wrap items-center space-x-4 md:space-x-6 text-lg font-medium">
+                    <li><a href="index.html" class="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg font-bold transition-colors inline-flex items-center gap-1 shadow-sm">🏠 Inicio</a></li>
                     <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
-                    <li><a href="#ides-bloques" class="hover:text-gray-200 transition-colors duration-300">IDEs Móviles</a></li>
-                    <li><a href="#programacion-eventos" class="hover:text-gray-200 transition-colors duration-300">Eventos</a></li>
-                    <li><a href="#definicion-eventos" class="hover:text-gray-200 transition-colors duration-300">Definición</a></li>
-                    <li><a href="#sensores" class="hover:text-gray-200 transition-colors duration-300">Sensores</a></li>
-                    <li><a href="#interaccion-es" class="hover:text-gray-200 transition-colors duration-300">Interacción E/S</a></li>
-                    <li><a href="#actividades-evaluacion" class="hover:text-gray-200 transition-colors duration-300">Evaluación</a></li>
+                    <li><a href="#definicion-ia" class="hover:text-gray-200 transition-colors duration-300">¿Qué es la IA?</a></li>
+                    <li><a href="#etica-responsabilidad" class="hover:text-gray-200 transition-colors duration-300">Ética en IA</a></li>
+                    <li><a href="#agentes-inteligentes" class="hover:text-gray-200 transition-colors duration-300">Agentes Inteligentes</a></li>
+                    <li><a href="#aprendizaje-automatico" class="hover:text-gray-200 transition-colors duration-300">Aprendizaje Automático</a></li>
+                    <li><a href="#tipos-aprendizaje" class="hover:text-gray-200 transition-colors duration-300">Tipos de Aprendizaje</a></li>
+                    <li><a href="#ml-for-kids" class="hover:text-gray-200 transition-colors duration-300">ML for Kids</a></li>
+                    <li><a href="#actividades-evaluacion" class="hover:text-gray-200 transition-colors duration-300">Actividades</a></li>
                     <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
+                    <li><a href="#rubrica-evaluacion" class="hover:text-gray-200 transition-colors duration-300 font-bold text-emerald-200">📋 Rúbrica</a></li>
                 </ul>
             </nav>
         </div>
@@ -92,298 +95,371 @@
 
     <main class="container mx-auto p-8 space-y-12">
 
+        <!-- Planificación Didáctica de la Unidad 2 -->
+        <section class="card p-6 bg-gradient-to-r from-emerald-50 to-teal-50 border-l-8 border-emerald-500 shadow-md">
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-3xl">🤖</span>
+                <div>
+                    <h3 class="text-xl font-bold text-emerald-900">Planificación y Fases Didácticas de la Unidad 2: IA con Scratch</h3>
+                    <p class="text-xs font-semibold text-emerald-800 bg-emerald-200/60 inline-block px-2.5 py-1 rounded-md mt-1">
+                        ⏱️ Planificación flexible y orientativa: Adaptable al ritmo del grupo, festivos e iteración en el aula (~5-6 sesiones estimadas).
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mt-4">
+                <div class="bg-white p-3 rounded-lg border border-emerald-200 shadow-sm">
+                    <p class="font-bold text-emerald-800 mb-1">Fase 1: Conceptos e IA en Scratch (Orientativo ~1-2 sesiones)</p>
+                    <p class="text-gray-600">Revisión rápida de qué es la IA y agentes inteligentes. Programar un personaje persecutor inteligente en Scratch.</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-emerald-200 shadow-sm">
+                    <p class="font-bold text-emerald-800 mb-1">Fase 2: Entrenar la IA en MLforKids (Orientativo ~2 sesiones)</p>
+                    <p class="text-gray-600">Crear modelos de clasificación de texto o imágenes en `machinelearningforkids.co.uk` con etiquetas de datos.</p>
+                </div>
+                <div class="bg-white p-3 rounded-lg border border-emerald-200 shadow-sm">
+                    <p class="font-bold text-emerald-800 mb-1">Fase 3: Proyecto Scratch + IA (Orientativo ~2 sesiones)</p>
+                    <p class="text-gray-600">Conectar los bloques de MLforKids en Scratch para crear el Chatbot Inteligente o Clasificador de Mensajes.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Introducción -->
         <section id="introduccion" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">¡Creando tus Propias Aplicaciones Móviles!</h2>
+            <h2 class="text-3xl font-bold mb-6 section-title">¡Descubre el Poder de la IA y el Aprendizaje Automático en Scratch!</h2>
             <p class="text-lg mb-4 leading-relaxed">
-                Seguro que usas aplicaciones en tu móvil o tablet todos los días: juegos, redes sociales, calculadoras... ¿Te imaginas poder crear las tuyas propias? En esta unidad, vamos a descubrir cómo se diseñan y programan las aplicaciones móviles, ¡y tú serás el desarrollador!
+                ¿Has hablado alguna vez con un asistente de voz como Siri o Google Assistant? ¿O has visto cómo Netflix te recomienda películas que te encantan? Todo esto es posible gracias a la <strong class="text-teal-600">Inteligencia Artificial (IA)</strong>.
             </p>
             <p class="text-lg mb-4 leading-relaxed">
-                Al igual que con los videojuegos, usaremos una forma de programación visual con bloques, pero esta vez enfocada a los dispositivos móviles. Esto te permitirá ver tus creaciones directamente en un teléfono o tablet.
+                La IA es una de las tecnologías más emocionantes de nuestro tiempo, y está en todas partes, desde los videojuegos hasta los coches que se conducen solos. En esta unidad, vamos a explorar qué es la IA, cómo funciona y por qué es tan importante para nuestro futuro.
             </p>
             <div class="flex justify-center mt-6">
-                <img src="mobile.jpg" alt="Ejemplo de aplicación móvil" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
+                <img src="ia.png" alt="Concepto de Inteligencia Artificial" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/6d28d9/ffffff?text=Concepto+de+Inteligencia+Artificial';">
             </div>
             <p class="text-center text-sm text-gray-500 mt-2">
-                 -  - ¡Pronto podrás crear algo así!
+                 -  - La IA está transformando el mundo.
             </p>
         </section>
 
-        <!-- CYR.1.D.1. Introducción a los IDEs de lenguajes de bloques para móviles. -->
-        <section id="ides-bloques" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">1. IDEs de Bloques para Móviles: Tu Taller de Apps</h2>
+        <!-- CYR.1.H.1. Definición de la Inteligencia Artificial. -->
+        <section id="definicion-ia" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">1. ¿Qué es la Inteligencia Artificial?</h2>
             <p class="text-lg mb-4 leading-relaxed">
-                Un <strong class="text-blue-600">IDE</strong> (Entorno de Desarrollo Integrado) es como tu "taller" o "estudio" donde creas las aplicaciones. Para móviles y con bloques, el más conocido es <strong class="text-purple-600">App Inventor</strong>.
+                La <strong class="text-blue-600">Inteligencia Artificial (IA)</strong> es la capacidad de las máquinas para <strong class="text-blue-600">imitar la inteligencia humana</strong>. Esto significa que un programa de IA puede hacer cosas que normalmente requieren pensamiento humano, como:
             </p>
-            <p class="text-lg mb-4 leading-relaxed">
-                App Inventor te permite diseñar la interfaz de tu aplicación (los botones, imágenes, textos) y luego programar su comportamiento usando bloques, de forma muy similar a como lo hiciste con Scratch.
-            </p>
-            <h3 class="text-2xl font-semibold mt-6 mb-4">Partes de un IDE de Bloques (App Inventor):</h3>
             <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><strong class="text-purple-600">Diseñador:</strong> Donde arrastras y sueltas los elementos visuales de tu app (botones, etiquetas, imágenes).</li>
-                <li><strong class="text-purple-600">Bloques:</strong> Donde programas la lógica de tu app uniendo bloques, como en Scratch.</li>
-                <li><strong class="text-purple-600">Emulador/Conexión:</strong> Para probar tu app en un móvil virtual o real.</li>
-            </ul>
-            <div class="flex justify-center mt-6">
-                <img src="app_inventor.jpg" alt="Interfaz de App Inventor" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
-            </div>
-            <p class="text-center text-sm text-gray-500 mt-2">
-                 - ¡Así se ve el entorno de App Inventor!
-            </p>
-            <p class="text-lg mt-6">
-                <strong class="text-blue-600">¡Actividad Práctica!</strong> Visita la web de App Inventor y familiarízate con su interfaz: <a href="https://appinventor.mit.edu/" target="_blank" class="text-blue-500 hover:underline">MIT App Inventor</a>
-            </p>
-        </section>
-
-        <!-- CYR.1.D.2. Introducción a la programación orientada a eventos. -->
-        <section id="programacion-eventos" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">2. Programación Orientada a Eventos: ¡La App Reacciona!</h2>
-            <p class="text-lg mb-4 leading-relaxed">
-                En las aplicaciones móviles, la programación es principalmente <strong class="text-green-600">orientada a eventos</strong>. Esto significa que la aplicación está "esperando" a que algo suceda para reaccionar.
-            </p>
-            <p class="text-lg mb-4 leading-relaxed">
-                Piensa en un botón: la aplicación no hace nada hasta que tú <strong class="text-green-600">haces clic</strong> en él. Ese clic es un <strong class="text-green-600">evento</strong>. Cuando el evento ocurre, la aplicación ejecuta el código que le has dicho que ejecute para ese evento.
-            </p>
-            <h3 class="text-2xl font-semibold mt-6 mb-4">Ejemplo: Un Botón que Habla</h3>
-            <div class="bg-gray-100 p-4 rounded-lg shadow-inner mb-4">
-                <pre class="whitespace-pre-wrap text-base font-mono">
-<span class="text-purple-700">cuando Boton1.Clic hacer</span>
-  <span class="text-blue-700">llamar TextoAVoz1.Hablar mensaje (Hola, mundo!)</span>
-                </pre>
-            </div>
-            <p class="text-center text-sm text-gray-500 mt-2">
-                 - La app espera un evento para actuar.
-            </p>
-            <p class="text-lg mt-6">
-                <strong class="text-blue-600">¡Actividad Práctica!</strong> En App Inventor, crea un nuevo proyecto, añade un botón y programa para que, al hacer clic, cambie el texto de una etiqueta.
-            </p>
-        </section>
-
-        <!-- CYR.1.D.3. Definición de eventos. -->
-        <section id="definicion-eventos" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">3. ¿Qué es un Evento?</h2>
-            <p class="text-lg mb-4 leading-relaxed">
-                Un <strong class="text-red-600">evento</strong> es una acción o suceso que ocurre y al que la aplicación puede responder. Son la clave para que tu app sea interactiva.
-            </p>
-            <h3 class="text-2xl font-semibold mt-6 mb-4">Tipos Comunes de Eventos en Apps:</h3>
-            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><strong class="text-red-600">Eventos de usuario:</strong>
-                    <ul class="list-circle list-inside ml-4 mt-2">
-                        <li><strong class="text-orange-700">Clic/Toque:</strong> Cuando el usuario toca un botón o la pantalla.</li>
-                        <li><strong class="text-orange-700">Arrastrar:</strong> Cuando el usuario mueve un elemento en la pantalla.</li>
-                        <li><strong class="text-orange-700">Escribir:</strong> Cuando el usuario introduce texto en un campo.</li>
-                    </ul>
-                </li>
-                <li><strong class="text-red-600">Eventos del sistema/dispositivo:</strong>
-                    <ul class="list-circle list-inside ml-4 mt-2">
-                        <li><strong class="text-orange-700">Agitar:</strong> Cuando el móvil es agitado.</li>
-                        <li><strong class="text-orange-700">Orientación:</strong> Cuando el móvil cambia de posición (horizontal/vertical).</li>
-                        <li><strong class="text-orange-700">Temporizador:</strong> Cuando pasa un tiempo determinado.</li>
-                    </ul>
-                </li>
+                <li><strong class="text-purple-600">Aprender:</strong> Mejorar con la experiencia.</li>
+                <li><strong class="text-purple-600">Razonar:</strong> Resolver problemas y tomar decisiones.</li>
+                <li><strong class="text-purple-600">Comprender el lenguaje:</strong> Entender lo que decimos o escribimos.</li>
+                <li><strong class="text-purple-600">Reconocer patrones:</strong> Identificar caras, objetos o voces.</li>
             </ul>
             <p class="text-lg mb-4 leading-relaxed mt-4">
-                Cada vez que ocurre uno de estos eventos, si has programado una respuesta, tu aplicación hará algo.
+                En resumen, la IA permite que las máquinas "piensen" y actúen de forma inteligente para realizar tareas.
             </p>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Ejemplos de IA en tu día a día:</h3>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Asistentes de voz:</strong> Siri, Google Assistant, Alexa.</li>
+                <li><strong class="text-purple-600">Recomendaciones:</strong> Netflix, YouTube, Spotify.</li>
+                <li><strong class="text-purple-600">Filtros de spam:</strong> En tu correo electrónico.</li>
+                <li><strong class="text-purple-600">Reconocimiento facial:</strong> Para desbloquear tu móvil.</li>
+                <li><strong class="text-purple-600">Videojuegos:</strong> Los personajes controlados por la máquina.</li>
+            </ul>
             <div class="flex justify-center mt-6">
-                <img src="app_inventor2.jpg" alt="Tipos de eventos en apps" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
+                <img src="ia2.jpeg" alt="Ejemplos de IA" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/a78bfa/ffffff?text=Ejemplos+de+IA';">
             </div>
             <p class="text-center text-sm text-gray-500 mt-2">
-                 - ¡Tu app puede reaccionar a muchas cosas!
+                 -  - La IA está por todas partes.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en 3 ejemplos de IA que uses o conozcas en tu vida diaria y compártelos con tus compañeros.
             </p>
         </section>
 
-        <!-- CYR.1.D.4. Generadores de eventos: los sensores. -->
-        <section id="sensores" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">4. Sensores: ¡Los Ojos y Oídos de tu Móvil!</h2>
+        <!-- CYR.1.H.2. Introducción a la ética y responsabilidad social en el uso de IA. -->
+        <section id="etica-responsabilidad" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">2. Ética y Responsabilidad Social en el uso de la IA</h2>
             <p class="text-lg mb-4 leading-relaxed">
-                Los móviles están llenos de <strong class="text-teal-600">sensores</strong> que pueden detectar cosas del mundo real y convertirlas en <strong class="text-teal-600">eventos</strong> para tu aplicación.
+                La IA es muy poderosa, y como todo poder, debe usarse con <strong class="text-green-600">responsabilidad</strong>. Es importante pensar en las consecuencias de cómo usamos la IA.
             </p>
-            <h3 class="text-2xl font-semibold mt-6 mb-4">Algunos Sensores Comunes:</h3>
+            <h3 class="text-2xl font-semibold mt-6 mb-4">Preguntas importantes sobre la ética en IA:</h3>
             <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><strong class="text-teal-600">Acelerómetro:</strong> Detecta el movimiento y la inclinación del móvil (ej. para juegos de carreras).</li>
-                <li><strong class="text-teal-600">GPS:</strong> Conoce la ubicación del móvil (ej. para apps de mapas).</li>
-                <li><strong class="text-teal-600">Giroscopio:</strong> Mide la rotación y orientación (más preciso que el acelerómetro).</li>
-                <li><strong class="text-teal-600">Micrófono:</strong> Captura sonidos (ej. para apps de reconocimiento de voz).</li>
-                <li><strong class="text-teal-600">Cámara:</strong> Captura imágenes y videos.</li>
-                <li><strong class="text-teal-600">Sensor de luz:</strong> Detecta la intensidad de la luz ambiental.</li>
+                <li><strong class="text-green-600">¿Es justa la IA?</strong> ¿Toma decisiones sin prejuicios? Por ejemplo, un sistema de IA que decide quién consigue un trabajo, ¿es justo para todos?</li>
+                <li><strong class="text-green-600">¿Es segura la IA?</strong> ¿Puede causar daño si falla o se usa mal?</li>
+                <li><strong class="text-green-600">¿Respeta nuestra privacidad?</strong> ¿Qué datos nuestros usa y cómo los protege?</li>
+                <li><strong class="text-green-600">¿Quién es responsable si algo sale mal?</strong> Si un coche autónomo tiene un accidente, ¿quién tiene la culpa?</li>
             </ul>
             <p class="text-lg mb-4 leading-relaxed mt-4">
-                Estos sensores generan eventos que tu aplicación puede "escuchar" y usar para hacer cosas interesantes. Por ejemplo, si el acelerómetro detecta que agitas el móvil, ¡puedes programar que se borre la pantalla!
+                Debemos asegurarnos de que la IA se desarrolle y se use para el <strong class="text-green-600">bien de la sociedad</strong>, respetando a las personas y sus derechos.
             </p>
             <div class="flex justify-center mt-6">
-                <img src="mobile_sensors.png" alt="Sensores del móvil" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" >
+                <img src="ia_ethics.png" alt="Ética en la IA" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/4ade80/ffffff?text=Etica+en+la+IA';">
             </div>
             <p class="text-center text-sm text-gray-500 mt-2">
-                 - ¡Tu móvil tiene muchos "superpoderes"!
+                 -  - La IA debe ser justa y segura.
             </p>
             <p class="text-lg mt-6">
-                <strong class="text-blue-600">¡Actividad Práctica!</strong> En App Inventor, añade un componente de "Acelerómetro" y programa para que, al agitar el móvil, un sonido se reproduzca.
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> En grupos, debatan un ejemplo de IA (como un sistema de reconocimiento facial en la calle) y piensen en un posible problema ético que podría surgir y cómo lo solucionarían.
             </p>
         </section>
 
-        <!-- CYR.1.D.5. Introducción a las E/S: captura de eventos y su respuesta. -->
-        <section id="interaccion-es" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">5. E/S en Apps: Captura y Respuesta de Eventos</h2>
+        <!-- CYR.1.H.3. Agentes inteligentes simples. -->
+        <section id="agentes-inteligentes" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">3. Agentes Inteligentes Simples: Pequeños Cerebros Digitales</h2>
             <p class="text-lg mb-4 leading-relaxed">
-                Cuando hablamos de <strong class="text-indigo-600">E/S (Entrada/Salida)</strong> en aplicaciones, nos referimos a cómo la app <strong class="text-indigo-600">recibe información (entrada)</strong> y cómo <strong class="text-indigo-600">muestra o produce información (salida)</strong>. Los eventos son el corazón de la entrada.
+                Un <strong class="text-red-600">agente inteligente</strong> es cualquier cosa (un programa, un robot) que puede <strong class="text-red-600">percibir</strong> su entorno (recibir información), <strong class="text-red-600">procesar</strong> esa información y luego <strong class="text-red-600">actuar</strong> para alcanzar un objetivo.
             </p>
-            <h3 class="text-2xl font-semibold mt-6 mb-4">Proceso de Interacción:</h3>
+            <p class="text-lg mb-4 leading-relaxed">
+                Piensa en el personaje de un videojuego que te persigue:
+            </p>
             <ul class="list-disc list-inside text-lg space-y-2 ml-4">
-                <li><strong class="text-indigo-600">Entrada (Input):</strong>
-                    <ul class="list-circle list-inside ml-4 mt-2">
-                        <li>El usuario toca un botón (evento de clic).</li>
-                        <li>El móvil se agita (evento del acelerómetro).</li>
-                        <li>El micrófono detecta voz (evento de sonido).</li>
-                    </ul>
+                <li><strong class="text-orange-600">Percibe:</strong> Ve dónde estás tú.</li>
+                <li><strong class="text-orange-600">Procesa:</strong> Decide la mejor ruta para alcanzarte.</li>
+                <li><strong class="text-orange-600">Actúa:</strong> Se mueve hacia ti.</li>
+            </ul>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                Estos son ejemplos de agentes inteligentes simples, programados para seguir reglas específicas.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ia_agent.png" alt="Agente inteligente simple" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/fca5a5/ffffff?text=Agente+Inteligente+Simple';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - Así funciona un agente inteligente.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> En Scratch, programa un "sprite" para que persiga al puntero del ratón. Esto es un agente inteligente simple que percibe la posición del ratón y actúa moviéndose hacia él.
+            </p>
+        </section>
+
+        <!-- CYR.1.H.4. Aprendizaje automático. -->
+        <section id="aprendizaje-automatico" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Aprendizaje Automático (Machine Learning): La IA que Aprende</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                El <strong class="text-yellow-600">Aprendizaje Automático (Machine Learning - ML)</strong> es una parte muy importante de la IA. Es la capacidad de los ordenadores para <strong class="text-yellow-600">aprender de los datos sin ser programados explícitamente</strong> para cada tarea.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Imagina que quieres que un ordenador reconozca si una foto es de un perro o un gato. En lugar de decirle "si tiene orejas puntiagudas y bigotes largos es un gato", le muestras <strong class="text-yellow-600">miles de fotos de perros y gatos</strong>. El ordenador, por sí mismo, aprende a diferenciar entre ellos.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed mt-4">
+                El ML se usa en las recomendaciones de Netflix, en el reconocimiento de voz de tu móvil y en los filtros de spam.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="ml_concept.jpeg" alt="Concepto de Machine Learning" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/fcd34d/ffffff?text=Concepto+de+Machine+Learning';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - La IA aprende de los datos.
+            </p>
+            <p class="text-lg mt-6">
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en un juego donde la dificultad se adapte a cómo juegas. ¿Cómo crees que la IA del juego podría "aprender" de tus movimientos para hacerse más difícil o más fácil?
+            </p>
+        </section>
+
+        <!-- CYR.1.H.5. Tipos de aprendizaje. -->
+        <section id="tipos-aprendizaje" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">5. Tipos de Aprendizaje Automático</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Hay varias formas en que las máquinas pueden aprender. Aquí veremos las más básicas:
+            </p>
+            <ul class="list-disc list-inside text-lg space-y-2 ml-4">
+                <li><strong class="text-purple-600">Aprendizaje Supervisado:</strong>
+                    <p class="ml-4 mt-1">Es como aprender con un profesor. Le das a la máquina muchos ejemplos con sus respuestas correctas, y la máquina aprende a dar esas respuestas. <br>
+                    <span class="text-gray-600">Ejemplo: Mostrarle fotos de perros y decirle "esto es un perro", "esto es un gato".</span></p>
                 </li>
-                <li><strong class="text-indigo-600">Procesamiento:</strong>
-                    <ul class="list-circle list-inside ml-4 mt-2">
-                        <li>La app detecta y "escucha" el evento.</li>
-                        <li>Ejecuta el código que has programado para ese evento.</li>
-                    </ul>
+                <li><strong class="text-purple-600">Aprendizaje No Supervisado:</strong>
+                    <p class="ml-4 mt-1">Es como descubrir cosas por ti mismo. Le das a la máquina datos sin respuestas correctas, y la máquina busca patrones o grupos por sí misma. <br>
+                    <span class="text-gray-600">Ejemplo: Agrupar a clientes con gustos similares sin que tú le digas cuáles son esos gustos.</span></p>
                 </li>
-                <li><strong class="text-indigo-600">Salida (Output):</strong>
-                    <ul class="list-circle list-inside ml-4 mt-2">
-                        <li>La app cambia el texto de una etiqueta.</li>
-                        <li>Reproduce un sonido.</li>
-                        <li>Muestra una imagen diferente.</li>
-                        <li>Envía un mensaje.</li>
-                    </ul>
+                <li><strong class="text-purple-600">Aprendizaje por Refuerzo:</strong>
+                    <p class="ml-4 mt-1">Es como aprender jugando a un videojuego. La máquina aprende por "prueba y error", recibiendo "recompensas" por las acciones correctas y "castigos" por las incorrectas. <br>
+                    <span class="text-gray-600">Ejemplo: Un robot aprendiendo a caminar, donde cada paso exitoso es una recompensa.</span></p>
                 </li>
             </ul>
             <div class="flex justify-center mt-6">
-                <img src="mobile_speak.jpg" alt="Flujo de entrada y salida en apps" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/6366f1/ffffff?text=Flujo+de+Entrada+y+Salida+en+Apps';">
+                <img src="ml.webp" alt="Tipos de Machine Learning" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/818cf8/ffffff?text=Tipos+de+ML';">
             </div>
             <p class="text-center text-sm text-gray-500 mt-2">
-                 - ¡Así es como tu app "habla" contigo!
+                 -  - Diferentes formas en que la IA puede aprender.
             </p>
             <p class="text-lg mt-6">
-                <strong class="text-blue-600">¡Actividad Práctica!</strong> Crea una app sencilla donde al pulsar un botón, la app pida al usuario su nombre (entrada) y luego diga "¡Hola, [nombre]!" (salida).
+                <strong class="text-blue-600">¡Actividad Práctica!</strong> Piensa en un ejemplo de la vida real para cada tipo de aprendizaje (supervisado, no supervisado, por refuerzo) que no hayamos mencionado.
             </p>
         </section>
 
-        <!-- Nueva Sección: Actividades de Evaluación -->
+        <!-- Nueva Sección: Machine Learning for Kids -->
+        <section id="ml-for-kids" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">6. Machine Learning for Kids: ¡Crea tu propia IA!</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Para entender de verdad cómo funciona el Aprendizaje Automático, ¡nada mejor que crearlo tú mismo! <strong class="text-pink-600">Machine Learning for Kids</strong> es una herramienta fantástica que te permite entrenar a una IA con tus propios datos y luego usarla en proyectos de Scratch o App Inventor.
+            </p>
+            <p class="text-lg mb-4 leading-relaxed">
+                Es como enseñar a un robot a reconocer cosas. Tú le das ejemplos (imágenes, textos, números) y le dices qué son. El robot "aprende" y luego puede reconocer cosas nuevas por sí mismo.
+            </p>
+            <div class="flex justify-center mt-6">
+                <img src="mlkids.png" alt="Interfaz de Machine Learning for Kids" class="rounded-lg shadow-md w-full md:w-3/4 lg:w-1/2" onerror="this.onerror=null;this.src='https://placehold.co/600x350/ec4899/ffffff?text=Interfaz+de+ML+for+Kids';">
+            </div>
+            <p class="text-center text-sm text-gray-500 mt-2">
+                 -  - ¡Entrena a tu propia IA!
+            </p>
+            <div class="mt-6 p-4 bg-pink-50 border border-pink-200 rounded-lg flex items-center justify-between">
+                <div>
+                    <h4 class="font-bold text-pink-900">🔗 Herramienta de Trabajo: Machine Learning for Kids</h4>
+                    <p class="text-sm text-pink-700">Entrena tus modelos de IA y conéctalos directamente con el editor de Scratch.</p>
+                </div>
+                <a href="https://machinelearningforkids.co.uk/" target="_blank" class="btn-primary text-sm font-bold shadow hover:bg-emerald-600 transition-colors">
+                    Acceder a MLforKids ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- Nueva Sección: Actividades Prácticas y Evaluación de IA + Scratch -->
         <section id="actividades-evaluacion" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">Actividades de Evaluación</h2>
-            <p class="text-lg mb-4 leading-relaxed">
-                Demuestra tus habilidades creando aplicaciones móviles que resuelvan problemas específicos.
+            <h2 class="text-3xl font-bold mb-6 section-title">🏆 Proyectos Prácticos de IA e Integración en Scratch</h2>
+            <p class="text-lg mb-6 leading-relaxed">
+                Pasa de la teoría a la acción entrenando tus propios modelos de Inteligencia Artificial en Machine Learning for Kids e integrándolos directamente dentro de tus juegos y programas en Scratch.
             </p>
 
-            <ul class="list-disc list-inside text-lg space-y-4 ml-4">
-                <li>
-                    <strong class="text-green-600">Actividad 1: "Mi Calculadora de Edad"</strong>
-                    <p class="mt-2">Crea una aplicación móvil sencilla en App Inventor que pida al usuario su año de nacimiento (usando un campo de texto y un botón). Al pulsar el botón, la app debe calcular y mostrar la edad aproximada del usuario en una etiqueta. Asegúrate de que la app reaccione al evento de clic del botón y muestre la información correctamente.</p>
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>2.3. Conocer y resolver la variedad de problemas posibles, desarrollando una aplicación móvil, particularizando las soluciones.</li>
-                        </ul>
+            <!-- Proyecto 1 -->
+            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-xl p-6 mb-8 shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-2xl font-bold text-emerald-900">🤖 Proyecto 1: "Chatbot Clasificador de Sentimientos" (Texto)</h3>
+                    <span class="bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-full">PRÁCTICA IA + SCRATCH</span>
+                </div>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Crea un personaje en Scratch que le pregunte al usuario <em>"¿Cómo te ha ido hoy en el instituto?"</em>. Tu modelo de IA analizará la frase escrita y determinará la emoción del mensaje.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
+                    <div class="bg-white p-3 rounded-lg border border-emerald-200">
+                        <span class="font-bold text-emerald-800 block mb-1">1. Entrenar en MLforKids</span>
+                        Crea 3 etiquetas: `Feliz`, `Triste`, `Neutro` y añade al menos 10 frases de ejemplo a cada una.
                     </div>
-                </li>
-                <li>
-                    <strong class="text-green-600">Actividad 2: "Botón Mágico de Sonido"</strong>
-                    <p class="mt-2">Diseña una aplicación que tenga un botón grande en el centro de la pantalla. Cuando el usuario toque el botón, la aplicación debe reproducir un sonido corto (puedes usar un sonido predeterminado de App Inventor o subir uno sencillo). Además, la app debe cambiar el color de fondo de la pantalla cada vez que se toque el botón.</p>
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>2.3. Conocer y resolver la variedad de problemas posibles, desarrollando una aplicación móvil, particularizando las soluciones.</li>
-                        </ul>
+                    <div class="bg-white p-3 rounded-lg border border-emerald-200">
+                        <span class="font-bold text-emerald-800 block mb-1">2. Programar en Scratch</span>
+                        Importa el modelo a Scratch y usa el bloque `<reconocer texto (respuesta)>` para clasificar el mensaje.
                     </div>
-                </li>
-                <li>
-                    <strong class="text-green-600">Actividad 3: "Agita para Mensaje Secreto"</strong>
-                    <p class="mt-2">Crea una aplicación que utilice el sensor de acelerómetro del móvil. La app debe mostrar un mensaje secreto (por ejemplo, "¡Has descubierto el secreto!") en una etiqueta solo cuando el usuario agite el móvil. Cuando el móvil esté en reposo, la etiqueta debe estar vacía o mostrar un mensaje como "Agita para ver el secreto".</p>
-                    <div class="evaluation-criteria">
-                        <p><strong>Criterios trabajados:</strong></p>
-                        <ul class="list-disc list-inside ml-4">
-                            <li>2.3. Conocer y resolver la variedad de problemas posibles, desarrollando una aplicación móvil, particularizando las soluciones.</li>
-                        </ul>
+                    <div class="bg-white p-3 rounded-lg border border-emerald-200">
+                        <span class="font-bold text-emerald-800 block mb-1">3. Respuesta Animada</span>
+                        El sprite cambia de disfraz (sonrisa, lágrimas, cara neutra) y emite un sonido acorde al sentimiento.
                     </div>
-                </li>
-            </ul>
+                </div>
+                <div class="evaluation-criteria">
+                    <p><strong>Criterios trabajados:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li><strong>Criterio 4.1:</strong> Conocer la naturaleza de los distintos tipos de datos generados hoy en día, siendo capaces de analizarlos, visualizarlos y compararlos, empleando a su vez un espíritu crítico y científico.</li>
+                        <li><strong>Criterio 4.2:</strong> Comprender los principios básicos de funcionamiento de los agentes inteligentes y de las técnicas de aprendizaje automático, con objeto de aplicarlos para la resolución de situaciones mediante la Inteligencia Artificial de forma ética y responsable.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="bg-gradient-to-r from-purple-50 to-indigo-50 border-2 border-purple-300 rounded-xl p-6 mb-8 shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-2xl font-bold text-purple-900">🎨 Proyecto 2: "El Reconocedor de Formas / Gestos" (Visión)</h3>
+                    <span class="bg-purple-600 text-white text-xs font-extrabold px-3 py-1 rounded-full">VISIÓN POR COMPUTADOR</span>
+                </div>
+                <p class="text-gray-700 mb-4 leading-relaxed">
+                    Entrena a la IA para reconocer dibujos hechos por los alumnos en la pantalla o mediante la webcam.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
+                    <div class="bg-white p-3 rounded-lg border border-purple-200">
+                        <span class="font-bold text-purple-800 block mb-1">1. Recopilar Imágenes</span>
+                        Dibuja o sube 15 muestras de 3 formas distintas (ej. `Círculo`, `Triángulo`, `Cuadrado`).
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-purple-200">
+                        <span class="font-bold text-purple-800 block mb-1">2. Entrenamiento</span>
+                        Genera el modelo de visión por computador y prueba su porcentaje de certeza (confianza).
+                    </div>
+                    <div class="bg-white p-3 rounded-lg border border-purple-200">
+                        <span class="font-bold text-purple-800 block mb-1">3. Juego en Scratch</span>
+                        Al dibujar en Scratch, el personaje dice en voz alta qué forma has dibujado y suma puntos si acierta.
+                    </div>
+                </div>
+                <div class="evaluation-criteria">
+                    <p><strong>Criterios trabajados:</strong></p>
+                    <ul class="list-disc list-inside ml-4">
+                        <li><strong>Criterio 4.1:</strong> Conocer la naturaleza de los distintos tipos de datos generados hoy en día, siendo capaces de analizarlos, visualizarlos y compararlos, empleando a su vez un espíritu crítico y científico.</li>
+                        <li><strong>Criterio 4.2:</strong> Comprender los principios básicos de funcionamiento de los agentes inteligentes y de las técnicas de aprendizaje automático, con objeto de aplicarlos para la resolución de situaciones mediante la Inteligencia Artificial de forma ética y responsable.</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <!-- Cuestionario -->
         <section id="cuestionario" class="card p-8">
-            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de Apps!</h2>
+            <h2 class="text-3xl font-bold mb-6 section-title">Cuestionario: ¡Demuestra lo que sabes de IA!</h2>
             <p class="text-lg mb-6 leading-relaxed">
                 Responde a las siguientes preguntas para comprobar lo que has aprendido en esta unidad.
             </p>
 
-            <form id="quizFormApp" onsubmit="event.preventDefault(); checkQuizApp();">
+            <form id="quizFormIA" onsubmit="event.preventDefault(); checkQuizIA();">
                 <!-- Pregunta 1 -->
                 <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
-                    <p class="font-semibold text-xl mb-4">1. ¿Qué es un IDE en el contexto de la creación de aplicaciones?</p>
+                    <p class="font-semibold text-xl mb-4">1. ¿Qué es la Inteligencia Artificial (IA)?</p>
                     <label class="quiz-option block">
-                        <input type="radio" name="q1" value="a"> a) Un tipo de teléfono móvil
+                        <input type="radio" name="q1" value="a"> a) Un nuevo tipo de videojuego
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q1" value="b"> b) Un entorno de desarrollo integrado para crear software
+                        <input type="radio" name="q1" value="b"> b) La capacidad de las máquinas para imitar la inteligencia humana
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q1" value="c"> c) Una aplicación de redes sociales
+                        <input type="radio" name="q1" value="c"> c) Un robot que puede hablar
                     </label>
                 </div>
 
                 <!-- Pregunta 2 -->
                 <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
-                    <p class="font-semibold text-xl mb-4">2. ¿Qué significa que una programación es "orientada a eventos"?</p>
+                    <p class="font-semibold text-xl mb-4">2. ¿Por qué es importante considerar la ética al usar la IA?</p>
                     <label class="quiz-option block">
-                        <input type="radio" name="q2" value="a"> a) Que el programa se ejecuta de principio a fin sin parar
+                        <input type="radio" name="q2" value="a"> a) Para que la IA sea más rápida
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q2" value="b"> b) Que el programa reacciona a sucesos o acciones
+                        <input type="radio" name="q2" value="b"> b) Para asegurar que la IA se use de forma justa y segura para todos
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q2" value="c"> c) Que el programa solo funciona en eventos especiales
+                        <input type="radio" name="q2" value="c"> c) Para que la IA aprenda más rápido
                     </label>
                 </div>
 
                 <!-- Pregunta 3 -->
                 <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
-                    <p class="font-semibold text-xl mb-4">3. ¿Cuál de los siguientes es un ejemplo de "evento de usuario"?</p>
+                    <p class="font-semibold text-xl mb-4">3. ¿Qué hace un "agente inteligente"?</p>
                     <label class="quiz-option block">
-                        <input type="radio" name="q3" value="a"> a) El móvil se queda sin batería
+                        <input type="radio" name="q3" value="a"> a) Solo juega videojuegos
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q3" value="b"> b) El usuario toca un botón en la pantalla
+                        <input type="radio" name="q3" value="b"> b) Percibe su entorno, procesa información y actúa para un objetivo
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q3" value="c"> c) El móvil detecta que hay mucha luz
+                        <input type="radio" name="q3" value="c"> c) Solo habla con las personas
                     </label>
                 </div>
 
                 <!-- Pregunta 4 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
-                    <p class="font-semibold text-xl mb-4">4. ¿Qué tipo de componente en un móvil puede generar eventos al detectar movimiento o inclinación?</p>
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
+                    <p class="font-semibold text-xl mb-4">4. ¿Qué es el Aprendizaje Automático (Machine Learning)?</p>
                     <label class="quiz-option block">
-                        <input type="radio" name="q4" value="a"> a) La pantalla
+                        <input type="radio" name="q4" value="a"> a) Una forma de programar cada paso de la máquina
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q4" value="b"> b) El altavoz
+                        <input type="radio" name="q4" value="b"> b) La capacidad de las máquinas para aprender de los datos sin ser programadas explícitamente
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q4" value="c"> c) Un sensor (como el acelerómetro)
+                        <input type="radio" name="q4" value="c"> c) Un tipo de robot muy avanzado
                     </label>
                 </div>
 
                 <!-- Pregunta 5 -->
-                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="b">
-                    <p class="font-semibold text-xl mb-4">5. Si una app muestra un mensaje en pantalla después de que tocas un botón, ¿qué representa el mensaje?</p>
+                <div class="mb-8 p-6 bg-gray-50 rounded-lg shadow-sm" data-answer="c">
+                    <p class="font-semibold text-xl mb-4">5. Si una IA aprende de ejemplos donde ya se le ha dicho cuál es la respuesta correcta (ej. "esto es un perro"), ¿qué tipo de aprendizaje es?</p>
                     <label class="quiz-option block">
-                        <input type="radio" name="q5" value="a"> a) Una entrada (Input)
+                        <input type="radio" name="q5" value="a"> a) Aprendizaje por refuerzo
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q5" value="b"> b) Una salida (Output)
+                        <input type="radio" name="q5" value="b"> b) Aprendizaje no supervisado
                     </label>
                     <label class="quiz-option block">
-                        <input type="radio" name="q5" value="c"> c) Un sensor
+                        <input type="radio" name="q5" value="c"> c) Aprendizaje supervisado
                     </label>
                 </div>
 
                 <div class="text-center">
-                    <button type="submit" id="checkAnswersBtnApp" class="btn-primary">Comprobar Respuestas</button>
+                    <button type="submit" id="checkAnswersBtnIA" class="btn-primary">Comprobar Respuestas</button>
                     <p class="text-sm text-gray-500 mt-2">
                         Nota: Este cuestionario no guarda tus respuestas.
                     </p>
@@ -391,32 +467,191 @@
             </form>
         </section>
 
+        <!-- Rúbrica Interactiva de Evaluación UD2 -->
+        <section id="rubrica-evaluacion" class="card p-8 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 shadow-md">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+                <div>
+                    <h2 class="text-3xl font-bold text-emerald-900 flex items-center gap-2 section-title border-emerald-500">
+                        📋 Rúbrica Interactiva de Evaluación (UD2: IA con Scratch)
+                    </h2>
+                    <p class="text-sm text-emerald-800 mt-1">
+                        Haz clic en la valoración de cada apartado para calcular la nota del proyecto (1 a 10). 
+                        <strong class="text-emerald-950 underline">¡Se prima la constancia en el entrenamiento, el interés y el esfuerzo diario!</strong>
+                    </p>
+                </div>
+                <div id="rubricScoreBadgeUD2" class="bg-emerald-600 text-white font-extrabold px-5 py-2.5 rounded-xl text-lg shadow-sm flex items-center gap-2 whitespace-nowrap">
+                    <span>Nota:</span> <span id="totalScoreUD2">0.0</span> / 10
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left bg-white rounded-xl shadow-sm border border-emerald-200">
+                    <thead class="bg-emerald-900 text-white text-xs uppercase font-semibold">
+                        <tr>
+                            <th class="p-3 w-1/4">Items de Evaluación</th>
+                            <th class="p-1.5 text-center bg-red-800/90">No realizado<br><span class="text-[10px] font-normal">(1-2 pts)</span></th>
+                            <th class="p-1.5 text-center bg-orange-700/90">Deficiente<br><span class="text-[10px] font-normal">(3-4 pts)</span></th>
+                            <th class="p-1.5 text-center bg-yellow-600/90">Suficiente<br><span class="text-[10px] font-normal">(5 pts)</span></th>
+                            <th class="p-1.5 text-center bg-blue-700/90">Bien<br><span class="text-[10px] font-normal">(6 pts)</span></th>
+                            <th class="p-1.5 text-center bg-indigo-700/90">Notable<br><span class="text-[10px] font-normal">(7-8 pts)</span></th>
+                            <th class="p-1.5 text-center bg-emerald-700/90">Sobresaliente<br><span class="text-[10px] font-normal">(9-10 pts)</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 font-medium text-gray-800">
+                        <!-- Item 1: Esfuerzo (40%) -->
+                        <tr class="hover:bg-emerald-50/50">
+                            <td class="p-3 font-bold text-emerald-950">
+                                💪 1. Esfuerzo, Trabajo Diario e Interés
+                                <span class="block text-[11px] font-normal text-emerald-800 mt-0.5">Trabajo constante en la plataforma MLforKids y Scratch, paciencia en la recopilación de muestras y actitud colaborativa (Peso: 40%)</span>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 1, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">1</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 2, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">2</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 3, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">3</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 4, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">4</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud2', 1, 5, this)" class="rubric-btn ud2-c1 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-yellow-50 text-[11px]">5</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud2', 1, 6, this)" class="rubric-btn ud2-c1 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-blue-50 text-[11px]">6</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 7, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">7</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 8, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">8</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 9, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">9</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 1, 10, this)" class="rubric-btn ud2-c1 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">10 ⭐</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Item 2: Calidad de los Datos (30%) -->
+                        <tr class="hover:bg-emerald-50/50">
+                            <td class="p-3 font-bold text-emerald-950">
+                                🧠 2. Calidad de Datos de Entrenamiento
+                                <span class="block text-[11px] font-normal text-emerald-800 mt-0.5">Creación adecuada de etiquetas (ej. Feliz/Triste/Neutro o Formas) y variedad de ejemplos suficientes (Peso: 30%)</span>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 1, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">1</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 2, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">2</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 3, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">3</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 4, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">4</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud2', 2, 5, this)" class="rubric-btn ud2-c2 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-yellow-50 text-[11px]">5</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud2', 2, 6, this)" class="rubric-btn ud2-c2 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-blue-50 text-[11px]">6</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 7, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">7</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 8, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">8</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 9, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">9</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 2, 10, this)" class="rubric-btn ud2-c2 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">10 ⭐</button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Item 3: Integración del Modelo de IA (30%) -->
+                        <tr class="hover:bg-emerald-50/50">
+                            <td class="p-3 font-bold text-emerald-950">
+                                ⚙️ 3. Integración de la IA en Scratch
+                                <span class="block text-[11px] font-normal text-emerald-800 mt-0.5">Uso correcto del bloque de predicción IA y respuesta animada/sonora del personaje en Scratch (Peso: 30%)</span>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 1, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">1</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 2, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-red-50 text-[11px]">2</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 3, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">3</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 4, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-orange-50 text-[11px]">4</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud2', 3, 5, this)" class="rubric-btn ud2-c3 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-yellow-50 text-[11px]">5</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <button type="button" onclick="setRubricScore('ud2', 3, 6, this)" class="rubric-btn ud2-c3 py-1.5 px-2 rounded border border-gray-300 w-full hover:bg-blue-50 text-[11px]">6</button>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 7, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">7</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 8, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-indigo-50 text-[11px]">8</button>
+                                </div>
+                            </td>
+                            <td class="p-1.5 text-center">
+                                <div class="grid grid-cols-2 gap-1">
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 9, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">9</button>
+                                    <button type="button" onclick="setRubricScore('ud2', 3, 10, this)" class="rubric-btn ud2-c3 p-1 rounded border border-gray-300 hover:bg-emerald-50 text-[11px]">10 ⭐</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Retroalimentación / Conclusión -->
+            <div class="mt-4 p-4 bg-white rounded-xl border border-emerald-200 flex flex-col md:flex-row items-center justify-between gap-3 shadow-sm">
+                <div id="rubricFeedbackUD2" class="text-sm font-semibold text-gray-700">
+                    👈 Selecciona una puntuación en cada fila para ver la nota y valoración final.
+                </div>
+                <button type="button" onclick="resetRubric('ud2')" class="text-xs bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-bold px-3 py-1.5 rounded-lg transition-colors border border-emerald-300">
+                    🔄 Reiniciar Rúbrica
+                </button>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-gray-800 text-white p-6 text-center rounded-t-xl mt-12">
-        <p>&copy; 2025 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
-        <p class="text-sm mt-2">Material didáctico creado para la unidad "Nos introducimos en el mundo de las apps".</p>
+        <p>&copy; 2026 Computación y Robótica - 1º ESO. Todos los derechos reservados.</p>
+        <p class="text-sm mt-2">Material didáctico creado para la unidad "La IA está aquí para quedarse".</p>
     </footer>
 
     <script>
-        // Definición de las respuestas correctas para cada pregunta (qX: respuesta_correcta)
-        const CORRECT_ANSWERS_APP = {
-            q1: 'b', // 1. Un entorno de desarrollo integrado para crear software
-            q2: 'b', // 2. Que el programa reacciona a sucesos o acciones
-            q3: 'b', // 3. El usuario toca un botón en la pantalla
-            q4: 'c', // 4. Un sensor (como el acelerómetro)
-            q5: 'b'  // 5. Una salida (Output)
+        // Definición de las respuestas correctas para cada pregunta
+        const CORRECT_ANSWERS_IA = {
+            q1: 'b', // 1. La capacidad de las máquinas para imitar la inteligencia humana
+            q2: 'b', // 2. Para asegurar que la IA se use de forma justa y segura para todos
+            q3: 'b', // 3. Percibe su entorno, procesa información y actúa para un objetivo
+            q4: 'b', // 4. La capacidad de las máquinas para aprender de los datos sin ser programadas explícitamente
+            q5: 'c'  // 5. Aprendizaje supervisado
         };
 
-        function checkQuizApp() {
-            const form = document.getElementById('quizFormApp');
-            // Usamos un selector CSS más general para encontrar los contenedores de preguntas
+        function checkQuizIA() {
+            const form = document.getElementById('quizFormIA');
+            // Selector para encontrar los contenedores de preguntas
             const questions = form.querySelectorAll('.mb-8.p-6.bg-gray-50.rounded-lg.shadow-sm');
             
             // Recorrer todas las preguntas
             questions.forEach((questionDiv, index) => {
                 const questionName = `q${index + 1}`;
-                const correctAnswer = CORRECT_ANSWERS_APP[questionName];
+                const correctAnswer = CORRECT_ANSWERS_IA[questionName];
                 const selectedOption = form.querySelector(`input[name="${questionName}"]:checked`);
                 
                 // Limpiar clases de feedback anteriores
@@ -455,9 +690,87 @@
         }
 
         // Configurar el botón para que ejecute la función
-        document.getElementById('checkAnswersBtnApp').type = 'button';
-        document.getElementById('checkAnswersBtnApp').onclick = checkQuizApp;
-        
+        document.getElementById('checkAnswersBtnIA').type = 'button';
+        document.getElementById('checkAnswersBtnIA').onclick = checkQuizIA;
+
+        // Estado global para rúbricas interactivas
+        const rubricState = {
+            ud1: { c1: 0, c2: 0, c3: 0 },
+            ud2: { c1: 0, c2: 0, c3: 0 },
+            ud3: { c1: 0, c2: 0, c3: 0 }
+        };
+
+        function setRubricScore(unit, criterion, score, btn) {
+            rubricState[unit][`c${criterion}`] = score;
+
+            const parentRow = btn.closest('tr');
+            const buttons = parentRow.querySelectorAll('.rubric-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-emerald-600', 'bg-indigo-600', 'bg-blue-600', 'bg-yellow-500', 'bg-orange-500', 'bg-red-600', 'text-white', 'font-bold', 'ring-2', 'ring-amber-400', 'ring-emerald-400', 'ring-purple-400');
+                b.classList.add('border-gray-300');
+            });
+
+            btn.classList.remove('border-gray-300');
+            btn.classList.add('text-white', 'font-bold', 'ring-2');
+            
+            if (unit === 'ud1') btn.classList.add('ring-amber-500');
+            else if (unit === 'ud2') btn.classList.add('ring-emerald-500');
+            else btn.classList.add('ring-purple-500');
+
+            if (score >= 9) btn.classList.add('bg-emerald-600');
+            else if (score >= 7) btn.classList.add('bg-indigo-600');
+            else if (score >= 5) btn.classList.add('bg-blue-600');
+            else if (score >= 3) btn.classList.add('bg-yellow-500');
+            else btn.classList.add('bg-red-600');
+
+            const c1 = rubricState[unit].c1;
+            const c2 = rubricState[unit].c2;
+            const c3 = rubricState[unit].c3;
+
+            if (c1 > 0 && c2 > 0 && c3 > 0) {
+                const total = (c1 * 0.40) + (c2 * 0.30) + (c3 * 0.30);
+                const scoreFormatted = total.toFixed(1);
+                const badge = document.getElementById(`totalScore${unit.toUpperCase()}`);
+                const feedback = document.getElementById(`rubricFeedback${unit.toUpperCase()}`);
+
+                if (badge) badge.textContent = scoreFormatted;
+
+                if (feedback) {
+                    if (total >= 9.0) {
+                        feedback.className = "text-sm font-bold text-emerald-700 flex items-center gap-1";
+                        feedback.innerHTML = `🌟 ¡Sobresaliente! (${scoreFormatted}/10) - ¡Enhorabuena por tu gran esfuerzo, creatividad e interés diario!`;
+                    } else if (total >= 7.0) {
+                        feedback.className = "text-sm font-bold text-indigo-700 flex items-center gap-1";
+                        feedback.innerHTML = `👍 ¡Notable! (${scoreFormatted}/10) - Muy buen trabajo, se nota tu constancia y dedicación en clase.`;
+                    } else if (total >= 5.0) {
+                        feedback.className = "text-sm font-bold text-blue-700 flex items-center gap-1";
+                        feedback.innerHTML = `👌 ¡Aprobado / Suficiente! (${scoreFormatted}/10) - Buen intento. Si sigues practicando y esforzándote, ¡llegarás al notable!`;
+                    } else {
+                        feedback.className = "text-sm font-bold text-amber-700 flex items-center gap-1";
+                        feedback.innerHTML = `💪 ¡Sigue intentándolo! (${scoreFormatted}/10) - Pide ayuda al profesor para completar las partes que faltan y mejorar la nota.`;
+                    }
+                }
+            }
+        }
+
+        function resetRubric(unit) {
+            rubricState[unit] = { c1: 0, c2: 0, c3: 0 };
+            const container = document.getElementById(`rubricScoreBadge${unit.toUpperCase()}`)?.closest('.rounded-2xl');
+            if (container) {
+                const buttons = container.querySelectorAll('.rubric-btn');
+                buttons.forEach(b => {
+                    b.classList.remove('bg-emerald-600', 'bg-indigo-600', 'bg-blue-600', 'bg-yellow-500', 'bg-orange-500', 'bg-red-600', 'text-white', 'font-bold', 'ring-2', 'ring-amber-500', 'ring-emerald-500', 'ring-purple-500');
+                    b.classList.add('border-gray-300');
+                });
+            }
+            const badge = document.getElementById(`totalScore${unit.toUpperCase()}`);
+            if (badge) badge.textContent = "0.0";
+            const feedback = document.getElementById(`rubricFeedback${unit.toUpperCase()}`);
+            if (feedback) {
+                feedback.className = "text-sm font-semibold text-gray-700";
+                feedback.textContent = "👈 Selecciona una puntuación en cada fila para ver la nota y valoración final.";
+            }
+        }
     </script>
 </body>
 </html>
