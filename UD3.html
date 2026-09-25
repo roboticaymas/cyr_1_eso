@@ -76,12 +76,14 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <h1 class="text-4xl font-extrabold mb-2 md:mb-0">📱 Dispositivos Portátiles y Arcade 👾</h1>
             <nav>
-                <ul class="flex flex-wrap items-center space-x-4 md:space-x-6 text-lg font-medium">
+                <ul class="flex flex-wrap items-center space-x-4 md:space-x-6 text-sm md:text-base font-medium">
                     <li><a href="index.html" class="bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded-lg font-bold transition-colors inline-flex items-center gap-1 shadow-sm">🏠 Inicio</a></li>
                     <li><a href="#introduccion" class="hover:text-gray-200 transition-colors duration-300">Introducción</a></li>
                     <li><a href="#ides-portatiles" class="hover:text-gray-200 transition-colors duration-300">IDEs Portátiles</a></li>
                     <li><a href="#programacion-eventos" class="hover:text-gray-200 transition-colors duration-300">Eventos A/B</a></li>
                     <li><a href="#makecode-arcade" class="hover:text-gray-200 transition-colors duration-300">MakeCode Arcade</a></li>
+                    <li><a href="#componentes-sensores" class="hover:text-gray-200 transition-colors duration-300">Componentes & Sensores</a></li>
+                    <li><a href="#publicacion-distribucion" class="hover:text-gray-200 transition-colors duration-300">Publicación</a></li>
                     <li><a href="#actividades-evaluacion" class="hover:text-gray-200 transition-colors duration-300">Torneo & Evaluación</a></li>
                     <li><a href="#cuestionario" class="hover:text-gray-200 transition-colors duration-300">Cuestionario</a></li>
                     <li><a href="#rubrica-evaluacion" class="hover:text-gray-200 transition-colors duration-300 font-bold text-purple-200">📋 Rúbrica</a></li>
@@ -105,16 +107,16 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mt-4">
                 <div class="bg-white p-3 rounded-lg border border-purple-200 shadow-sm">
-                    <p class="font-bold text-purple-800 mb-1">Fase 1: Arquitectura y Prototipado (Orientativo ~1 sesión)</p>
-                    <p class="text-gray-600">Entender cómo interactúan las pantallas, botones y sensores de dispositivos portátiles. Ficha de prototipado en papel (Wireframe).</p>
+                    <p class="font-bold text-purple-800 mb-1">Fase 1: Arquitectura, Componentes y Prototipado (~1 sesión)</p>
+                    <p class="text-gray-600">Entender cómo interactúan las pantallas, botones, componentes visuales/no visuales y sensores de dispositivos portátiles. Prototipado Wireframe.</p>
                 </div>
                 <div class="bg-white p-3 rounded-lg border border-purple-200 shadow-sm">
-                    <p class="font-bold text-purple-800 mb-1">Fase 2: Eventos con MakeCode Arcade (Orientativo ~1-2 sesiones)</p>
-                    <p class="text-gray-600">Crear un juego retro en el simulador de consola portátil (D-Pad + Botones A/B) trabajando eventos y sprites.</p>
+                    <p class="font-bold text-purple-800 mb-1">Fase 2: Eventos con MakeCode Arcade (~1-2 sesiones)</p>
+                    <p class="text-gray-600">Crear un juego retro en el simulador de consola portátil (D-Pad + Botones A/B) trabajando eventos, sprites y empaquetado/QR.</p>
                 </div>
                 <div class="bg-white p-3 rounded-lg border border-purple-200 shadow-sm">
-                    <p class="font-bold text-purple-800 mb-1">Fase 3: Torneo Arcade de Clase (Orientativo ~1 sesión)</p>
-                    <p class="text-gray-600">Cierre festivo del trimestre: probar y evaluar los juegos retro creados por los compañeros en pantalla.</p>
+                    <p class="font-bold text-purple-800 mb-1">Fase 3: Torneo Arcade y Publicación (~1 sesión)</p>
+                    <p class="text-gray-600">Cierre festivo del trimestre: probar, publicar mediante QR/enlace y evaluar los juegos retro creados por los compañeros en pantalla.</p>
                 </div>
             </div>
         </section>
@@ -282,6 +284,110 @@
                     <li><strong class="text-white">Crear el Premio:</strong> Añade otro sprite <code>set myFood to sprite [MONEDA] of kind Food</code> y colócalo en una posición aleatoria.</li>
                     <li><strong class="text-white">Evento de Choque:</strong> Usa el bloque de evento <code>on sprite of kind Player overlaps sprite of kind Food</code> → dentro pon <code>change score by 1</code> y mueve la moneda de sitio. ¡Listo para jugar!</li>
                 </ol>
+            </div>
+        </section>
+
+        <!-- CYR.1.D.4. Componentes y propiedades de las aplicaciones móviles y prototipado. -->
+        <section id="componentes-sensores" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">4. Componentes, Propiedades y Sensores del Móvil</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Toda aplicación móvil se compone de elementos gráficos que el usuario ve y toca (<strong class="text-purple-600">componentes visuales</strong>) y de funciones o sensores internos que trabajan en segundo plano (<strong class="text-purple-600">componentes no visuales</strong>).
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <!-- Componentes Visuales -->
+                <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3 flex items-center gap-2">
+                        🖼️ Componentes Visuales (Interfaz UI)
+                    </h3>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        Son los elementos que el diseñador coloca en la pantalla del dispositivo móvil.
+                    </p>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                        <li><strong class="text-blue-800">Botones (Buttons):</strong> Permiten al usuario hacer clic o pulsar para desencadenar una acción.</li>
+                        <li><strong class="text-blue-800">Etiquetas (Labels):</strong> Muestran texto explicativo o puntuaciones en pantalla.</li>
+                        <li><strong class="text-blue-800">Imágenes (Images / Sprites):</strong> Muestran fotos, iconos o personajes animados.</li>
+                        <li><strong class="text-blue-800">Campos de Texto (TextBox):</strong> Permiten que el usuario escriba información (ej. su nombre).</li>
+                        <li><strong class="text-blue-800">Lienzo (Canvas):</strong> Zona gráfica donde se pueden dibujar formas o mover objetos táctiles.</li>
+                    </ul>
+                </div>
+
+                <!-- Componentes No Visuales y Sensores -->
+                <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                        📡 Componentes No Visuales y Sensores
+                    </h3>
+                    <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                        No se ven en pantalla, pero aportan superpoderes a la aplicación leyendo el entorno.
+                    </p>
+                    <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                        <li><strong class="text-emerald-800">Acelerómetro / Giroscopio:</strong> Detecta la inclinación o si agitas el teléfono móvil.</li>
+                        <li><strong class="text-emerald-800">Sensor de Ubicación (GPS):</strong> Determina la posición geográfica del usuario.</li>
+                        <li><strong class="text-emerald-800">Cámara y Micrófono:</strong> Capturan fotos, vídeos o sonidos en directo.</li>
+                        <li><strong class="text-emerald-800">Reloj / Temporizador (Clock):</strong> Mide el tiempo y genera eventos a intervalos regulares.</li>
+                        <li><strong class="text-emerald-800">Reproductor de Sonido (Sound):</strong> Emite efectos sonoros o vibraciones al pulsar botones.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-6 p-5 bg-purple-50 rounded-xl border border-purple-200">
+                <h4 class="font-bold text-purple-900 mb-2">⚙️ ¿Qué son las Propiedades?</h4>
+                <p class="text-sm text-gray-700 leading-relaxed">
+                    Cada componente tiene características personalizables llamadas <strong class="text-purple-700">propiedades</strong>. Por ejemplo, un botón tiene propiedades como su <code>color de fondo</code>, <code>tamaño de fuente</code>, <code>texto visible</code> y si está <code>habilitado o visible</code>. En la programación orientada a eventos, podemos cambiar las propiedades de un componente dinámicamente cuando ocurre un evento (ej. al pulsar el botón, cambiar su color a verde).
+                </p>
+            </div>
+        </section>
+
+        <!-- CYR.1.D.5. Publicación y distribución de aplicaciones móviles. -->
+        <section id="publicacion-distribucion" class="card p-8">
+            <h2 class="text-3xl font-bold mb-6 section-title">5. Publicación, Empaquetado y Distribución de Apps y Juegos</h2>
+            <p class="text-lg mb-4 leading-relaxed">
+                Una vez que hemos diseñado y programado nuestra aplicación móvil o videojuego retro, el paso final es <strong class="text-indigo-600">empaquetarlo y compartirlo</strong> con nuestros amigos, familiares o en internet para que puedan probarlo.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <!-- Método 1: Archivos ejecutable (.APK) -->
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-2xl mb-2">📦</div>
+                        <h3 class="font-bold text-indigo-900 text-lg mb-2">Compilación y Ejecutables (.APK)</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-3">
+                            En herramientas para smartphones como App Inventor, podemos compilar el proyecto y generar un archivo ejecutable <strong>.APK</strong> para instalar la app directamente en un dispositivo Android.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-bold text-indigo-700 bg-indigo-50 px-2 py-1 rounded">Instalación nativa</span>
+                </div>
+
+                <!-- Método 2: Código QR y Enlace Web -->
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-2xl mb-2">📲</div>
+                        <h3 class="font-bold text-indigo-900 text-lg mb-2">Distribución mediante Código QR y Web</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-3">
+                            Tanto en MakeCode Arcade como en App Inventor se genera un <strong>Código QR</strong> o un <strong>enlace web directo</strong>. Escaneando el código con la cámara del teléfono, se abre el simulador o la aplicación al instante sin necesidad de tiendas de apps.
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded">Prueba instantánea</span>
+                </div>
+
+                <!-- Método 3: Descarga a Consola Física (.UF2) -->
+                <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-2xl mb-2">🎮</div>
+                        <h3 class="font-bold text-indigo-900 text-lg mb-2">Descarga a Consolas Físicas (.UF2)</h3>
+                        <p class="text-xs text-gray-600 leading-relaxed mb-3">
+                            En MakeCode Arcade podemos pulsar el botón <strong>Download (Descargar)</strong> para obtener un archivo <strong>.UF2</strong>. Conectando por USB una consola retro física (ej. Meowbit, PyBadge o KittenBot), copiamos el archivo y ¡jugamos con botones reales!
+                        </p>
+                    </div>
+                    <span class="text-[11px] font-bold text-purple-700 bg-purple-50 px-2 py-1 rounded">Hardware Real</span>
+                </div>
+            </div>
+
+            <div class="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-center gap-3">
+                <span class="text-2xl">🔒</span>
+                <p class="text-xs text-amber-900 leading-relaxed">
+                    <strong>Seguridad y Responsabilidad al Distribuir:</strong> Al compartir enlaces o ejecutables de tus apps, asegúrate siempre de pedir permisos respetuosos (ej. no acceder a datos privados sin necesidad) y comparte solo mediante plataformas seguras oficiales.
+                </p>
             </div>
         </section>
 
